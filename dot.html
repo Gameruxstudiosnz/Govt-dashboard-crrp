@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Department of Transportation</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <div class="dot-container">
+        <header class="dot-header">
+            <div class="logo-section">
+                <img src="assets/badges/dot-logo.png" alt="DOT Logo">
+                <h1>Department of Transportation</h1>
+                <span class="department-status">OPERATIONAL STATUS: NORMAL</span>
+            </div>
+            
+            <div class="quick-stats">
+                <div class="stat-box">
+                    <i class="fas fa-road"></i>
+                    <div class="stat-info">
+                        <span class="stat-value">1,250</span>
+                        <span class="stat-label">Miles Maintained</span>
+                    </div>
+                </div>
+                <div class="stat-box">
+                    <i class="fas fa-traffic-light"></i>
+                    <div class="stat-info">
+                        <span class="stat-value">425</span>
+                        <span class="stat-label">Traffic Signals</span>
+                    </div>
+                </div>
+                <div class="stat-box">
+                    <i class="fas fa-bus"></i>
+                    <div class="stat-info">
+                        <span class="stat-value">180</span>
+                        <span class="stat-label">Transit Vehicles</span>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <div class="divisions-grid">
+            <!-- Road Infrastructure -->
+            <section class="division-card infrastructure">
+                <div class="division-header">
+                    <i class="fas fa-hard-hat"></i>
+                    <h2>Road Infrastructure</h2>
+                </div>
+                <div class="active-projects">
+                    <h3>Active Projects</h3>
+                    <ul class="project-list">
+                        <li class="priority-high">Highway Expansion - Phase 2</li>
+                        <li class="priority-medium">Bridge Maintenance - North</li>
+                        <li class="priority-low">Sidewalk Repairs - Downtown</li>
+                    </ul>
+                </div>
+                <div class="resources">
+                    <div class="resource-item">
+                        <span>Work Crews: 25</span>
+                        <span>Equipment Units: 40</span>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Traffic Management -->
+            <section class="division-card traffic">
+                <div class="division-header">
+                    <i class="fas fa-traffic-light"></i>
+                    <h2>Traffic Management</h2>
+                </div>
+                <div class="traffic-status">
+                    <div class="status-item">
+                        <h4>Signal Operations</h4>
+                        <div class="status-grid">
+                            <span class="operational">425 Active</span>
+                            <span class="maintenance">12 Maintenance</span>
+                            <span class="offline">3 Offline</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="monitoring">
+                    <h4>Traffic Cameras</h4>
+                    <div class="camera-grid">
+                        <span>Highway Cams: 50</span>
+                        <span>Intersection Cams: 75</span>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Public Transit -->
+            <section class="division-card transit">
+                <div class="division-header">
+                    <i class="fas fa-bus-alt"></i>
+                    <h2>Public Transit</h2>
+                </div>
+                <div class="fleet-status">
+                    <h3>Fleet Overview</h3>
+                    <div class="fleet-grid">
+                        <div class="vehicle-type">
+                            <i class="fas fa-bus"></i>
+                            <span>Buses: 120</span>
+                        </div>
+                        <div class="vehicle-type">
+                            <i class="fas fa-train"></i>
+                            <span>Light Rail: 40</span>
+                        </div>
+                        <div class="vehicle-type">
+                            <i class="fas fa-van-shuttle"></i>
+                            <span>Shuttles: 20</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="route-status">
+                    <h4>Active Routes</h4>
+                    <div class="route-info">
+                        <span>Bus Routes: 35</span>
+                        <span>Rail Lines: 4</span>
+                        <span>Shuttle Services: 8</span>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </div>
+</body>
+</html>

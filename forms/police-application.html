@@ -1,0 +1,45 @@
+<div class="application-form police-form">
+    <h2>Police Department Application</h2>
+    <form id="policeApplication">
+        <div class="form-grid">
+            <div class="form-section personal-info">
+                <h3>Personal Information</h3>
+                <input type="text" placeholder="Full Name" required>
+                <input type="date" placeholder="Date of Birth" required>
+                <input type="text" placeholder="Social Security Number" required>
+                <input type="email" placeholder="Email Address" required>
+                <input type="tel" placeholder="Phone Number" required>
+            </div>
+
+            <div class="form-section qualifications">
+                <h3>Law Enforcement Experience</h3>
+                <select name="experience" required>
+                    <option value="">Select Experience Level</option>
+                    <option value="none">No Experience</option>
+                    <option value="military">Military Background</option>
+                    <option value="law">Law Enforcement Background</option>
+                </select>
+                <input type="text" placeholder="Previous Agency (if applicable)">
+                <input type="text" placeholder="Years of Service">
+                <input type="text" placeholder="Certifications">
+            </div>
+
+            <div class="form-section physical">
+                <h3>Physical Qualifications</h3>
+                <label>Can you complete physical requirements?</label>
+                <div class="checkbox-group">
+                    <input type="checkbox" id="run"> <label for="run">1.5 Mile Run</label>
+                    <input type="checkbox" id="pushups"> <label for="pushups">Push-ups</label>
+                    <input type="checkbox" id="situps"> <label for="situps">Sit-ups</label>
+                </div>
+            </div>
+        </div>
+        <button type="submit" class="submit-btn">Submit Application</button>
+    </form>
+</div>
+
+<head>
+    <title>Police Department Application</title>
+    <link rel="stylesheet" href="../styles/forms.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
