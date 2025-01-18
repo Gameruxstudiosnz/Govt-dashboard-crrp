@@ -1,0 +1,169 @@
+/* Global Variables */
+:root {
+    --primary-color: #2c3e50;
+    --secondary-color: #34495e;
+    --accent-color: #3498db;
+    --success-color: #2ecc71;
+    --warning-color: #f1c40f;
+    --danger-color: #e74c3c;
+    --light-gray: #ecf0f1;
+    --dark-gray: #95a5a6;
+}
+
+/* Base Styles */
+body {
+    background-color: var(--light-gray);
+    font-family: 'Roboto', sans-serif;
+    line-height: 1.6;
+    padding-top: 60px; /* Added padding to prevent content overlap */
+}
+
+/* Typography */
+h1, h2, h3, h4, h5, h6 {
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+}
+
+/* Layout Components */
+.container {
+    padding: 2rem;
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+/* Navigation */
+.navbar {
+    background-color: var(--primary-color);
+    padding: 1rem 2rem;
+    position: fixed; /* Make the navbar fixed */
+    top: 0; /* Stick to the top */
+    left: 0; /* Stretch to the left */
+    right: 0; /* Stretch to the right */
+    z-index: 1000; /* Ensure it's on top */
+}
+
+.nav-link {
+    color: white !important;
+    transition: opacity 0.3s ease;
+}
+
+.nav-link:hover {
+    opacity: 0.8;
+}
+
+/* Tables */
+.table {
+    width: 100%;
+    margin-bottom: 2rem;
+}
+
+.table th {
+    background-color: var(--secondary-color);
+    color: white;
+    padding: 1rem;
+}
+
+.table td {
+    padding: 0.75rem;
+    border-bottom: 1px solid var(--light-gray);
+}
+
+/* Buttons */
+.btn {
+    padding: 0.5rem 1.5rem;
+    border-radius: 4px;
+    border: none;
+    transition: transform 0.2s ease;
+}
+
+.btn:hover {
+    transform: translateY(-2px);
+}
+
+.btn-primary {
+    background-color: var(--accent-color);
+    color: white;
+}
+
+.btn-danger {
+    background-color: var(--danger-color);
+    color: white;
+}
+
+/* Forms */
+.form {
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+.form-group {
+    margin-bottom: 1.5rem;
+}
+
+.form-control {
+    width: 100%;
+    padding: 0.75rem;
+    border: 1px solid var(--dark-gray);
+    border-radius: 4px;
+}
+
+/* Cards */
+.card {
+    background: white;
+    border-radius: 8px;
+    padding: 1.5rem;
+    margin-bottom: 1.5rem;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+/* Alerts */
+.alert {
+    padding: 1rem;
+    border-radius: 4px;
+    margin-bottom: 1rem;
+}
+
+.alert-success {
+    background-color: var(--success-color);
+    color: white;
+}
+
+.alert-warning {
+    background-color: var(--warning-color);
+    color: white;
+}
+
+.alert-danger {
+    background-color: var(--danger-color);
+    color: white;
+}
+
+/* Utilities */
+.text-center {
+    text-align: center;
+}
+
+.mt-2 {
+    margin-top: 2rem;
+}
+
+.mb-2 {
+    margin-bottom: 2rem;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .container {
+        padding: 1rem;
+    }
+    
+    .table {
+        font-size: 0.9rem;
+    }
+    
+    .btn {
+        width: 100%;
+        margin-bottom: 0.5rem;
+    }
+}
