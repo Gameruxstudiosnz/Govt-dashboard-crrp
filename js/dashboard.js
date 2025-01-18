@@ -4,6 +4,9 @@ class Dashboard {
         this.charts = {};
         this.init();
     }
+    updateDashboard() {
+        // Update dashboard elements with fetched stats
+    }
 
     async init() {
         await this.fetchStats();
