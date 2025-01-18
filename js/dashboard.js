@@ -248,8 +248,21 @@ function loadBotSettings() {
     };
 
     // Populate form fields
+    // Best practice - using optional chaining
     document.getElementById('botPrefix')?.value = settings.prefix;
-    document.getElementById('defaultLang')?.value = settings.defaultLang;
+
+    // Alternative approaches:
+    // Using nullish coalescing
+    const prefixElement = document.getElementById('botPrefix');
+    if (prefixElement) {
+        prefixElement.value = settings.prefix;
+    }
+
+    // Using type-safe querySelector
+    const prefixInput = document.querySelector('input#botPrefix');
+    if (prefixInput instanceof HTMLInputElement) {
+        prefixInput.value = settings.prefix;
+    }    document.getElementById('defaultLang')?.value = settings.defaultLang;
     document.getElementById('autoMod')?.checked = settings.autoMod;
     document.getElementById('spamThreshold')?.value = settings.spamThreshold;
     document.getElementById('welcomeMsg')?.value = settings.welcomeMsg;
