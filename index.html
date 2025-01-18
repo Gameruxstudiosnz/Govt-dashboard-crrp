@@ -12,265 +12,267 @@
       <link rel="stylesheet" href="styles/dark-mode.css">
   </head>
   <body>
-      <div class="dashboard-container">
-          <!-- Sidebar -->
-          <aside class="sidebar">
-              <div class="logo">
-                  <img src="assets/govt-logo.png" alt="Government Logo">
-                  <h2>Gov Portal</h2>
-              </div>
-              <nav>
-                  <ul>
-                      <li class="active"><a href="#"><i class="fas fa-home"></i> Dashboard</a></li>
-                      <li><a href="#"><i class="fas fa-file-alt"></i> Documents</a></li>
-                      <li><a href="#"><i class="fas fa-users"></i> Citizens</a></li>
-                      <li><a href="#"><i class="fas fa-chart-bar"></i> Statistics</a></li>
-                      <li><a href="#"><i class="fas fa-calendar"></i> Appointments</a></li>
-                      <li><a href="#"><i class="fas fa-cog"></i> Settings</a></li>
-                        <!-- Add this to the navbar -->
-                <div class="nav-item">
-                    <button id="darkModeToggle" class="btn btn-outline-light">
-                       <i class="fas fa-moon"></i>
-                    </button>
-                   </div>
-                  </ul>
-              </nav>
-          </aside>
 
-          <!-- Main Content -->
-          <main class="main-content">
-              <!-- Top Header -->
-              <header>
-                  <div class="search-bar">
-                      <input type="search" placeholder="Search...">
-                  </div>
-                  <div class="user-profile">
-                      <!-- User profile content will be injected by JavaScript -->
-                  </div>
-              </header>
 
-              <!-- Stats Cards -->
-              <div class="stats-container">
-                  <div class="stat-card">
-                      <i class="fas fa-users"></i>
-                      <div class="stat-info">
-                          <h3>Total Citizens</h3>
-                          <p>Loading...</p>
-                      </div>
-                  </div>
-                  <div class="stat-card">
-                      <i class="fas fa-file-alt"></i>
-                      <div class="stat-info">
-                          <h3>Documents</h3>
-                          <p>Loading...</p>
-                      </div>
-                  </div>
-                  <div class="stat-card">
-                      <i class="fas fa-calendar-check"></i>
-                      <div class="stat-info">
-                          <h3>Appointments</h3>
-                          <p>Loading...</p>
-                      </div>
-                  </div>
-                  <div class="stat-card">
-                      <i class="fas fa-chart-line"></i>
-                      <div class="stat-info">
-                          <h3>Growth</h3>
-                          <p>Loading...</p>
-                      </div>
-                  </div>
-              </div>
 
-              <!-- Recent Activity Section -->
-              <section class="recent-activity">
-                  <h2>Recent Activity</h2>
-                  <div class="activity-list">
-                      <!-- Activity items will be dynamically populated -->
-                  </div>
-              </section>
-          </main>
 
-        </div>
 
-      <!-- Profile Modal -->
-      <div class="modal fade" id="userProfileModal" tabindex="-1">
-          <div class="modal-dialog modal-lg modal-dialog-centered">
-              <div class="modal-content">
-                  <div class="modal-header bg-primary text-white">
-                      <h5 class="modal-title">
-                          <i class="fas fa-user-edit me-2"></i>Edit User Profile
-                      </h5>
-                      <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
-                  </div>
-            
-                  <div class="modal-body">
-                      <div class="profile-header mb-4">
-                          <div class="profile-avatar-wrapper">
-                              <img src="assets/profile.jpg" alt="Profile" class="profile-avatar">
-                              <div class="avatar-upload">
-                                  <input type="file" id="avatarUpload" hidden>
-                                  <label for="avatarUpload" class="upload-icon">
-                                      <i class="fas fa-camera"></i>
-                                  </label>
-                              </div>
-                          </div>
-                          <div class="user-status">
-                              <span class="badge bg-success">Active</span>
-                              <span class="user-role">Administrator</span>
-                          </div>
-                      </div>
 
-                      <ul class="nav nav-tabs" role="tablist">
-                          <li class="nav-item">
-                              <a class="nav-link active" data-bs-toggle="tab" href="#personalInfo">
-                                  <i class="fas fa-user me-2"></i>Personal Info
-                              </a>
-                          </li>
-                          <li class="nav-item">
-                              <a class="nav-link" data-bs-toggle="tab" href="#security">
-                                  <i class="fas fa-shield-alt me-2"></i>Security
-                              </a>
-                          </li>
-                          <li class="nav-item">
-                              <a class="nav-link" data-bs-toggle="tab" href="#preferences">
-                                  <i class="fas fa-cog me-2"></i>Preferences
-                              </a>
-                          </li>
-                      </ul>
 
-                      <div class="tab-content mt-3">
-                          <!-- Personal Info Tab -->
-                          <div class="tab-pane fade show active" id="personalInfo">
-                              <form id="personalInfoForm">
-                                  <div class="row">
-                                      <div class="col-md-6 mb-3">
-                                          <label class="form-label">Full Name</label>
-                                          <input type="text" class="form-control" value="John Doe">
-                                      </div>
-                                      <div class="col-md-6 mb-3">
-                                          <label class="form-label">Employee ID</label>
-                                          <input type="text" class="form-control" value="GOV-2024-001" readonly>
-                                      </div>
-                                  </div>
-                                  <div class="row">
-                                      <div class="col-md-6 mb-3">
-                                          <label class="form-label">Email</label>
-                                          <input type="email" class="form-control" value="john.doe@gov.org">
-                                      </div>
-                                      <div class="col-md-6 mb-3">
-                                          <label class="form-label">Phone</label>
-                                          <input type="tel" class="form-control" value="+1234567890">
-                                      </div>
-                                  </div>
-                              </form>
-                          </div>
 
-                          <!-- Security Tab -->
-                          <div class="tab-pane fade" id="security">
-                              <form id="securityForm">
-                                  <div class="mb-3">
-                                      <label class="form-label">Current Password</label>
-                                      <input type="password" class="form-control">
-                                  </div>
-                                  <div class="mb-3">
-                                      <label class="form-label">New Password</label>
-                                      <input type="password" class="form-control">
-                                  </div>
-                                  <div class="mb-3">
-                                      <label class="form-label">Confirm Password</label>
-                                      <input type="password" class="form-control">
-                                  </div>
-                                  <div class="mb-3">
-                                      <label class="form-label">Two-Factor Authentication</label>
-                                      <div class="form-check form-switch">
-                                          <input class="form-check-input" type="checkbox" id="twoFactorAuth">
-                                          <label class="form-check-label" for="twoFactorAuth">Enable 2FA</label>
-                                      </div>
-                                  </div>
-                              </form>
-                          </div>
 
-                          <!-- Preferences Tab -->
-                          <div class="tab-pane fade" id="preferences">
-                              <form id="preferencesForm">
-                                  <div class="mb-3">
-                                      <label class="form-label">Language</label>
-                                      <select class="form-select">
-                                          <option>English</option>
-                                          <option>Spanish</option>
-                                          <option>French</option>
-                                      </select>
-                                  </div>
-                                  <div class="mb-3">
-                                      <label class="form-label">Time Zone</label>
-                                      <select class="form-select">
-                                          <option>UTC-5 (Eastern Time)</option>
-                                          <option>UTC-8 (Pacific Time)</option>
-                                          <option>UTC+0 (GMT)</option>
-                                      </select>
-                                  </div>
-                                  <div class="mb-3">
-                                      <label class="form-label">Notifications</label>
-                                      <div class="form-check">
-                                          <input class="form-check-input" type="checkbox" checked>
-                                          <label class="form-check-label">Email Notifications</label>
-                                      </div>
-                                      <div class="form-check">
-                                          <input class="form-check-input" type="checkbox" checked>
-                                          <label class="form-check-label">SMS Notifications</label>
-                                      </div>
-                                  </div>
-                              </form>
-                          </div>
-                      </div>
-                  </div>
 
-                  <div class="modal-footer">
-                      <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
-                      <button type="button" class="btn btn-primary" id="saveProfileChanges">
-                          <i class="fas fa-save me-2"></i>Save Changes
-                      </button>
-                  </div>
-              </div>
-          </div>
-      </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      <app-website-framework></app-website-framework>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
       <!-- Scripts -->
       <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
       <script src="js/dashboard.js"></script>
   </body>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
   </html>
-
-<!-- Add these sections after the stats cards -->
-
-<!-- Charts Section -->
-<div class="charts-container">
-    <div class="chart-card">
-        <h3>Population Growth</h3>
-        <canvas id="populationChart"></canvas>
-    </div>
-    <div class="chart-card">
-        <h3>Document Processing</h3>
-        <canvas id="documentsChart"></canvas>
-    </div>
-</div>
-
-<!-- Quick Actions Panel -->
-<div class="quick-actions">
-    <h3>Quick Actions</h3>
-    <div class="action-buttons">
-        <button class="btn btn-primary"><i class="fas fa-plus"></i> New Document</button>
-        <button class="btn btn-success"><i class="fas fa-user-plus"></i> Add Citizen</button>
-        <button class="btn btn-info"><i class="fas fa-calendar-plus"></i> Schedule Meeting</button>
-        <button class="btn btn-warning"><i class="fas fa-file-export"></i> Export Reports</button>
-    </div>
-</div>
-
-<!-- Notifications Center -->
-<div class="notifications-center">
-    <h3>Recent Notifications</h3>
-    <div class="notifications-list">
-        <!-- Notifications will be dynamically populated -->
-    </div>
-    <link rel="stylesheet" href="styles/dark-mode.css">
-</div>

@@ -7,20 +7,29 @@
     <link href="css/admin.css" rel="stylesheet">
     <link href="css/fontawesome.min.css" rel="stylesheet">
     <link rel="stylesheet" href="styles/dark-mode.css">
+    <!-- Add Charts.js for analytics -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/chart.js">
 </head>
 <body>
     <div class="admin-container" data-requires-permission="admin">
         <nav class="admin-sidebar">
             <div class="sidebar-header">
                 <h3>Admin Panel</h3>
-                <div class="user-info"></div>
+                <div class="user-info">
+                    <span class="admin-name"></span>
+                    <span class="admin-role"></span>
+                </div>
             </div>
             <ul class="sidebar-menu">
+                <li><a href="#dashboard"><i class="fas fa-tachometer-alt"></i> Dashboard</a></li>
                 <li><a href="#users"><i class="fas fa-users"></i> User Management</a></li>
                 <li><a href="#permissions"><i class="fas fa-key"></i> Permissions</a></li>
                 <li><a href="#logs"><i class="fas fa-history"></i> System Logs</a></li>
+                <li><a href="#analytics"><i class="fas fa-chart-bar"></i> Analytics</a></li>
+                <li><a href="#reports"><i class="fas fa-file-alt"></i> Reports</a></li>
                 <li><a href="#settings"><i class="fas fa-cog"></i> System Settings</a></li>
-                <!-- Dark Mode Toggle -->
+                <li><a href="#backup"><i class="fas fa-database"></i> Backup/Restore</a></li>
+                <li><a href="#announcements"><i class="fas fa-bullhorn"></i> Announcements</a></li>
                 <li class="nav-item">
                     <button id="darkModeToggle" class="btn btn-outline-light">
                         <i class="fas fa-moon"></i>
@@ -33,6 +42,9 @@
             <div class="content-header">
                 <h2 id="section-title">Dashboard Overview</h2>
                 <div class="actions">
+                    <button class="btn btn-success" id="exportData">
+                        <i class="fas fa-file-export"></i> Export
+                    </button>
                     <button class="btn btn-primary" id="refreshData">
                         <i class="fas fa-sync"></i> Refresh
                     </button>
@@ -43,7 +55,128 @@
             </div>
             
             <div class="content-body">
-                <!-- Dynamic content sections -->
+                <!-- Quick Stats Section -->
+                <div class="stats-container">
+                    <div class="stat-card">
+                        <i class="fas fa-users"></i>
+                        <h3>Total Users</h3>
+                        <p id="totalUsers">0</p>
+                    </div>
+                    <div class="stat-card">
+                        <i class="fas fa-tasks"></i>
+                        <h3>Active Projects</h3>
+                        <p id="activeProjects">0</p>
+                    </div>
+                    <div class="stat-card">
+                        <i class="fas fa-exclamation-triangle"></i>
+                        <h3>System Alerts</h3>
+                        <p id="systemAlerts">0</p>
+                    </div>
+                    <div class="stat-card">
+                        <i class="fas fa-clock"></i>
+                        <h3>Uptime</h3>
+                        <p id="systemUptime">0</p>
+                    </div>
+                </div>
+
+                <!-- Charts Section -->
+                <div class="charts-container">
+                    <div class="chart-card">
+                        <canvas id="userActivityChart"></canvas>
+                    </div>
+                    <div class="chart-card">
+                        <canvas id="resourceUsageChart"></canvas>
+                    </div>
+                </div>
+
+                <!-- Recent Activity Table -->
+                <div class="recent-activity">
+                    <h3>Recent Activity</h3>
+                    <table class="table table-striped">
+                        <thead>
+                            <tr>
+                                <th>Time</th>
+                                <th>User</th>
+                                <th>Action</th>
+                                <th>Status</th>
+                            </tr>
+                        </thead>
+                        <tbody id="activityLog">
+                            <!-- Dynamic content -->
+                        </tbody>
+                    </table>
+                </div>
+
+                <div class="announcements-panel">
+                    <div class="announcement-form">
+                        <h3>Create Announcement</h3>
+                        <form id="announcementForm">
+                            <div class="form-group">
+                                <label>Title</label>
+                                <input type="text" class="form-control" id="announcementTitle" required>
+                            </div>
+                            <div class="form-group">
+                                <label>Message</label>
+                                <textarea class="form-control" id="announcementMessage" rows="4" required></textarea>
+                            </div>
+                            <div class="form-group">
+                                <label>Target Platforms</label>
+                                <div class="platform-checkboxes">
+                                    <label><input type="checkbox" id="discordTarget" checked> Discord</label>
+                                    <label><input type="checkbox" id="serverTarget" checked> Server</label>
+                                    <label><input type="checkbox" id="websiteTarget" checked> Website</label>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label>Priority Level</label>
+                                <select class="form-control" id="announcementPriority">
+                                    <option value="low">Low</option>
+                                    <option value="medium">Medium</option>
+                                    <option value="high">High</option>
+                                    <option value="urgent">Urgent</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label>Schedule</label>
+                                <input type="datetime-local" class="form-control" id="announcementSchedule">
+                            </div>
+                            <button type="submit" class="btn btn-primary">Post Announcement</button>
+                        </form>
+                    </div>
+                    <div class="settings-panel">
+                        <form id="systemSettings">
+                            <div class="setting-group">
+                                <h3>General Settings</h3>
+                                <div class="form-group">
+                                    <label>System Name</label>
+                                    <input type="text" name="systemName" class="form-control">
+                                </div>
+                                <div class="form-group">
+                                    <label>Maintenance Mode</label>
+                                    <input type="checkbox" name="maintenanceMode">
+                                </div>
+                            </div>
+                            <div class="setting-group">
+                                <h3>Security Settings</h3>
+                                <div class="form-group">
+                                    <label>Session Timeout (minutes)</label>
+                                    <input type="number" name="sessionTimeout" class="form-control">
+                                </div>
+                                <div class="form-group">
+                                    <label>2FA Requirement</label>
+                                    <input type="checkbox" name="require2FA">
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                    
+                    <div class="announcements-history">
+                        <h3>Recent Announcements</h3>
+                        <div id="announcementsLog" class="table-responsive">
+                            <!-- Dynamic content -->
+                        </div>
+                    </div>
+                </div>
             </div>
         </main>
     </div>
@@ -52,5 +185,7 @@
     <script src="js/bootstrap.bundle.min.js"></script>
     <script src="js/admin.js"></script>
     <script src="js/dark-mode.js"></script>
+    <script src="js/charts.js"></script>
 </body>
 </html>
+
