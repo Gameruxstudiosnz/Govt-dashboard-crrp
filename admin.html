@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Admin Dashboard | CRRP</title>
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/admin.css" rel="stylesheet">
+    <link href="css/fontawesome.min.css" rel="stylesheet">
+</head>
+<body>
+    <div class="admin-container" data-requires-permission="admin">
+        <nav class="admin-sidebar">
+            <div class="sidebar-header">
+                <h3>Admin Panel</h3>
+                <div class="user-info"></div>
+            </div>
+            <ul class="sidebar-menu">
+                <li><a href="#users"><i class="fas fa-users"></i> User Management</a></li>
+                <li><a href="#permissions"><i class="fas fa-key"></i> Permissions</a></li>
+                <li><a href="#logs"><i class="fas fa-history"></i> System Logs</a></li>
+                <li><a href="#settings"><i class="fas fa-cog"></i> System Settings</a></li>
+            </ul>
+        </nav>
+        
+        <main class="admin-content">
+            <div class="content-header">
+                <h2 id="section-title">Dashboard Overview</h2>
+                <div class="actions">
+                    <button class="btn btn-primary" id="refreshData">
+                        <i class="fas fa-sync"></i> Refresh
+                    </button>
+                    <button class="btn btn-danger logout-btn">
+                        <i class="fas fa-sign-out-alt"></i> Logout
+                    </button>
+                </div>
+            </div>
+            
+            <div class="content-body">
+                <!-- Dynamic content sections -->
+            </div>
+        </main>
+    </div>
+</body>
+</html>

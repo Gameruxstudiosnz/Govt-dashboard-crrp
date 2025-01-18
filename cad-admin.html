@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>CAD Administration | CRRP</title>
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/cad-admin.css" rel="stylesheet">
+</head>
+<body>
+    <div class="cad-admin-container">
+        <nav class="nav-tabs">
+            <div class="nav-item">
+                <a class="nav-link active" href="#dispatch">Dispatch Control</a>
+            </div>
+            <div class="nav-item">
+                <a class="nav-link" href="#units">Unit Management</a>
+            </div>
+            <div class="nav-item">
+                <a class="nav-link" href="#calls">Active Calls</a>
+            </div>
+            <div class="nav-item">
+                <a class="nav-link" href="#codes">10-Codes Management</a>
+            </div>
+        </nav>
+        
+        <div class="cad-content">
+            <!-- Dynamic CAD management sections -->
+            <div id="dispatchControl" class="control-panel">
+                <h3>Dispatch Control Center</h3>
+                <div class="dispatch-grid">
+                    <div class="active-units"></div>
+                    <div class="pending-calls"></div>
+                    <div class="resource-allocation"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
