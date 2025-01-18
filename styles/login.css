@@ -39,3 +39,39 @@
 .modal.show .modal-dialog {
     transform: scale(1);
 }
+
+.login-page {
+    min-height: 100vh;
+    background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.login-container {
+    width: 100%;
+    max-width: 400px;
+    padding: 20px;
+}
+
+.login-box {
+    background: white;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0,0,0,0.1);
+}
+
+.login-logo {
+    width: 120px;
+    margin-bottom: 20px;
+}
+
+.btn-discord {
+    background: #7289DA;
+    color: white;
+}
+
+.btn-fivem {
+    background: #FF6B6B;
+    color: white;
+}

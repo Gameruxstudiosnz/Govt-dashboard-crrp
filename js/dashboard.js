@@ -4,37 +4,112 @@ class Dashboard {
         this.charts = {};
         this.init();
     }
-    updateDashboard() {
-        // Update dashboard elements with fetched stats
-    }
 
     async init() {
+        this.checkAuth();
         await this.fetchStats();
         this.initCharts();
         this.setupEventListeners();
         this.startRealTimeUpdates();
-        this.initJobManagement();
+    }
+
+    checkAuth() {
+        const userData = localStorage.getItem('userData');
+        if (!userData) {
+            window.location.href = 'login.html';
+            return;
+        }
+        this.userData = JSON.parse(userData);
+        this.updateUserProfile();
+    }
+
+    updateUserProfile() {
+        const userProfile = document.querySelector('.user-profile');
+        if (userProfile) {
+            userProfile.innerHTML = `
+                <span class="notifications">
+                    <i class="fas fa-bell"></i>
+                    <span class="badge">3</span>
+                </span>
+                <img src="assets/profile.jpg" alt="Profile" onclick="openProfileModal()">
+                <span>${this.userData.name}</span>
+                <button onclick="this.handleLogout()" class="btn btn-outline-light ms-2">
+                    <i class="fas fa-sign-out-alt"></i>
+                </button>
+            `;
+        }
     }
 
     async fetchStats() {
-        const response = await fetch('/api/stats');
-        this.stats = await response.json();
-        this.updateDashboard();
+        try {
+            const response = await fetch('/api/stats');
+            this.stats = await response.json();
+            this.updateDashboard();
+        } catch (error) {
+            console.error('Failed to fetch stats:', error);
+        }
     }
 
-    initCharts() {
-        // Initialize charts with Chart.js
-        this.charts.services = new Chart(
-            document.getElementById('services-chart'),
-            this.getServiceChartConfig()
-        );
-        
-        this.charts.budget = new Chart(
-            document.getElementById('budget-chart'),
-            this.getBudgetChartConfig()
-        );
+    updateDashboard() {
+        // Update stats cards
+        this.updateStatsCards();
+        // Update recent activity
+        this.updateRecentActivity();
     }
 
+    updateStatsCards() {
+        const statsElements = {
+            citizens: document.querySelector('.stat-card:nth-child(1) p'),
+            documents: document.querySelector('.stat-card:nth-child(2) p'),
+            appointments: document.querySelector('.stat-card:nth-child(3) p'),
+            growth: document.querySelector('.stat-card:nth-child(4) p')
+        };
+
+        if (this.stats.citizens) statsElements.citizens.textContent = this.stats.citizens.toLocaleString();
+        if (this.stats.documents) statsElements.documents.textContent = this.stats.documents.toLocaleString();
+        if (this.stats.appointments) statsElements.appointments.textContent = this.stats.appointments.toLocaleString();
+        if (this.stats.growth) statsElements.growth.textContent = `${this.stats.growth}%`;
+    }
+
+    handleLogout() {
+        localStorage.removeItem('userData');
+        window.location.href = 'login.html';
+    }
+      initCharts() {
+          // Population Growth Chart
+          const populationCtx = document.getElementById('populationChart').getContext('2d');
+          new Chart(populationCtx, {
+              type: 'line',
+              data: {
+                  labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun'],
+                  datasets: [{
+                      label: 'Population Growth',
+                      data: [30000, 31200, 32800, 34100, 35800, 37200],
+                      borderColor: 'rgb(75, 192, 192)',
+                      tension: 0.1
+                  }]
+              }
+          });
+
+          // Documents Processing Chart
+          const documentsCtx = document.getElementById('documentsChart').getContext('2d');
+          new Chart(documentsCtx, {
+              type: 'bar',
+              data: {
+                  labels: ['Pending', 'Processing', 'Completed', 'Rejected'],
+                  datasets: [{
+                      label: 'Document Status',
+                      data: [150, 240, 520, 30],
+                      backgroundColor: [
+                          'rgba(255, 159, 64, 0.8)',
+                          'rgba(54, 162, 235, 0.8)',
+                          'rgba(75, 192, 192, 0.8)',
+                          'rgba(255, 99, 132, 0.8)'
+                      ]
+                  }]
+              }
+          });
+      }
     startRealTimeUpdates() {
         const ws = new WebSocket('ws://localhost:3000/updates');
         ws.onmessage = (event) => {
@@ -42,30 +117,12 @@ class Dashboard {
             this.updateLiveStats(data);
         };
     }
-
-    initJobManagement() {
-        this.jobPanel = new JobManagementPanel({
-            container: document.getElementById('job-management'),
-            onJobUpdate: this.handleJobUpdate.bind(this)
-        });
-    }
-
-    async handleJobUpdate(playerData) {
-        const response = await fetch('/api/jobs/update', {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json'
-            },
-            body: JSON.stringify(playerData)
-        });
-        
-        if (response.ok) {
-            this.showNotification('Job updated successfully');
-            this.refreshJobsList();
-        }
-    }
 }
 
+// Initialize dashboard when DOM is loaded
+document.addEventListener('DOMContentLoaded', () => {
+    window.dashboardInstance = new Dashboard();
+});
 class JobManagementPanel {
     constructor(options) {
         this.container = options.container;
@@ -106,30 +163,43 @@ class JobManagementPanel {
 // Central event handler for all dashboard functionality
 class DashboardManager {
     constructor() {
+        this.checkAuth();
         this.initializeComponents();
         this.setupEventListeners();
     }
 
+    checkAuth() {
+        const userData = localStorage.getItem('userData');
+        if (!userData) {
+            window.location.href = 'login.html';
+            return;
+        }
+        this.userData = JSON.parse(userData);
+    }
+
     initializeComponents() {
-        // Initialize all modals
-        this.loginModal = new bootstrap.Modal(document.getElementById('loginModal'));
         this.profileModal = new bootstrap.Modal(document.getElementById('userProfileModal'));
-        
-        // Initialize user state
-        this.checkAuthState();
+        this.updateUserInfo();
+    }
+
+    updateUserInfo() {
+        const userProfile = document.querySelector('.user-profile');
+        if (userProfile && this.userData) {
+            userProfile.innerHTML = `
+                <span class="notifications">
+                    <i class="fas fa-bell"></i>
+                    <span class="badge">3</span>
+                </span>
+                <img src="assets/profile.jpg" alt="Profile" onclick="openProfileModal()">
+                <span>${this.userData.name}</span>
+            `;
+        }
     }
 
     setupEventListeners() {
         // Global event listeners
         document.addEventListener('userLoggedIn', () => this.handleUserLogin());
         document.addEventListener('userLoggedOut', () => this.handleUserLogout());
-    }
-
-    checkAuthState() {
-        const token = localStorage.getItem('authToken');
-        if (token) {
-            this.handleUserLogin();
-        }
     }
 
     handleUserLogin() {

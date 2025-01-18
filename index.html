@@ -3,56 +3,15 @@
   <head>
       <meta charset="UTF-8">
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
-      <title>Government Dashboard</title>
+      <title>New Horizon Government Dashboard</title>
     
       <!-- CSS Dependencies -->
       <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
       <link rel="stylesheet" href="styles/dashboard.css">
-      <!-- Bootstrap loaded last to prevent override -->
       <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
   </head>
   <body>
-      <!-- Welcome Screen -->
-      <div class="login-welcome">
-          <div class="welcome-content">
-              <img src="assets/govt-logo.png" alt="Government Logo" class="welcome-logo">
-              <h1>Government Portal</h1>
-              <!-- Main login form -->
-              <form id="mainLoginForm" class="mt-4">
-                  <div class="mb-3">
-                      <input type="text" class="form-control" id="username" placeholder="Username">
-                  </div>
-                  <div class="mb-3">
-                      <input type="password" class="form-control" id="password" placeholder="Password">
-                  </div>
-                  <div class="login-options mb-3">
-                      <!-- Original login fields remain above -->
-                      
-                      <!-- Discord Login -->
-                      <button type="button" class="btn btn-discord w-100 mb-2">
-                          <i class="fab fa-discord"></i> Login with Discord
-                      </button>
-                      
-                      <!-- FiveM Login -->
-                      <button type="button" class="btn btn-fivem w-100 mb-2">
-                          <i class="fas fa-gamepad"></i> Login with FiveM
-                      </button>
-                      
-                      <!-- Original submit button remains below -->
-                  </div>
-                  <button type="submit" class="btn btn-primary w-100">Enter Dashboard</button>
-              </form>
-
-              <!-- Modal login form -->
-              <form id="modalLoginForm">
-                  <!-- ... form contents ... -->
-              </form>
-              <div class="mt-3 text-muted">
-                  <small>Test Access: admin/admin123 or dev/dev123</small>
-              </div>
-          </div>
-      </div>      <!-- Add auth-required class to protected content -->
-      <div class="dashboard-container auth-required">
+      <div class="dashboard-container">
           <!-- Sidebar -->
           <aside class="sidebar">
               <div class="logo">
@@ -79,12 +38,7 @@
                       <input type="search" placeholder="Search...">
                   </div>
                   <div class="user-profile">
-                      <span class="notifications">
-                          <i class="fas fa-bell"></i>
-                          <span class="badge">3</span>
-                      </span>
-                      <img src="assets/profile.jpg" alt="Profile" onclick="openProfileModal()">
-                      <span>Admin User</span>
+                      <!-- User profile content will be injected by JavaScript -->
                   </div>
               </header>
 
@@ -94,28 +48,28 @@
                       <i class="fas fa-users"></i>
                       <div class="stat-info">
                           <h3>Total Citizens</h3>
-                          <p>1,234,567</p>
+                          <p>Loading...</p>
                       </div>
                   </div>
                   <div class="stat-card">
                       <i class="fas fa-file-alt"></i>
                       <div class="stat-info">
                           <h3>Documents</h3>
-                          <p>45,678</p>
+                          <p>Loading...</p>
                       </div>
                   </div>
                   <div class="stat-card">
                       <i class="fas fa-calendar-check"></i>
                       <div class="stat-info">
                           <h3>Appointments</h3>
-                          <p>892</p>
+                          <p>Loading...</p>
                       </div>
                   </div>
                   <div class="stat-card">
                       <i class="fas fa-chart-line"></i>
                       <div class="stat-info">
                           <h3>Growth</h3>
-                          <p>+12.5%</p>
+                          <p>Loading...</p>
                       </div>
                   </div>
               </div>
@@ -124,55 +78,12 @@
               <section class="recent-activity">
                   <h2>Recent Activity</h2>
                   <div class="activity-list">
-                      <div class="activity-item">
-                          <div class="activity-icon"><i class="fas fa-file-signature"></i></div>
-                          <div class="activity-details">
-                              <h4>New Document Submitted</h4>
-                              <p>Citizen ID: 12345 - Birth Certificate Application</p>
-                              <span class="time">2 minutes ago</span>
-                          </div>
-                      </div>
-                      <div class="activity-item">
-                          <div class="activity-icon"><i class="fas fa-user-check"></i></div>
-                          <div class="activity-details">
-                              <h4>Citizen Verification Complete</h4>
-                              <p>Citizen ID: 67890 - Identity Verified</p>
-                              <span class="time">1 hour ago</span>
-                          </div>
-                      </div>
+                      <!-- Activity items will be dynamically populated -->
                   </div>
               </section>
           </main>
-      </div>
-      <!-- Login Modal -->
-      <div class="modal fade" id="loginModal" tabindex="-1">
-          <div class="modal-dialog modal-dialog-centered">
-              <div class="modal-content">
-                  <div class="modal-header">
-                      <h5 class="modal-title">Login to Dashboard</h5>
-                      <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
-                  </div>
-                  <div class="modal-body">
-                      <form id="loginForm">
-                          <div class="mb-3">
-                              <label for="username" class="form-label">Username</label>
-                              <input type="text" class="form-control" id="username" required>
-                          </div>
-                          <div class="mb-3">
-                              <label for="password" class="form-label">Password</label>
-                              <input type="password" class="form-control" id="password" required>
-                          </div>
-                          <div class="alert alert-info">
-                              <strong>Test Credentials:</strong><br>
-                              Admin: admin/admin123<br>
-                              Dev: dev/dev123
-                          </div>
-                          <button type="submit" class="btn btn-primary w-100">Login</button>
-                      </form>
-                  </div>
-              </div>
-          </div>
-      </div>
+
+        </div>
 
       <!-- Profile Modal -->
       <div class="modal fade" id="userProfileModal" tabindex="-1">
@@ -184,7 +95,7 @@
                       </h5>
                       <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
                   </div>
-              
+            
                   <div class="modal-body">
                       <div class="profile-header mb-4">
                           <div class="profile-avatar-wrapper">
@@ -323,45 +234,35 @@
   </body>
   </html>
 
-<!-- Add this button below the login form -->
-<div class="mt-3 text-center">
-    <button type="button" class="btn btn-link" onclick="showRegistrationModal()">
-        Create New Account
-    </button>
+<!-- Add these sections after the stats cards -->
+
+<!-- Charts Section -->
+<div class="charts-container">
+    <div class="chart-card">
+        <h3>Population Growth</h3>
+        <canvas id="populationChart"></canvas>
+    </div>
+    <div class="chart-card">
+        <h3>Document Processing</h3>
+        <canvas id="documentsChart"></canvas>
+    </div>
 </div>
-<!-- Add this new Registration Modal -->
-<div class="modal fade" id="registrationModal" tabindex="-1">
-    <div class="modal-dialog modal-dialog-centered">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title">Create New Account</h5>
-                <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
-            </div>
-            <div class="modal-body">
-                <form id="registrationForm">
-                    <div class="mb-3">
-                        <label class="form-label">Full Name</label>
-                        <input type="text" class="form-control" id="regFullName" required>
-                    </div>
-                    <div class="mb-3">
-                        <label class="form-label">Email</label>
-                        <input type="email" class="form-control" id="regEmail" required>
-                    </div>
-                    <div class="mb-3">
-                        <label class="form-label">Username</label>
-                        <input type="text" class="form-control" id="regUsername" required>
-                    </div>
-                    <div class="mb-3">
-                        <label class="form-label">Password</label>
-                        <input type="password" class="form-control" id="regPassword" required>
-                    </div>
-                    <div class="mb-3">
-                        <label class="form-label">Confirm Password</label>
-                        <input type="password" class="form-control" id="regConfirmPassword" required>
-                    </div>
-                    <button type="submit" class="btn btn-primary w-100">Create Account</button>
-                </form>
-            </div>
-        </div>
+
+<!-- Quick Actions Panel -->
+<div class="quick-actions">
+    <h3>Quick Actions</h3>
+    <div class="action-buttons">
+        <button class="btn btn-primary"><i class="fas fa-plus"></i> New Document</button>
+        <button class="btn btn-success"><i class="fas fa-user-plus"></i> Add Citizen</button>
+        <button class="btn btn-info"><i class="fas fa-calendar-plus"></i> Schedule Meeting</button>
+        <button class="btn btn-warning"><i class="fas fa-file-export"></i> Export Reports</button>
+    </div>
+</div>
+
+<!-- Notifications Center -->
+<div class="notifications-center">
+    <h3>Recent Notifications</h3>
+    <div class="notifications-list">
+        <!-- Notifications will be dynamically populated -->
     </div>
 </div>

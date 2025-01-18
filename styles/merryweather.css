@@ -1,0 +1,100 @@
+/* Merryweather Security Styles */
+:root {
+    --mw-primary: #212121;
+    --mw-secondary: #424242;
+    --mw-accent: #ff3d00;
+}
+
+.merryweather-theme {
+    background: var(--mw-primary);
+    color: white;
+}
+
+.mw-container {
+    display: grid;
+    grid-template-columns: 300px 1fr;
+    min-height: 100vh;
+}
+
+.operations-panel {
+    background: var(--mw-secondary);
+    border-radius: 8px;
+    padding: 1.5rem;
+    margin: 1rem;
+}
+
+.teams-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1rem;
+    padding: 1rem;
+}
+
+.team-card {
+    background: var(--mw-secondary);
+    padding: 1rem;
+    border-radius: 8px;
+    border-left: 4px solid var(--mw-accent);
+}
+
+.threat-map {
+    height: 400px;
+    background: var(--mw-secondary);
+    border-radius: 8px;
+    margin: 1rem 0;
+}
+
+.database-panel {
+    background: #2a2a2a;
+    border-radius: 8px;
+    padding: 20px;
+    margin: 15px;
+}
+
+.search-section {
+    margin-bottom: 20px;
+    padding: 15px;
+    background: #333;
+    border-radius: 6px;
+}
+
+.search-box {
+    display: flex;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+.search-box input {
+    padding: 8px;
+    border: 1px solid #444;
+    border-radius: 4px;
+    background: #222;
+    color: #fff;
+}
+
+.results-container {
+    margin-top: 20px;
+}
+
+.result-card {
+    background: #333;
+    padding: 15px;
+    border-radius: 6px;
+    margin-top: 10px;
+}
+
+.result-card h4 {
+    color: #fff;
+    margin-bottom: 15px;
+}
+
+.result-card p {
+    margin: 5px 0;
+    color: #ddd;
+}
+
+.alert {
+    margin-top: 10px;
+    padding: 8px;
+    border-radius: 4px;
+}
