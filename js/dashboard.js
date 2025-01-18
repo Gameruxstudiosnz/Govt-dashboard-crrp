@@ -100,8 +100,52 @@ class JobManagementPanel {
     }
 }
 
+// Central event handler for all dashboard functionality
+class DashboardManager {
+    constructor() {
+        this.initializeComponents();
+        this.setupEventListeners();
+    }
+
+    initializeComponents() {
+        // Initialize all modals
+        this.loginModal = new bootstrap.Modal(document.getElementById('loginModal'));
+        this.profileModal = new bootstrap.Modal(document.getElementById('userProfileModal'));
+        
+        // Initialize user state
+        this.checkAuthState();
+    }
+
+    setupEventListeners() {
+        // Global event listeners
+        document.addEventListener('userLoggedIn', () => this.handleUserLogin());
+        document.addEventListener('userLoggedOut', () => this.handleUserLogout());
+    }
+
+    checkAuthState() {
+        const token = localStorage.getItem('authToken');
+        if (token) {
+            this.handleUserLogin();
+        }
+    }
+
+    handleUserLogin() {
+        // Update UI for logged-in state
+        document.querySelectorAll('.auth-dependent').forEach(el => {
+            el.style.display = 'block';
+        });
+    }
+
+    handleUserLogout() {
+        // Update UI for logged-out state
+        document.querySelectorAll('.auth-dependent').forEach(el => {
+            el.style.display = 'none';
+        });
+    }
+}
+
 // Initialize dashboard
-const dashboard = new Dashboard();
+const dashboard = new DashboardManager();
 
 // Security measures for frontend
 class SecurityManager {
@@ -196,3 +240,48 @@ function showNotification(message) {
         notification.remove();
     }, 3000);
 }
+
+// Add these functions to handle button clicks
+function openLoginModal() {
+    const loginModal = new bootstrap.Modal(document.getElementById('loginModal'));
+    loginModal.show();
+}
+
+function openProfileModal() {
+    const profileModal = new bootstrap.Modal(document.getElementById('userProfileModal'));
+    profileModal.show();
+}
+
+// Add this to your header section where the buttons are
+document.querySelector('.user-profile').innerHTML = `
+    <button onclick="openLoginModal()" class="btn btn-primary">
+        <i class="fas fa-sign-in-alt"></i> Login
+    </button>
+    <button onclick="openProfileModal()" class="btn btn-secondary">
+        <i class="fas fa-user-edit"></i> Profile
+    </button>
+    <button class="btn btn-info">
+        <i class="fas fa-user-shield"></i> Admin
+    </button>
+`;
+
+// Add event listeners when document loads
+document.addEventListener('DOMContentLoaded', () => {
+    // Initialize modals
+    const loginModal = new bootstrap.Modal(document.getElementById('loginModal'));
+    const profileModal = new bootstrap.Modal(document.getElementById('userProfileModal'));
+
+    // Handle login form submission
+    document.getElementById('loginForm')?.addEventListener('submit', (e) => {
+        e.preventDefault();
+        // Add your login logic here
+        loginModal.hide();
+    });
+
+    // Handle profile form submission
+    document.getElementById('profileForm')?.addEventListener('submit', (e) => {
+        e.preventDefault();
+        // Add your profile update logic here
+        profileModal.hide();
+    });
+});

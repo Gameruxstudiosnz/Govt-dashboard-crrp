@@ -1,0 +1,62 @@
+/* Blur effect for background */
+.modal-backdrop {
+    backdrop-filter: blur(8px);
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+/* Enhanced modal styling */
+.modal.fade .modal-dialog {
+    transform: scale(0.7);
+    transition: transform 0.3s ease-out;
+}
+
+.modal.show .modal-dialog {
+    transform: scale(1);
+}
+
+.login-modal {
+    max-width: 400px;
+    margin: 1.75rem auto;
+}
+
+.login-modal .modal-content {
+    border: none;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+.login-modal .modal-header {
+    border-bottom: none;
+    padding: 2rem 2rem 1rem;
+}
+
+.login-modal .modal-body {
+    padding: 1rem 2rem;
+}
+
+.login-modal .modal-footer {
+    border-top: none;
+    padding: 1rem 2rem 2rem;
+}
+
+/* Animation for form elements */
+.login-form .form-group {
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeInUp 0.5s forwards;
+}
+
+.login-form .form-group:nth-child(2) {
+    animation-delay: 0.1s;
+}
+
+.login-form .form-group:nth-child(3) {
+    animation-delay: 0.2s;
+}
+
+@keyframes fadeInUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}

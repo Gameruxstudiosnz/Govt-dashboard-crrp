@@ -15,6 +15,7 @@ body {
     background-color: var(--light-gray);
     font-family: 'Roboto', sans-serif;
     line-height: 1.6;
+    padding-top: 60px; /* Added padding to prevent content overlap */
 }
 
 /* Typography */
@@ -24,7 +25,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 /* Layout Components */
-.container-custom {
+.container {
     padding: 2rem;
     background: white;
     border-radius: 8px;
@@ -32,9 +33,14 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 /* Navigation */
-.navbar-custom {
+.navbar {
     background-color: var(--primary-color);
     padding: 1rem 2rem;
+    position: fixed; /* Make the navbar fixed */
+    top: 0; /* Stick to the top */
+    left: 0; /* Stretch to the left */
+    right: 0; /* Stretch to the right */
+    z-index: 1000; /* Ensure it's on top */
 }
 
 .nav-link {
@@ -47,46 +53,46 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 /* Tables */
-.table-custom {
+.table {
     width: 100%;
     margin-bottom: 2rem;
 }
 
-.table-custom th {
+.table th {
     background-color: var(--secondary-color);
     color: white;
     padding: 1rem;
 }
 
-.table-custom td {
+.table td {
     padding: 0.75rem;
     border-bottom: 1px solid var(--light-gray);
 }
 
 /* Buttons */
-.btn-custom {
+.btn {
     padding: 0.5rem 1.5rem;
     border-radius: 4px;
     border: none;
     transition: transform 0.2s ease;
 }
 
-.btn-custom:hover {
+.btn:hover {
     transform: translateY(-2px);
 }
 
-.btn-primary-custom {
+.btn-primary {
     background-color: var(--accent-color);
     color: white;
 }
 
-.btn-danger-custom {
+.btn-danger {
     background-color: var(--danger-color);
     color: white;
 }
 
 /* Forms */
-.form-custom {
+.form {
     max-width: 500px;
     margin: 0 auto;
 }
@@ -95,7 +101,7 @@ h1, h2, h3, h4, h5, h6 {
     margin-bottom: 1.5rem;
 }
 
-.form-control-custom {
+.form-control {
     width: 100%;
     padding: 0.75rem;
     border: 1px solid var(--dark-gray);
@@ -103,7 +109,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 /* Cards */
-.card-custom {
+.card {
     background: white;
     border-radius: 8px;
     padding: 1.5rem;
@@ -112,7 +118,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 /* Alerts */
-.alert-custom {
+.alert {
     padding: 1rem;
     border-radius: 4px;
     margin-bottom: 1rem;
@@ -148,15 +154,15 @@ h1, h2, h3, h4, h5, h6 {
 
 /* Responsive Design */
 @media (max-width: 768px) {
-    .container-custom {
+    .container {
         padding: 1rem;
     }
     
-    .table-custom {
+    .table {
         font-size: 0.9rem;
     }
     
-    .btn-custom {
+    .btn {
         width: 100%;
         margin-bottom: 0.5rem;
     }
