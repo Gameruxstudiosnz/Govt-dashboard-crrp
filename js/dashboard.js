@@ -186,7 +186,8 @@ document.addEventListener('DOMContentLoaded', () => {
     loginForm.addEventListener('submit', (e) => {
         e.preventDefault();
         const username = document.getElementById('username').value;
-        const password = document.getElementById('password').value;
+        const password = document.getElementById('loginPassword').value;  // For main login form
+        const modalPassword = document.getElementById('modalPassword').value;  // For modal login form
         
         // Validate credentials
         if ((username === 'admin' && password === 'admin123') || 
