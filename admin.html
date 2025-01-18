@@ -1,11 +1,12 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="light">
 <head>
     <meta charset="UTF-8">
     <title>Admin Dashboard | CRRP</title>
     <link href="css/bootstrap.min.css" rel="stylesheet">
     <link href="css/admin.css" rel="stylesheet">
     <link href="css/fontawesome.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="styles/dark-mode.css">
 </head>
 <body>
     <div class="admin-container" data-requires-permission="admin">
@@ -19,6 +20,12 @@
                 <li><a href="#permissions"><i class="fas fa-key"></i> Permissions</a></li>
                 <li><a href="#logs"><i class="fas fa-history"></i> System Logs</a></li>
                 <li><a href="#settings"><i class="fas fa-cog"></i> System Settings</a></li>
+                <!-- Dark Mode Toggle -->
+                <li class="nav-item">
+                    <button id="darkModeToggle" class="btn btn-outline-light">
+                        <i class="fas fa-moon"></i>
+                    </button>
+                </li>
             </ul>
         </nav>
         
@@ -40,5 +47,10 @@
             </div>
         </main>
     </div>
+
+    <!-- Scripts -->
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="js/admin.js"></script>
+    <script src="js/dark-mode.js"></script>
 </body>
 </html>

@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>News & Updates - County Road RP</title>
+    
+    <!-- CSS Dependencies -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="styles/public-home.css">
+    <link rel="stylesheet" href="styles/news.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="styles/dark-mode.css">
+      <!-- Add this to the navbar -->
+      <div class="nav-item">
+        <button id="darkModeToggle" class="btn btn-outline-light">
+           <i class="fas fa-moon"></i>
+        </button>
+       </div>
+</head>
+<body>
+    <!-- Hero Section -->
+    <header class="news-hero">
+        <div class="hero-content container">
+            <h1>County Road News Network</h1>
+            <p>Stay Updated with Latest Developments</p>
+        </div>
+    </header>
+
+    <!-- News Grid -->
+    <section class="news-grid py-5">
+        <div class="container">
+            <!-- Featured News -->
+            <div class="featured-news mb-5">
+                <div class="row">
+                    <div class="col-md-8">
+                        <div class="main-news-card">
+                            <img src="assets/news-featured.jpg" alt="Featured News">
+                            <div class="news-content">
+                                <span class="news-tag">Breaking News</span>
+                                <h2>Major Infrastructure Update Coming to New Horizon</h2>
+                                <p class="news-meta">
+                                    <i class="fas fa-clock"></i> June 15, 2024
+                                    <i class="fas fa-user ml-3"></i> Admin Team
+                                </p>
+                                <p class="news-excerpt">Exciting new changes coming to our infrastructure...</p>
+                                <a href="#" class="btn btn-primary">Read More</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="trending-news">
+                            <h3>Trending</h3>
+                            <div class="trending-item">
+                                <span class="trend-number">01</span>
+                                <div class="trend-content">
+                                    <h4>New Police Chief Appointed</h4>
+                                    <p class="news-meta">June 14, 2024</p>
+                                </div>
+                            </div>
+                            <!-- More trending items -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- News Categories -->
+            <div class="news-categories mb-4">
+                <button class="btn btn-outline-primary active">All</button>
+                <button class="btn btn-outline-primary">Updates</button>
+                <button class="btn btn-outline-primary">Events</button>
+                <button class="btn btn-outline-primary">Announcements</button>
+                <button class="btn btn-outline-primary">Community</button>
+            </div>
+
+            <!-- News Articles Grid -->
+            <div class="row g-4">
+                <div class="col-md-4">
+                    <article class="news-card">
+                        <img src="assets/news1.jpg" alt="News Image">
+                        <div class="news-content">
+                            <span class="news-tag">Update</span>
+                            <h3>New Emergency Response Protocol</h3>
+                            <p class="news-meta">June 13, 2024</p>
+                            <p>Implementation of new emergency response procedures...</p>
+                            <a href="#" class="read-more">Read More <i class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </article>
+                </div>
+                <!-- More news articles -->
+            </div>
+
+            <!-- Newsletter Signup -->
+            <div class="newsletter-section mt-5">
+                <div class="newsletter-card">
+                    <h3>Stay Informed</h3>
+                    <p>Subscribe to our newsletter for the latest updates</p>
+                    <form class="newsletter-form">
+                        <input type="email" placeholder="Enter your email" class="form-control">
+                        <button type="submit" class="btn btn-primary">Subscribe</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+</body>
+<link rel="stylesheet" href="styles/dark-mode.css">
+</html>
