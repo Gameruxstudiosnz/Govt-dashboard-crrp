@@ -1,0 +1,243 @@
+/* Department-specific styles */
+.department-hero {
+    min-height: 60vh;
+    background-size: cover;
+    background-position: center;
+    color: white;
+    display: flex;
+    align-items: center;
+    text-align: center;
+}
+
+.police-hero {
+    background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('../assets/police-dept.jpg');
+}
+
+.department-badge {
+    width: 150px;
+    margin-bottom: 2rem;
+}
+
+.division-card {
+    background: white;
+    padding: 2rem;
+    border-radius: 8px;
+    text-align: center;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease;
+}
+
+.division-card:hover {
+    transform: translateY(-5px);
+}
+
+.division-card i {
+    font-size: 2.5rem;
+    color: var(--bs-primary);
+    margin-bottom: 1rem;
+}
+
+.staff-card {
+    text-align: center;
+    padding: 1.5rem;
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.staff-card img {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 1rem;
+}
+
+.department-stats {
+    background: white;
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.stat-card {
+    text-align: center;
+    margin-bottom: 1.5rem;
+}
+
+.stat-card i {
+    font-size: 2rem;
+    color: var(--bs-primary);
+}
+
+/* Sheriff-specific styles */
+.sheriff-hero {
+    background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('../assets/sheriff-dept.jpg');
+}
+
+.map-container {
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.patrol-map img {
+    width: 100%;
+    border-radius: 8px;
+}
+
+/* Enhanced division cards for WMCSO */
+.division-card {
+    min-height: 250px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+/* Command staff cards specific styling */
+.staff-card {
+    background: linear-gradient(to bottom, #f8f9fa 0%, #fff 100%);
+    border: 1px solid #dee2e6;
+}
+
+.staff-card img {
+    border: 4px solid #fff;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+/* State Trooper specific styles */
+.trooper-hero {
+    background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('../assets/state-patrol.jpg');
+}
+
+.program-card {
+    background: white;
+    padding: 2rem;
+    border-radius: 8px;
+    text-align: center;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease;
+    border-left: 4px solid var(--bs-primary);
+}
+
+.program-card:hover {
+    transform: translateY(-5px);
+}
+
+.program-card i {
+    font-size: 2.5rem;
+    color: var(--bs-primary);
+    margin-bottom: 1rem;
+}
+
+.patrol-districts .map-container {
+    padding: 1rem;
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+/* Fire Department specific styles */
+.fire-hero {
+    background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('../assets/fire-dept.jpg');
+}
+
+.emergency-banner {
+    background: var(--bs-danger);
+    color: white;
+    padding: 2rem;
+    border-radius: 8px;
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.station-card {
+    background: white;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.station-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.station-card h3 {
+    padding: 1rem;
+    margin: 0;
+    background: var(--bs-danger);
+    color: white;
+}
+
+.apparatus-list {
+    padding: 1rem;
+    list-style: none;
+}
+
+.fire-service {
+    border-top: 4px solid var(--bs-danger);
+}
+
+.fire-service i {
+    color: var(--bs-danger);
+}
+
+.response-stats {
+    background: linear-gradient(45deg, #dc3545, #ff4d5a);
+    color: white;
+    padding: 2rem;
+    border-radius: 8px;
+}
+
+.response-stats .stat-card i {
+    color: white;
+}
+
+/* Merryweather specific styles */
+.merryweather-hero {
+    background: linear-gradient(rgba(0,0,0,0.8), rgba(0,0,0,0.8)), url('../assets/merryweather-bg.jpg');
+}
+
+.unit-card {
+    background: rgba(255,255,255,0.1);
+    padding: 2rem;
+    border-radius: 8px;
+    text-align: center;
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255,255,255,0.1);
+    transition: transform 0.3s ease;
+}
+
+.unit-card:hover {
+    transform: translateY(-5px);
+    background: rgba(255,255,255,0.15);
+}
+
+.unit-card i {
+    font-size: 2.5rem;
+    color: #fff;
+    margin-bottom: 1rem;
+}
+
+.security-stats {
+    background: linear-gradient(45deg, #1a1a1a, #333);
+    color: white;
+    padding: 2rem;
+    border-radius: 8px;
+    border: 1px solid rgba(255,255,255,0.1);
+}
+
+.security-stats .stat-card {
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+    padding-bottom: 1rem;
+}
+
+.security-stats .stat-card:last-child {
+    border-bottom: none;
+}
+
+.department-badge {
+    filter: drop-shadow(0 0 10px rgba(255,255,255,0.3));
+}
