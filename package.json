@@ -1,0 +1,9 @@
+{
+  "name": "government-dashboard",
+  "homepage": "https://yourusername.github.io/repository-name",
+  "scripts": {
+    "build": "vite build",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d dist"
+  }
+}

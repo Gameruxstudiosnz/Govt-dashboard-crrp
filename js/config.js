@@ -1,6 +1,9 @@
+const isProd = window.location.hostname !== 'localhost';
+
 const API_CONFIG = {
-    BASE_URL: 'http://localhost:5000',
-    TIMEOUT: 5000,
+    BASE_URL: isProd 
+        ? 'https://your-api-domain.com'
+        : 'http://localhost:5000',
     VERSION: 'v1'
 };
 
