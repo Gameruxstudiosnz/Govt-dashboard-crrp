@@ -292,3 +292,45 @@ header {
     margin-bottom: 1rem;
     color: var(--primary-color);
 }
+
+/* Add these new styles */
+.btn-discord {
+    background-color: #7289DA;
+    color: white;
+}
+
+.btn-discord:hover {
+    background-color: #5b73c7;
+    color: white;
+}
+
+.btn-fivem {
+    background-color: #FF6B6B;
+    color: white;
+}
+
+.btn-fivem:hover {
+    background-color: #ff4f4f;
+    color: white;
+}
+
+.login-options {
+    border-top: 1px solid #dee2e6;
+    padding-top: 1rem;
+    margin-top: 1rem;
+}
+
+/* Add these styles */
+#registrationModal .modal-content {
+    border-radius: 15px;
+}
+
+#registrationModal .modal-header {
+    background-color: #f8f9fa;
+    border-radius: 15px 15px 0 0;
+}
+
+#registrationForm .form-control:focus {
+    border-color: #80bdff;
+    box-shadow: 0 0 0 0.2rem rgba(0,123,255,.25);
+}

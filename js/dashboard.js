@@ -315,3 +315,78 @@ document.querySelector('.user-profile').innerHTML = `
         <i class="fas fa-user-shield"></i> Admin
     </button>
 `;
+
+// Add these functions to your existing dashboard.js
+
+// Discord Login Handler
+document.querySelector('.btn-discord').addEventListener('click', function() {
+    const clientId = 'YOUR_DISCORD_CLIENT_ID';
+    const redirectUri = encodeURIComponent('YOUR_REDIRECT_URI');
+    const discordAuthUrl = `https://discord.com/api/oauth2/authorize?client_id=${clientId}&redirect_uri=${redirectUri}&response_type=code&scope=identify%20email`;
+    
+    window.location.href = discordAuthUrl;
+});
+
+// FiveM Login Handler
+document.querySelector('.btn-fivem').addEventListener('click', function() {
+    // Replace with your FiveM authentication endpoint
+    const fivemAuthUrl = 'YOUR_FIVEM_AUTH_ENDPOINT';
+    
+    // You can either redirect or handle via popup
+    window.location.href = fivemAuthUrl;
+});
+
+// Add these functions to your dashboard.js
+
+function showRegistrationModal() {
+    const registrationModal = new bootstrap.Modal(document.getElementById('registrationModal'));
+    registrationModal.show();
+}
+
+document.getElementById('registrationForm').addEventListener('submit', function(e) {
+    e.preventDefault();
+    
+    // Get form values
+    const fullName = document.getElementById('regFullName').value;
+    const email = document.getElementById('regEmail').value;
+    const username = document.getElementById('regUsername').value;
+    const password = document.getElementById('regPassword').value;
+    const confirmPassword = document.getElementById('regConfirmPassword').value;
+    
+    // Basic validation
+    if (password !== confirmPassword) {
+        alert('Passwords do not match!');
+        return;
+    }
+    
+    // Here you would typically send this data to your backend
+    const userData = {
+        fullName,
+        email,
+        username,
+        password
+    };
+    
+    // Example API call (replace with your actual endpoint)
+    fetch('/api/register', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(userData)
+    })
+    .then(response => response.json())
+    .then(data => {
+        if (data.success) {
+            alert('Account created successfully! Please login.');
+            const registrationModal = bootstrap.Modal.getInstance(document.getElementById('registrationModal'));
+            registrationModal.hide();
+        } else {
+            alert(data.message || 'Registration failed. Please try again.');
+        }
+    })
+    .catch(error => {
+        console.error('Registration error:', error);
+        alert('Registration failed. Please try again.');
+    });
+});

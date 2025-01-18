@@ -24,6 +24,21 @@
                   <div class="mb-3">
                       <input type="password" class="form-control" id="password" placeholder="Password">
                   </div>
+                  <div class="login-options mb-3">
+                      <!-- Original login fields remain above -->
+                      
+                      <!-- Discord Login -->
+                      <button type="button" class="btn btn-discord w-100 mb-2">
+                          <i class="fab fa-discord"></i> Login with Discord
+                      </button>
+                      
+                      <!-- FiveM Login -->
+                      <button type="button" class="btn btn-fivem w-100 mb-2">
+                          <i class="fas fa-gamepad"></i> Login with FiveM
+                      </button>
+                      
+                      <!-- Original submit button remains below -->
+                  </div>
                   <button type="submit" class="btn btn-primary w-100">Enter Dashboard</button>
               </form>
               <div class="mt-3 text-muted">
@@ -301,3 +316,47 @@
       <script src="js/dashboard.js"></script>
   </body>
   </html>
+
+<!-- Add this button below the login form -->
+<div class="mt-3 text-center">
+    <button type="button" class="btn btn-link" onclick="showRegistrationModal()">
+        Create New Account
+    </button>
+</div>
+
+<!-- Add this new Registration Modal -->
+<div class="modal fade" id="registrationModal" tabindex="-1">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Create New Account</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+            </div>
+            <div class="modal-body">
+                <form id="registrationForm">
+                    <div class="mb-3">
+                        <label class="form-label">Full Name</label>
+                        <input type="text" class="form-control" id="regFullName" required>
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label">Email</label>
+                        <input type="email" class="form-control" id="regEmail" required>
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label">Username</label>
+                        <input type="text" class="form-control" id="regUsername" required>
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label">Password</label>
+                        <input type="password" class="form-control" id="regPassword" required>
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label">Confirm Password</label>
+                        <input type="password" class="form-control" id="regConfirmPassword" required>
+                    </div>
+                    <button type="submit" class="btn btn-primary w-100">Create Account</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
