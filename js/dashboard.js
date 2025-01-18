@@ -315,18 +315,20 @@ function openProfileModal() {
     profileModal.show();
 }
 
-// Add this to your header section where the buttons are
-document.querySelector('.user-profile').innerHTML = `
-    <button onclick="openLoginModal()" class="btn btn-primary">
-        <i class="fas fa-sign-in-alt"></i> Login
-    </button>
-    <button onclick="openProfileModal()" class="btn btn-secondary">
-        <i class="fas fa-user-edit"></i> Profile
-    </button>
-    <button class="btn btn-info">
-        <i class="fas fa-user-shield"></i> Admin
-    </button>
-`;
+const userProfileElement = document.querySelector('.user-profile');
+if (userProfileElement) {
+    userProfileElement.innerHTML = `
+        <button onclick="openLoginModal()" class="btn btn-primary">
+            <i class="fas fa-sign-in-alt"></i> Login
+        </button>
+        <button onclick="openProfileModal()" class="btn btn-secondary">
+            <i class="fas fa-user-edit"></i> Profile
+        </button>
+        <button class="btn btn-info">
+            <i class="fas fa-user-shield"></i> Admin
+        </button>
+    `;
+}
 
 // Add these functions to your existing dashboard.js
 
