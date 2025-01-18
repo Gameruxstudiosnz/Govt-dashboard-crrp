@@ -183,52 +183,49 @@ document.addEventListener('DOMContentLoaded', () => {
 document.addEventListener('DOMContentLoaded', () => {
     const loginForm = document.getElementById('loginForm');
     
-    loginForm.addEventListener('submit', (e) => {
-        e.preventDefault();
-        const username = document.getElementById('username').value;
-        const password = document.getElementById('loginPassword').value;  // For main login form
-        const modalPassword = document.getElementById('modalPassword').value;  // For modal login form
-        
-        // Validate credentials
-        if ((username === 'admin' && password === 'admin123') || 
-            (username === 'dev' && password === 'dev123')) {
+    if (loginForm) {
+        loginForm.addEventListener('submit', (e) => {
+            e.preventDefault();
             
-            // Store user session
-            const userData = {
-                name: username === 'admin' ? 'Administrator' : 'Developer',
-                role: username === 'admin' ? 'Admin' : 'Developer',
-                loginTime: new Date().toISOString()
-            };
-            localStorage.setItem('userData', JSON.stringify(userData));
+            // Get values using unique IDs
+            const username = document.getElementById('username')?.value || '';
+            const password = document.getElementById('password')?.value || '';
             
-            // Update display
-            document.querySelector('.login-welcome').style.display = 'none';
-            document.querySelector('.dashboard-container').style.display = 'flex';
-            
-            // Update user profile
-            const userProfile = document.querySelector('.user-profile');
-            if (userProfile) {
-                userProfile.innerHTML = `
-                    <span class="user-name">${userData.name}</span>
-                    <span class="badge bg-primary">${userData.role}</span>
-                `;
+            // Validate credentials
+            if ((username === 'admin' && password === 'admin123') || 
+                (username === 'dev' && password === 'dev123')) {
+                
+                handleSuccessfulLogin(username);
             }
-            
-            // Show success message
-            const toast = `
-                <div class="position-fixed bottom-0 end-0 p-3" style="z-index: 1080">
-                    <div class="toast show bg-success text-white">
-                        <div class="toast-body">
-                            Welcome to the dashboard, ${userData.name}!
-                        </div>
-                    </div>
-                </div>
-            `;
-            document.body.insertAdjacentHTML('beforeend', toast);
-            setTimeout(() => document.querySelector('.toast')?.remove(), 3000);
-        }
-    });
+        });
+    }
 });
+
+function handleSuccessfulLogin(username) {
+    const userData = {
+        name: username === 'admin' ? 'Administrator' : 'Developer',
+        role: username === 'admin' ? 'Admin' : 'Developer',
+        loginTime: new Date().toISOString()
+    };
+    
+    localStorage.setItem('userData', JSON.stringify(userData));
+    updateUIAfterLogin(userData);
+}
+
+function updateUIAfterLogin(userData) {
+    document.querySelector('.login-welcome')?.style.display = 'none';
+    document.querySelector('.dashboard-container')?.style.display = 'flex';
+    
+    const userProfile = document.querySelector('.user-profile');
+    if (userProfile) {
+        userProfile.innerHTML = `
+            <span class="user-name">${userData.name}</span>
+            <span class="badge bg-primary">${userData.role}</span>
+        `;
+    }
+    
+    showLoginSuccessToast(userData.name);
+}
 function loadBotSettings() {
     // Safe element access with null checking
     const settingsForm = document.getElementById('settingsForm');
