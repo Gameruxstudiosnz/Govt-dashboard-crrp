@@ -17,7 +17,8 @@
           <div class="welcome-content">
               <img src="assets/govt-logo.png" alt="Government Logo" class="welcome-logo">
               <h1>Government Portal</h1>
-              <form id="loginForm" class="mt-4">
+              <!-- Main login form -->
+              <form id="mainLoginForm" class="mt-4">
                   <div class="mb-3">
                       <input type="text" class="form-control" id="username" placeholder="Username">
                   </div>
@@ -40,6 +41,11 @@
                       <!-- Original submit button remains below -->
                   </div>
                   <button type="submit" class="btn btn-primary w-100">Enter Dashboard</button>
+              </form>
+
+              <!-- Modal login form -->
+              <form id="modalLoginForm">
+                  <!-- ... form contents ... -->
               </form>
               <div class="mt-3 text-muted">
                   <small>Test Access: admin/admin123 or dev/dev123</small>

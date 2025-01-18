@@ -181,26 +181,27 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 document.addEventListener('DOMContentLoaded', () => {
-    const loginForm = document.getElementById('loginForm');
-    
-    if (loginForm) {
-        loginForm.addEventListener('submit', (e) => {
-            e.preventDefault();
-            
-            // Get values using unique IDs
-            const username = document.getElementById('username')?.value || '';
-            const password = document.getElementById('password')?.value || '';
-            
-            // Validate credentials
-            if ((username === 'admin' && password === 'admin123') || 
-                (username === 'dev' && password === 'dev123')) {
-                
-                handleSuccessfulLogin(username);
-            }
-        });
-    }
-});
+    // Handle main login form
+    const mainLoginForm = document.getElementById('mainLoginForm');
+    const modalLoginForm = document.getElementById('modalLoginForm');
 
+    const handleLogin = (e) => {
+        e.preventDefault();
+        const form = e.target;
+        const username = form.querySelector('#username').value;
+        const password = form.querySelector('#password').value;
+        
+        // Validate credentials
+        if ((username === 'admin' && password === 'admin123') || 
+            (username === 'dev' && password === 'dev123')) {
+            
+            handleSuccessfulLogin(username);
+        }
+    };
+
+    mainLoginForm?.addEventListener('submit', handleLogin);
+    modalLoginForm?.addEventListener('submit', handleLogin);
+});
 function handleSuccessfulLogin(username) {
     const userData = {
         name: username === 'admin' ? 'Administrator' : 'Developer',
