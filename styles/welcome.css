@@ -1,0 +1,42 @@
+.login-welcome {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+}
+
+.welcome-content {
+    background: white;
+    padding: 2rem;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 400px;
+    text-align: center;
+}
+
+.welcome-logo {
+    width: 80px;
+    margin-bottom: 1rem;
+}
+
+.welcome-content h1 {
+    color: #2c3e50;
+    margin-bottom: 1.5rem;
+}
+
+.welcome-content input {
+    border-radius: 8px;
+    padding: 12px;
+}
+
+.welcome-content button {
+    padding: 12px;
+    font-size: 1.1rem;
+    border-radius: 8px;
+}

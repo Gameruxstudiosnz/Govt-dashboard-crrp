@@ -238,12 +238,12 @@ header {
     .sidebar nav span {
         display: none;
     }
-}
-/* Add more responsive styles as needed */
 
-<button onclick="openProfileModal()" class="btn btn-primary">
-    <i class="fas fa-user-edit"></i> Edit Profile
-</button>
+
+.edit-profile-button i {
+    margin-right: 5px;
+}
+}
 
 /* Add these styles for authentication states */
 .auth-required {

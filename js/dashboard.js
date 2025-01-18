@@ -175,15 +175,67 @@ class SecurityManager {
     }
 }
 
+// Main dashboard initialization
 document.addEventListener('DOMContentLoaded', () => {
-    // Load saved settings
-    loadBotSettings();
-
-    // Save settings handler
-    document.getElementById('saveSettings').addEventListener('click', saveBotSettings);
+    initDashboard();
 });
 
+document.addEventListener('DOMContentLoaded', () => {
+    const loginForm = document.getElementById('loginForm');
+    
+    loginForm.addEventListener('submit', (e) => {
+        e.preventDefault();
+        const username = document.getElementById('username').value;
+        const password = document.getElementById('password').value;
+        
+        // Validate credentials
+        if ((username === 'admin' && password === 'admin123') || 
+            (username === 'dev' && password === 'dev123')) {
+            
+            // Store user session
+            const userData = {
+                name: username === 'admin' ? 'Administrator' : 'Developer',
+                role: username === 'admin' ? 'Admin' : 'Developer',
+                loginTime: new Date().toISOString()
+            };
+            localStorage.setItem('userData', JSON.stringify(userData));
+            
+            // Update display
+            document.querySelector('.login-welcome').style.display = 'none';
+            document.querySelector('.dashboard-container').style.display = 'flex';
+            
+            // Update user profile
+            const userProfile = document.querySelector('.user-profile');
+            if (userProfile) {
+                userProfile.innerHTML = `
+                    <span class="user-name">${userData.name}</span>
+                    <span class="badge bg-primary">${userData.role}</span>
+                `;
+            }
+            
+            // Show success message
+            const toast = `
+                <div class="position-fixed bottom-0 end-0 p-3" style="z-index: 1080">
+                    <div class="toast show bg-success text-white">
+                        <div class="toast-body">
+                            Welcome to the dashboard, ${userData.name}!
+                        </div>
+                    </div>
+                </div>
+            `;
+            document.body.insertAdjacentHTML('beforeend', toast);
+            setTimeout(() => document.querySelector('.toast')?.remove(), 3000);
+        }
+    });
+});
 function loadBotSettings() {
+    // Safe element access with null checking
+    const settingsForm = document.getElementById('settingsForm');
+    if (settingsForm) {
+        settingsForm.value = 'default settings';
+        // Additional settings logic
+    }
+
     // Fetch settings from API/localStorage
     const settings = {
         prefix: '!',
@@ -197,26 +249,40 @@ function loadBotSettings() {
     };
 
     // Populate form fields
-    document.getElementById('botPrefix').value = settings.prefix;
-    document.getElementById('defaultLang').value = settings.defaultLang;
-    document.getElementById('autoMod').checked = settings.autoMod;
-    document.getElementById('spamThreshold').value = settings.spamThreshold;
-    document.getElementById('welcomeMsg').value = settings.welcomeMsg;
-    document.getElementById('welcomeChannel').value = settings.welcomeChannel;
-    document.getElementById('enableLogs').checked = settings.enableLogs;
-    document.getElementById('logChannel').value = settings.logChannel;
+    document.getElementById('botPrefix')?.value = settings.prefix;
+    document.getElementById('defaultLang')?.value = settings.defaultLang;
+    document.getElementById('autoMod')?.checked = settings.autoMod;
+    document.getElementById('spamThreshold')?.value = settings.spamThreshold;
+    document.getElementById('welcomeMsg')?.value = settings.welcomeMsg;
+    document.getElementById('welcomeChannel')?.value = settings.welcomeChannel;
+    document.getElementById('enableLogs')?.checked = settings.enableLogs;
+    document.getElementById('logChannel')?.value = settings.logChannel;
+
+    // Save settings handler
+    document.getElementById('saveSettings')?.addEventListener('click', saveBotSettings);
+}
+
+function showFallbackContent() {
+    const container = document.querySelector('.dashboard-container');
+    if (container) {
+        container.innerHTML = `
+            <div class="fallback-content">
+                <h2>Loading Dashboard...</h2>
+            </div>
+        `;
+    }
 }
 
 function saveBotSettings() {
     const settings = {
-        prefix: document.getElementById('botPrefix').value,
-        defaultLang: document.getElementById('defaultLang').value,
-        autoMod: document.getElementById('autoMod').checked,
-        spamThreshold: document.getElementById('spamThreshold').value,
-        welcomeMsg: document.getElementById('welcomeMsg').value,
-        welcomeChannel: document.getElementById('welcomeChannel').value,
-        enableLogs: document.getElementById('enableLogs').checked,
-        logChannel: document.getElementById('logChannel').value
+        prefix: document.getElementById('botPrefix')?.value,
+        defaultLang: document.getElementById('defaultLang')?.value,
+        autoMod: document.getElementById('autoMod')?.checked,
+        spamThreshold: document.getElementById('spamThreshold')?.value,
+        welcomeMsg: document.getElementById('welcomeMsg')?.value,
+        welcomeChannel: document.getElementById('welcomeChannel')?.value,
+        enableLogs: document.getElementById('enableLogs')?.checked,
+        logChannel: document.getElementById('logChannel')?.value
     };
 
     // Send settings to API
@@ -226,26 +292,11 @@ function saveBotSettings() {
     showNotification('Settings saved successfully!');
 }
 
-function showNotification(message) {
-    // Create notification element
-    const notification = document.createElement('div');
-    notification.className = 'notification success';
-    notification.textContent = message;
-    
-    // Add to document
-    document.body.appendChild(notification);
-    
-    // Remove after 3 seconds
-    setTimeout(() => {
-        notification.remove();
-    }, 3000);
-}
-
-// Add these functions to handle button clicks
-function openLoginModal() {
+// Make function globally available on window object
+window.openLoginModal = function() {
     const loginModal = new bootstrap.Modal(document.getElementById('loginModal'));
     loginModal.show();
-}
+};
 
 function openProfileModal() {
     const profileModal = new bootstrap.Modal(document.getElementById('userProfileModal'));
@@ -264,24 +315,3 @@ document.querySelector('.user-profile').innerHTML = `
         <i class="fas fa-user-shield"></i> Admin
     </button>
 `;
-
-// Add event listeners when document loads
-document.addEventListener('DOMContentLoaded', () => {
-    // Initialize modals
-    const loginModal = new bootstrap.Modal(document.getElementById('loginModal'));
-    const profileModal = new bootstrap.Modal(document.getElementById('userProfileModal'));
-
-    // Handle login form submission
-    document.getElementById('loginForm')?.addEventListener('submit', (e) => {
-        e.preventDefault();
-        // Add your login logic here
-        loginModal.hide();
-    });
-
-    // Handle profile form submission
-    document.getElementById('profileForm')?.addEventListener('submit', (e) => {
-        e.preventDefault();
-        // Add your profile update logic here
-        profileModal.hide();
-    });
-});
