@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <title>System Settings  | CRRP Admin</title>
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/admin.css" rel="stylesheet">
+    <link href="css/settings.css" rel="stylesheet">
+</head>
+<body>
+    <div class="settings-container">
+        <!-- Main Settings Navigation -->
+        <div class="settings-nav">
+            <li><a href="adminhome.html"><i class="fas fa-bullhorn"></i> Admin home</a></li>
+            <li><a href="admin-docs.html"><i class="fas fa-bullhorn"></i> Admin-docs-manger</a></li>
+            <li><a href="analytics.html"><i class="fas fa-bullhorn"></i> Analytics</a></li>
+            <li><a href="settings.html"><i class="fas fa-bullhorn"></i> settings</a></li>
+            <li><a href="rules.html"><i class="fas fa-bullhorn"></i> rules</a></li>
+            <li><a href="status.html"><i class="fas fa-bullhorn"></i> status</a></li>
+            <li><a href="cad-admin.html"><i class="fas fa-bullhorn"></i> cad admin</a></li>
+            <li><a href="settings.html"><i class="fas fa-bullhorn"></i> Settings</a></li>
+        </div>
+
+        <!-- Settings Content -->
+        <div class="tab-content">
+            <!-- General Settings -->
+            <div id="general" class="tab-pane active">
+                <div class="settings-section">
+                    <h3>System Configuration</h3>
+                    <form id="generalSettingsForm">
+                        <div class="form-group">
+                            <label>System Name</label>
+                            <input type="text" class="form-control" name="systemName">
+                        </div>
+                        <div class="form-group">
+                            <label>Default Language</label>
+                            <select class="form-control" name="defaultLanguage">
+                                <option value="en">English</option>
+                                <option value="es">Spanish</option>
+                                <option value="fr">French</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label>Timezone</label>
+                            <select class="form-control" name="timezone">
+                                <option value="UTC">UTC</option>
+                                <option value="EST">Eastern Time</option>
+                                <option value="PST">Pacific Time</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label>Maintenance Mode</label>
+                            <div class="custom-control custom-switch">
+                                <input type="checkbox" class="custom-control-input" id="maintenanceMode">
+                                <label class="custom-control-label" for="maintenanceMode"></label>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+
+            <!-- Security Settings -->
+            <div id="security" class="tab-pane">
+                <div class="settings-section">
+                    <h3>Security Configuration</h3>
+                    <form id="securitySettingsForm">
+                        <div class="form-group">
+                            <label>Session Timeout (minutes)</label>
+                            <input type="number" class="form-control" name="sessionTimeout">
+                        </div>
+                        <div class="form-group">
+                            <label>Password Policy</label>
+                            <div class="custom-control custom-checkbox">
+                                <input type="checkbox" class="custom-control-input" id="requireSpecialChars">
+                                <label class="custom-control-label" for="requireSpecialChars">Require Special Characters</label>
+                            </div>
+                            <div class="custom-control custom-checkbox">
+                                <input type="checkbox" class="custom-control-input" id="requireNumbers">
+                                <label class="custom-control-label" for="requireNumbers">Require Numbers</label>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label>Two-Factor Authentication</label>
+                            <div class="custom-control custom-switch">
+                                <input type="checkbox" class="custom-control-input" id="require2FA">
+                                <label class="custom-control-label" for="require2FA"></label>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+
+            <!-- Integrations Settings -->
+            <div id="integrations" class="tab-pane">
+                <div class="settings-section">
+                    <h3>Discord Integration</h3>
+                    <form id="discordSettingsForm">
+                        <div class="form-group">
+                            <label>Webhook URL</label>
+                            <input type="url" class="form-control" name="discordWebhook">
+                        </div>
+                        <div class="form-group">
+                            <label>Notification Level</label>
+                            <select class="form-control" name="notificationLevel">
+                                <option value="all">All Events</option>
+                                <option value="important">Important Only</option>
+                                <option value="critical">Critical Only</option>
+                            </select>
+                        </div>
+                    </form>
+                </div>
+            </div>
+
+            <!-- Backup & Restore -->
+            <div id="backup" class="tab-pane">
+                <div class="settings-section">
+                    <h3>Backup Configuration</h3>
+                    <form id="backupSettingsForm">
+                        <div class="form-group">
+                            <label>Automatic Backups</label>
+                            <div class="custom-control custom-switch">
+                                <input type="checkbox" class="custom-control-input" id="autoBackup">
+                                <label class="custom-control-label" for="autoBackup"></label>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label>Backup Frequency</label>
+                            <select class="form-control" name="backupFrequency">
+                                <option value="daily">Daily</option>
+                                <option value="weekly">Weekly</option>
+                                <option value="monthly">Monthly</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label>Retention Period (days)</label>
+                            <input type="number" class="form-control" name="retentionPeriod">
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+<!-- FiveM Server Configuration -->
+<div id="fivem" class="tab-pane">
+    <div class="settings-section">
+        <h3>FiveM Server Settings</h3>
+        <form id="fivemSettingsForm">
+            <div class="form-group">
+                <label>Server Name</label>
+                <input type="text" class="form-control" name="serverName">
+            </div>
+            <div class="form-group">
+                <label>Max Players</label>
+                <input type="number" class="form-control" name="maxPlayers">
+            </div>
+            <div class="form-group">
+                <label>OneSync</label>
+                <div class="custom-control custom-switch">
+                    <input type="checkbox" class="custom-control-input" id="oneSync">
+                    <label class="custom-control-label" for="oneSync"></label>
+                </div>
+            </div>
+            <div class="form-group">
+                <label>Resource Manager</label>
+                <div class="resource-list">
+                    <!-- Dynamic resource list -->
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+
+<!-- Server Performance -->
+<div id="performance" class="tab-pane">
+    <div class="settings-section">
+        <h3>Server Performance</h3>
+        <div class="performance-metrics">
+            <div class="metric-card">
+                <h4>CPU Usage</h4>
+                <canvas id="cpuChart"></canvas>
+            </div>
+            <div class="metric-card">
+                <h4>Memory Usage</h4>
+                <canvas id="memoryChart"></canvas>
+            </div>
+            <div class="metric-card">
+                <h4>Network Traffic</h4>
+                <canvas id="networkChart"></canvas>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Resource Management -->
+<div id="resources" class="tab-pane">
+    <div class="settings-section">
+        <h3>Resource Manager</h3>
+        <div class="resource-controls">
+            <button class="btn btn-primary" id="refreshResources">Refresh List</button>
+            <button class="btn btn-success" id="startAll">Start All</button>
+            <button class="btn btn-danger" id="stopAll">Stop All</button>
+        </div>
+        <div class="resource-grid">
+            <!-- Dynamic resource cards -->
+        </div>
+    </div>
+</div>
+
+<!-- Player Management -->
+<div id="players" class="tab-pane">
+    <div class="settings-section">
+        <h3>Player Management</h3>
+        <div class="player-filters">
+            <input type="text" class="form-control" placeholder="Search players...">
+            <select class="form-control">
+                <option value="all">All Players</option>
+                <option value="staff">Staff</option>
+                <option value="whitelisted">Whitelisted</option>
+                <option value="banned">Banned</option>
+            </select>
+        </div>
+        <div class="player-list">
+            <!-- Dynamic player list -->
+        </div>
+    </div>
+</div>
+
+<!-- Whitelist Configuration -->
+<div id="whitelist" class="tab-pane">
+    <div class="settings-section">
+        <h3>Whitelist Management</h3>
+        <div class="whitelist-controls">
+            <div class="form-group">
+                <label>Whitelist Mode</label>
+                <select class="form-control" name="whitelistMode">
+                    <option value="disabled">Disabled</option>
+                    <option value="strict">Strict</option>
+                    <option value="lenient">Lenient</option>
+                </select>
+            </div>
+            <div class="whitelist-entries">
+                <!-- Dynamic whitelist entries -->
+            </div>
+        </div>
+    </div>
+</div>
+        <!-- Action Buttons -->
+        <div class="settings-actions">
+            <button class="btn btn-primary" id="saveSettings">Save Changes</button>
+            <button class="btn btn-secondary" id="resetSettings">Reset to Default</button>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="../js/settings.js"></script>
+</body>
+</html>

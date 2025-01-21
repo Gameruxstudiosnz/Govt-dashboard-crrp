@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <title>Admin User | CRRP</title>
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/admin.css" rel="stylesheet">
+    <link href="css/fontawesome.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="styles/dark-mode.css">
+    <!-- Add Charts.js for analytics -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/chart.js">
+</head>
+<body>
+    <div class="admin-container" data-requires-permission="admin">
+        <nav class="admin-sidebar">
+            <div class="sidebar-header">
+                <h3>Admin Panel</h3>
+                <div class="user-info">
+                    <span class="admin-name"></span>
+                    <span class="admin-role"></span>
+                </div>
+            </div>
+            <ul class="sidebar-menu">
+                <li><a href="adminhome.html"><i class="fas fa-bullhorn"></i> Admin home</a></li>
+                <li><a href="admin-docs.html"><i class="fas fa-bullhorn"></i> Admin-docs-manger</a></li>
+                <li><a href="analytics.html"><i class="fas fa-bullhorn"></i> Analytics</a></li>
+                <li><a href="settings.html"><i class="fas fa-bullhorn"></i> settings</a></li>
+                <li><a href="rules.html"><i class="fas fa-bullhorn"></i> rules</a></li>
+                <li><a href="status.html"><i class="fas fa-bullhorn"></i> status</a></li>
+                <li><a href="cad-admin.html"><i class="fas fa-bullhorn"></i> cad admin</a></li>
+                <li><a href="settings.html"><i class="fas fa-bullhorn"></i> cad admin</a></li>
+                <li class="nav-item">
+                    <button id="darkModeToggle" class="btn btn-outline-light">
+                        <i class="fas fa-moon"></i>
+                    </button>
+                </li>
+            </ul>
+        </nav>
+<body>
+    <div class="admin-subpage">
+        <h2>User Management</h2>
+        <div class="user-controls">
+            <button class="btn btn-primary" id="addUser">Add New User</button>
+            <button class="btn btn-secondary" id="importUsers">Import</button>
+            <button class="btn btn-info" id="exportUsers">Export</button>
+        </div>
+        <div class="user-grid">
+            <!-- User management content -->
+        </div>
+    </div>
+</body>
+</html>

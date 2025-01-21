@@ -1,0 +1,144 @@
+.status-container {
+    display: flex;
+    min-height: 100vh;
+}
+
+.sidebar {
+    width: 250px;
+    background: #2c3e50;
+    padding: 20px 0;
+    color: white;
+    position: fixed;
+    height: 100vh;
+}
+
+.sidebar-logo {
+    padding: 0 20px;
+    margin-bottom: 30px;
+}
+
+.sidebar-logo img {
+    max-width: 100%;
+    height: auto;
+}
+
+.nav-menu {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.nav-menu li a {
+    display: flex;
+    align-items: center;
+    padding: 15px 20px;
+    color: white;
+    text-decoration: none;
+    transition: background-color 0.3s;
+}
+
+.nav-menu li a:hover {
+    background-color: #34495e;
+}
+
+.nav-menu li a i {
+    margin-right: 10px;
+}
+
+.main-content {
+    flex: 1;
+    margin-left: 250px;
+    padding: 30px;
+}
+
+.status-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+    margin-top: 20px;
+}
+
+.status-card {
+    background: white;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.status-indicator {
+    display: flex;
+    align-items: center;
+    margin: 15px 0;
+}
+
+.status-dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    margin-right: 10px;
+    background-color: #gray;
+}
+
+.status-dot.online {
+    background-color: #2ecc71;
+}
+
+.status-dot.offline {
+    background-color: #e74c3c;
+}
+
+.status-text {
+    font-weight: 500;
+}
+
+.status-details {
+    margin-top: 15px;
+}
+
+.status-actions {
+    margin-top: 20px;
+    display: flex;
+    gap: 10px;
+}
+
+.btn {
+    padding: 8px 16px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    font-weight: 500;
+    transition: background-color 0.3s;
+}
+
+.btn-warning {
+    background-color: #f1c40f;
+    color: #000;
+}
+
+.btn-primary {
+    background-color: #3498db;
+    color: white;
+}
+
+.btn:hover {
+    opacity: 0.9;
+}
+
+.btn:disabled {
+    opacity: 0.7;
+    cursor: not-allowed;
+}
+
+/* Animation for restart icon */
+@keyframes spin {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+
+.btn:disabled .icon {
+    display: inline-block;
+    animation: spin 1s linear infinite;
+}
