@@ -1,0 +1,48 @@
+/* Card Base */
+.card {
+    background: white;
+    border-radius: var(--radius-md);
+    box-shadow: var(--shadow-md);
+    transition: transform var(--transition-base);
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-lg);
+}
+
+/* Section Base */
+.section {
+    padding: var(--space-lg) 0;
+}
+
+/* Heading Base */
+.heading {
+    font-weight: 700;
+    margin-bottom: var(--space-md);
+}
+
+.heading-lg {
+    font-size: 2.5rem;
+}
+
+.heading-md {
+    font-size: 2rem;
+}
+
+.heading-sm {
+    font-size: 1.5rem;
+}
+
+/* Button Base */
+.button {
+    padding: var(--space-sm) var(--space-md);
+    border-radius: var(--radius-sm);
+    transition: all var(--transition-base);
+}
+
+/* Grid Base */
+.grid {
+    display: grid;
+    gap: var(--space-md);
+}

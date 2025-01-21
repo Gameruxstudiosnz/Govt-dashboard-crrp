@@ -1,11 +1,9 @@
 /* Hero Section Base */
 .hero-section {
+    /* Bold, attention-grabbing style */
+    background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7));
     height: 100vh;
     position: relative;
-    background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('../massets/govt-dashboard-crrp.png');
-    background-size: cover;
-    background-position: center;
-    background-attachment: fixed;
     display: flex;
     flex-direction: column;
 }

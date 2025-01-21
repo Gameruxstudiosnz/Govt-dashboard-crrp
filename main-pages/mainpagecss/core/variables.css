@@ -1,0 +1,9 @@
+/* Global Variables */
+:root {
+    --primary: #2563eb;
+    --secondary: #1e40af;
+    --accent: #60a5fa;
+    --text-dark: #1e293b;
+    --text-light: #64748b;
+    --shadow: 0 15px 30px rgba(0,0,0,0.1);
+}

@@ -1,0 +1,94 @@
+/* Dark Theme Core Variables */
+:root[data-theme="dark"] {
+    /* Background Colors */
+    --bg-primary: #121212;
+    --bg-secondary: #1e1e1e;
+    --bg-tertiary: #2d2d2d;
+    
+    /* Text Colors */
+    --text-primary: #ffffff;
+    --text-secondary: #e0e0e0;
+    --text-muted: #a0a0a0;
+    
+    /* Accent Colors */
+    --accent-primary: #60a5fa;
+    --accent-secondary: #3b82f6;
+    
+    /* Card & Container Colors */
+    --card-bg: #1e1e1e;
+    --container-bg: #2d2d2d;
+    
+    /* Border Colors */
+    --border-primary: #333333;
+    --border-secondary: #404040;
+    
+    /* Shadow Colors */
+    --shadow-color: rgba(0, 0, 0, 0.3);
+    --shadow-lg: 0 10px 30px var(--shadow-color);
+}
+
+/* Dark Theme Base Styles */
+.dark-theme {
+    background-color: var(--bg-primary);
+    color: var(--text-primary);
+}
+
+/* Section Backgrounds */
+.dark-theme section {
+    background-color: var(--bg-primary);
+}
+
+/* Card Styles */
+.dark-theme .card {
+    background-color: var(--card-bg);
+    border-color: var(--border-primary);
+}
+
+/* Text Elements */
+.dark-theme h1, 
+.dark-theme h2, 
+.dark-theme h3 {
+    color: var(--text-primary);
+}
+
+.dark-theme p {
+    color: var(--text-secondary);
+}
+
+/* Component Specific Dark Styles */
+.dark-theme .navbar {
+    background-color: var(--bg-secondary);
+    border-bottom: 1px solid var(--border-primary);
+}
+
+.dark-theme .hero-section {
+    background: linear-gradient(rgba(0,0,0,0.8), rgba(0,0,0,0.8));
+}
+
+.dark-theme .event-card {
+    background-color: var(--card-bg);
+    border-color: var(--accent-primary);
+}
+
+.dark-theme .footer {
+    background-color: var(--bg-tertiary);
+    border-top: 1px solid var(--border-primary);
+}
+
+/* Interactive Elements */
+.dark-theme .button {
+    background-color: var(--accent-primary);
+    color: var(--text-primary);
+}
+
+.dark-theme .button:hover {
+    background-color: var(--accent-secondary);
+}
+
+/* Form Elements */
+.dark-theme input,
+.dark-theme textarea {
+    background-color: var(--bg-tertiary);
+    border-color: var(--border-secondary);
+    color: var(--text-primary);
+}

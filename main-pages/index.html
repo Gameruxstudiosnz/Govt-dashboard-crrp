@@ -5,15 +5,22 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>County Road RP</title>
     
-    <!-- Core CSS -->
-    <link rel="stylesheet" href="mainpagecss/public-home.css">
-    
+    <!-- Core CSS Structure -->
+    <link rel="stylesheet" href="mainpagecss/core/tokens.css">
+    <link rel="stylesheet" href="mainpagecss/core/components.css">
+    <link rel="stylesheet" href="mainpagecss/layouts/grid.css">
+
     <!-- Component CSS -->
     <link rel="stylesheet" href="mainpagecss/components/navbar.css">
     <link rel="stylesheet" href="mainpagecss/components/hero.css">
     <link rel="stylesheet" href="mainpagecss/components/cards.css">
-    <link rel="stylesheet" href="mainpagecss/components/footer.css">
     <link rel="stylesheet" href="mainpagecss/components/events.css">
+    <link rel="stylesheet" href="mainpagecss/components/staff.css">
+    <link rel="stylesheet" href="mainpagecss/components/timeline.css">
+    <link rel="stylesheet" href="mainpagecss/components/values.css">
+    <link rel="stylesheet" href="mainpagecss/components/testimonials.css">
+    <link rel="stylesheet" href="mainpagecss/components/footer.css">
+    <link rel="stylesheet" href="mainpagecss/components/dark-theme.css">
     <link rel="icon" type="image/x-icon" href="massets/favicon.ico">
     <meta name="description" content="County Road RP - Join our immersive FiveM roleplay community featuring law enforcement, civilian life, and dynamic events in New Horizon">
     <meta name="keywords" content="County Road RP, FiveM roleplay, law enforcement RP, New Horizon, police roleplay, civilian roleplay">
@@ -65,9 +72,9 @@
                                 <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
                                 <li class="nav-item"><a class="nav-link" href="rules.html">Rules</a></li>
                                 <li class="nav-item"><a class="nav-link btn btn-primary ms-2" href="login.html">Login</a></li>
-                                <div class="nav-item">
-                                    <button id="darkModeToggle" class="btn btn-outline-light">
-                                        <i class="fas fa-moon"></i>
+                                <button id="darkModeToggle" class="theme-toggle">
+                                    <i class="fas fa-sun"></i>
+                                </button>
                                     </button>
                                 </div>
                             </ul>
@@ -83,65 +90,20 @@
                     <p>Embracing Possibilities, Shaping Tomorrow.</p>
                 </div>
             </header>
-            <section class="events-section">
-                <div class="container">
-                    <h2 class="section-title">Upcoming Events</h2>
-                    <div class="events-calendar">
-                        <!-- Featured Event -->
-                        <div class="event-card featured">
-                            <div class="row">
-                                <div class="col-md-6">
-                                    <img src="event-image.jpg" class="event-image" alt="Event">
-                                </div>
-                                <div class="col-md-6">
-                                    <div class="event-details">
-                                        <h3 class="event-title">Community Meet & Greet</h3>
-                                        <div class="event-info">
-                                            <p><i class="fas fa-calendar"></i> April 15, 2024</p>
-                                            <p><i class="fas fa-clock"></i> 7:00 PM EST</p>
-                                            <p><i class="fas fa-map-marker-alt"></i> Main Square</p>
-                                        </div>
-                                        <div class="event-description">
-                                            Join us for an evening of community building and fun!
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
 
-                        <!-- Regular Events Grid -->
-                        <div class="row mt-4">
-                            <div class="col-md-4">
-                                <div class="event-card">
-                                    <img src="event-image.jpg" class="event-image" alt="Event">
-                                    <div class="event-details">
-                                        <h3 class="event-title">Training Session</h3>
-                                        <div class="event-info">
-                                            <p><i class="fas fa-calendar"></i> April 20, 2024</p>
-                                            <p><i class="fas fa-clock"></i> 3:00 PM EST</p>
-                                            <p><i class="fas fa-map-marker-alt"></i> Training Center</p>
-                                        </div>
-                                        <div class="event-description">
-                                            Essential training for all new recruits.
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <!-- Add more event cards as needed -->
-                        </div>
+            <!-- About Section - Moved here -->
+            <section class="about-section">
+                <div class="container">
+                    <!-- Mission Statement -->
+                    <div class="mission-banner">
+                        <h1>Welcome to County Road Roleplay</h1>
+                        <p>Creating Immersive Law Enforcement Experiences Since 2023</p>
                     </div>
+                    <!-- Rest of about section content -->
                 </div>
             </section>
-        </div>
-    </main>
-<section class="about-section">
-    <div class="container">
-        <!-- Mission Statement -->
-        <div class="mission-banner">
-            <h1>Welcome to County Road Roleplay</h1>
-            <p>Creating Immersive Law Enforcement Experiences Since 2023</p>
-        </div>
 
+    <div class="container">
         <div class="about-grid">
             <!-- Main About Content -->
             <div class="about-card">
@@ -257,6 +219,57 @@
             </div>
         </div>
     </div>
+    <!-- Events Section -->
+    <section class="events-section">
+        <div class="container text-center">
+            <h2 class="section-title">Upcoming Events</h2>
+            <div class="events-grid">
+                <!-- Featured Event -->
+                <div class="event-card featured">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <img src="event-image.jpg" class="event-image" alt="Event">
+                        </div>
+                        <div class="col-md-6">
+                            <div class="event-details">
+                                <h3 class="event-title">Community Meet & Greet</h3>
+                                <div class="event-info">
+                                    <p><i class="fas fa-calendar"></i> April 15, 2024</p>
+                                    <p><i class="fas fa-clock"></i> 7:00 PM EST</p>
+                                    <p><i class="fas fa-map-marker-alt"></i> Main Square</p>
+                                </div>
+                                <div class="event-description">
+                                    Join us for an evening of community building and fun!
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+    
+                <!-- Regular Events -->
+                <div class="events-regular-grid">
+                    <div class="col-md-4">
+                        <div class="event-card">
+                            <img src="event-image.jpg" class="event-image" alt="Event">
+                            <div class="event-details">
+                                <h3 class="event-title">Training Session</h3>
+                                <div class="event-info">
+                                    <p><i class="fas fa-calendar"></i> April 20, 2024</p>
+                                    <p><i class="fas fa-clock"></i> 3:00 PM EST</p>
+                                    <p><i class="fas fa-map-marker-alt"></i> Training Center</p>
+                                </div>
+                                <div class="event-description">
+                                    Essential training for all new recruits.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Add more event cards as needed -->
+                </div>
+            </div>
+        </div>
+    </section>        </div>
+</main>
 </section>    <!-- New Staff Showcase -->
     <div class="staff-showcase mt-5">
         <h3 class="text-center mb-4">Meet Our Leadership Team</h3>
@@ -318,67 +331,89 @@
         </div>
     </div>
 </section>
-<div class="department-showcase">
-    <div class="department-carousel">
-        <button class="dept-carousel-btn prev"><i class="fas fa-chevron-left"></i></button>
-        <div class="department-slides">
-            <!-- Slide 1 -->
-            <div class="department-preview active">
-                <img src="massets/department-preview.jpg" alt="Department Preview">
-                <div class="overlay">
-                    <h3>Join Our Forces</h3>
-                    <p>Become part of our dedicated law enforcement team</p>
-                    <div class="department-info">
-                        <span><i class="fas fa-shield-alt"></i> Professional Training</span>
-                        <span><i class="fas fa-users"></i> Supportive Team</span>
-                    </div>
-                    <a href="#" class="btn btn-light">Learn More</a>
-                </div>
-            </div>
-            <!-- Add more department slides as needed -->
-        </div>
-        <button class="dept-carousel-btn next"><i class="fas fa-chevron-right"></i></button>
-        <div class="carousel-indicators">
-            <!-- Dots will be added dynamically via JS -->
-        </div>
-    </div>
-</div>
 </main>
 </section>
-    <!-- Footer -->
-    <footer class="footer bg-dark text-light py-4">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-4">
-                    <h4></h4>
-                    <p><br></p>
-                    <p><br></p>
+<footer class="footer">
+    <div class="footer-grid">
+        <!-- Company Info Section -->
+        <div class="footer-section">
+            <h2 class="footer-logo">County Road RP</h2>
+            <p>Delivering professional roleplay experiences and community-driven law enforcement simulation.</p>
+            <div class="social-links">
+                <a href="#" class="social-icon">
+                    <i class="fab fa-discord"></i>
+                </a>
+                <a href="#" class="social-icon">
+                    <i class="fab fa-twitter"></i>
+                </a>
+                <a href="#" class="social-icon">
+                    <i class="fab fa-youtube"></i>
+                </a>
+                <a href="#" class="social-icon">
+                    <i class="fab fa-instagram"></i>
+                </a>
+            </div>
+        </div>
+
+        <!-- Quick Links Section -->
+        <div class="footer-section">
+            <h3>Quick Links</h3>
+            <ul class="footer-nav">
+                <li><a href="/departments">Departments</a></li>
+                <li><a href="/join">Join Us</a></li>
+                <li><a href="/rules">Server Rules</a></li>
+                <li><a href="/community">Community</a></li>
+                <li><a href="/support">Support</a></li>
+            </ul>
+        </div>
+
+        <!-- Contact Section -->
+        <div class="footer-section">
+            <h3>Contact Us</h3>
+            <div class="contact-info">
+                <div class="contact-item">
+                    <i class="fas fa-envelope"></i>
+                    <span>support@countyroadrp.com</span>
                 </div>
-                <div class="col-md-4">
-                    <h4>Quick Links</h4>
-                    <ul class="list-unstyled">
-                        <li><a href="#">Privacy Policy</a></li>
-                        <li><a href="#">Terms of Service</a></li>
-                        <li><a href="#">Accessibility</a></li>
-                        <li><a href="#">Site Map</a></li>
-                    </ul>
+                <div class="contact-item">
+                    <i class="fab fa-discord"></i>
+                    <span>Join our Discord</span>
                 </div>
-                <div class="col-md-4">
-                    <h4>Connect With Us</h4>
-                    <div class="social-links">
-                        <a href="#"><i class="fab fa-facebook"></i></a>
-                        <a href="#"><i class="fab fa-twitter"></i></a>
-                        <a href="#"><i class="fab fa-instagram"></i></a>
-                        <a href="#"><i class="fab fa-linkedin"></i></a>
-                    </div>
+                <div class="contact-item">
+                    <i class="fas fa-clock"></i>
+                    <span>24/7 Support Available</span>
                 </div>
             </div>
-            </div>
-     </footer>
-    </body>
-</html>
+        </div>
+
+        <!-- Newsletter Section -->
+        <div class="footer-section">
+            <h3>Stay Updated</h3>
+            <p>Subscribe to our newsletter for the latest updates and events.</p>
+            <form class="newsletter-form">
+                <input 
+                    type="email" 
+                    class="newsletter-input" 
+                    placeholder="Enter your email"
+                    required
+                >
+                <button type="submit" class="newsletter-button">
+                    Subscribe
+                </button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Copyright Bar -->
+    <div class="copyright-bar">
+        <p>© 2024 County Road RP. All rights reserved.</p>
+    </div>
+</footer>
+
 
     <!-- Scripts -->
+    <!-- Add this in the navbar -->
+   
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <script src="js/public-home.js"></script>
     <script src="js/dark-mode.js"></script>

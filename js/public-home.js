@@ -7,21 +7,35 @@ window.addEventListener('scroll', function() {
     }
 });
 
-const counters = document.querySelectorAll('.counter');
-counters.forEach(counter => {
-    const updateCount = () => {
-        const target = parseInt(counter.getAttribute('data-target'));
-        const count = parseInt(counter.innerText);
-        const increment = target / 200;
-        if (count < target) {
-            counter.innerText = Math.ceil(count + increment);
-            setTimeout(updateCount, 1);
-        }
-    };
-    updateCount();
-});
-
+// Dark background implementation
 document.addEventListener('DOMContentLoaded', () => {
+    const body = document.body;
+    const darkClass = 'dark-theme';
+    
+    // Set initial dark theme
+    body.classList.add(darkClass);
+    
+    // Add dark theme CSS variables
+    const root = document.documentElement;
+    root.style.setProperty('--bg-color', '#121212');
+    root.style.setProperty('--text-color', '#ffffff');
+    root.style.setProperty('--card-bg', '#1e1e1e');
+    root.style.setProperty('--border-color', '#333333');
+    
+    // Update component backgrounds
+    const sections = document.querySelectorAll('section');
+    sections.forEach(section => {
+        section.style.background = 'var(--bg-color)';
+        section.style.color = 'var(--text-color)';
+    });
+    
+    // Update cards and containers
+    const cards = document.querySelectorAll('.card');
+    cards.forEach(card => {
+        card.style.background = 'var(--card-bg)';
+        card.style.borderColor = 'var(--border-color)';
+    });
+
     const loader = document.getElementById('loadingStates');
     const content = document.getElementById('mainContent');
     
@@ -76,4 +90,18 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Auto advance slides
     setInterval(nextSlide, 5000);
+});
+
+const counters = document.querySelectorAll('.counter');
+counters.forEach(counter => {
+    const updateCount = () => {
+        const target = parseInt(counter.getAttribute('data-target'));
+        const count = parseInt(counter.innerText);
+        const increment = target / 200;
+        if (count < target) {
+            counter.innerText = Math.ceil(count + increment);
+            setTimeout(updateCount, 1);
+        }
+    };
+    updateCount();
 });

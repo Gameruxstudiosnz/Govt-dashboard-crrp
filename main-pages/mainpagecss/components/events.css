@@ -14,15 +14,26 @@
     text-align: center;
 }
 
-.events-calendar {
+.events-grid {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: var(--space-md);
+}
+
+.event-card.featured {
+    margin-bottom: var(--space-lg);
+}
+
+.events-regular-grid {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 2rem;
-    margin-top: 2rem;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: var(--space-md);
 }
 
 /* Event Card */
 .event-card {
+    /* Distinctive left border and timeline feel */
+    border-left: 5px solid var(--primary);
     background: rgba(255, 255, 255, 0.95);
     border-radius: 20px;
     overflow: hidden;
@@ -37,7 +48,6 @@
     height: 220px;
     overflow: hidden;
 }
-
 .event-image {
     width: 100%;
     height: 100%;
