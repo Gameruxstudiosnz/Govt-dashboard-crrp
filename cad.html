@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Government Dashboard - CAD System</title>
+    <link rel="stylesheet" href="styles/cad.css">
+</head>
+<body>
+    <div class="cad-container">
+        <!-- Sidebar Navigation -->
+        <aside class="sidebar">
+            <div class="sidebar-logo">
+                <img src="assets/govt-logo.png" alt="Dashboard Logo">
+            </div>
+            <ul class="nav-menu">
+                <li class="nav-item">
+                    <a href="civilian-portal.html">New Horizon Civilian</a>
+                </li>
+                <li class="nav-item">
+                    <a href="police-cad.html">Law Enforcments officers</a>
+                </li>
+                <li class="nav-item">
+                    <a href="police-cad.html">Gang units </a>
+                </li>
+                <li class="nav-item active">
+                    <a href="admin-docs.html">Admin Documentation</a>
+                </li>
+                <li class="nav-item">
+                    <a href="fire-cad.html">New Horizon Fire and Rescue</a>
+                </li>
+            </ul>
+        </aside>
+          <!-- Main Content Area -->
+          <main class="main-content">
+              <div class="content-grid">
+                  <!-- Documentation Feed Section -->
+                  <section class="doc-feed">
+                      <h2>Department Documentation</h2>
+                    
+                      <!-- Department Filter -->
+                      <div class="filter-bar">
+                          <select class="form-control" id="deptFilter">
+                              <option value="all">All Departments</option>
+                              <option value="police">Police Department</option>
+                              <option value="fire">Fire Department</option>
+                              <option value="ems">Emergency Services</option>
+                              <option value="gang">Gang Units</option>
+                          </select>
+                          <input type="search" class="form-control" placeholder="Search documents...">
+                      </div>
+
+                      <!-- Documents Grid -->
+                      <div class="doc-grid">
+                          <!-- Document Card Template -->
+                          <div class="doc-card">
+                              <div class="doc-header">
+                                  <span class="dept-badge police">Police</span>
+                                  <span class="doc-date">Jan 20, 2024</span>
+                              </div>
+                              <h3>Standard Operating Procedures</h3>
+                              <p class="doc-preview">Updated guidelines for patrol operations and incident response...</p>
+                              <div class="doc-footer">
+                                  <button class="btn btn-primary btn-sm">Read More</button>
+                                  <span class="doc-category">Policy</span>
+                              </div>
+                          </div>
+
+                          <!-- Additional Document Cards -->
+                          <div class="doc-card">
+                              <div class="doc-header">
+                                  <span class="dept-badge fire">Fire</span>
+                                  <span class="doc-date">Jan 19, 2024</span>
+                              </div>
+                              <h3>Emergency Response Protocol</h3>
+                              <p class="doc-preview">Updated protocols for multi-agency emergency responses...</p>
+                              <div class="doc-footer">
+                                  <button class="btn btn-primary btn-sm">Read More</button>
+                                  <span class="doc-category">Protocol</span>
+                              </div>
+                          </div>
+                      </div>
+
+                      <!-- Pagination -->
+                      <div class="pagination">
+                          <button class="btn btn-secondary btn-sm">Previous</button>
+                          <span>Page 1 of 5</span>
+                          <button class="btn btn-secondary btn-sm">Next</button>
+                      </div>
+                  </section>
+
+                  <!-- Announcements Section -->
+                  <section class="announcements-box">
+                      <div class="announcements-header">
+                          <h2>Department Announcements</h2>
+                          <span class="discord-status online">Discord Connected</span>
+                      </div>
+                      <div class="announcements-feed">
+                          <!-- Announcements populated via JavaScript -->
+                      </div>
+                  </section>
+              </div>
+          </main>
+      </div>
+</section>
+
+    <script src="js/doc-feed.js"></script>
+</body>
+</html>
+

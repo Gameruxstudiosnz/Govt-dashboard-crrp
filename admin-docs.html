@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Department Documentation Management</title>
+    <link rel="stylesheet" href="styles/cad.css">
+</head>
+<body>
+    <div class="cad-container">
+        <!-- Sidebar Navigation -->
+        <aside class="sidebar">
+            <div class="sidebar-logo">
+                <img src="assets/images/logo.png" alt="New Horizon Government Dashboard Logo" width="180" height="60">
+            </div>
+            <ul class="nav-menu">
+                <li class="nav-item">
+                    <a href="dashboard.html">Dashboard</a>
+                </li>
+                <li class="nav-item active">
+                    <a href="admin-docs.html">Documentation Management</a>
+                </li>
+                <li class="nav-item">
+                    <a href="departments.html">Departments</a>
+                </li>
+            </ul>
+        </aside>
+
+        <!-- Main Content Area -->
+        <main class="main-content">
+            <h1>Department Documentation Management</h1>
+            
+            <!-- Document Creation Form -->
+            <div class="card">
+                <h2>Add New Documentation</h2>
+                <form class="doc-form">
+                    <div class="form-group">
+                        <label for="department">Department</label>
+                        <select id="department" class="form-control" required>
+                            <option value="">Select Department</option>
+                            <option value="police">Police Department</option>
+                            <option value="fire">Fire Department</option>
+                            <option value="ems">Emergency Medical Services</option>
+                            <option value="sheriff">Sheriff's Office</option>
+                            <option value="dispatch">Dispatch</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="docTitle">Document Title</label>
+                        <input type="text" id="docTitle" class="form-control" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="docCategory">Category</label>
+                        <select id="docCategory" class="form-control" required>
+                            <option value="">Select Category</option>
+                            <option value="sop">Standard Operating Procedures</option>
+                            <option value="policy">Policy Manual</option>
+                            <option value="training">Training Materials</option>
+                            <option value="forms">Forms</option>
+                            <option value="protocols">Protocols</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="docContent">Document Content</label>
+                        <textarea id="docContent" class="form-control rich-editor" rows="10" required></textarea>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="docAttachments">Attachments</label>
+                        <input type="file" id="docAttachments" class="form-control" multiple>
+                    </div>
+
+                    <div class="form-actions">
+                        <button type="submit" class="btn btn-primary">Publish Document</button>
+                        <button type="button" class="btn btn-secondary">Save Draft</button>
+                    </div>
+                </form>
+            </div>
+
+            <!-- Recent Documents Table -->
+            <div class="card mt-4">
+                <h2>Recent Documents</h2>
+                <table class="data-table">
+                    <thead>
+                        <tr>
+                            <th>Title</th>
+                            <th>Department</th>
+                            <th>Category</th>
+                            <th>Last Updated</th>
+                            <th>Status</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Use of Force Policy</td>
+                            <td>Police Department</td>
+                            <td>Policy Manual</td>
+                            <td>2024-01-20</td>
+                            <td><span class="status status-active">Published</span></td>
+                            <td>
+                                <button class="btn btn-primary btn-sm">Edit</button>
+                                <button class="btn btn-danger btn-sm">Delete</button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </main>
+    </div>
+
+    <script src="js/rich-text-editor.js"></script>
+    <script src="js/doc-management.js"></script>
+</body>
+</html>
