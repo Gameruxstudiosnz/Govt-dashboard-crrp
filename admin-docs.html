@@ -62,12 +62,10 @@
                             <option value="protocols">Protocols</option>
                         </select>
                     </div>
-
-                    <div class="form-group">
-                        <label for="docContent">Document Content</label>
-                        <textarea id="docContent" class="form-control rich-editor" rows="10" required></textarea>
-                    </div>
-
+                      <div class="form-group">
+                          <label for="docContent">Document Content</label>
+                          <textarea id="docContent" class="form-control rich-editor" rows="10" required></textarea>
+                      </div>
                     <div class="form-group">
                         <label for="docAttachments">Attachments</label>
                         <input type="file" id="docAttachments" class="form-control" multiple>
@@ -111,8 +109,17 @@
             </div>
         </main>
     </div>
-
-    <script src="js/rich-text-editor.js"></script>
-    <script src="js/doc-management.js"></script>
-</body>
-</html>
+      <!-- Add before closing body tag -->
+      <script src="https://cdn.tiny.cloud/1/83okcg300zpsbrozbs1eh1ww2xzia4cjp62gy8ceictro0mm/tinymce/6/tinymce.min.js" referrerpolicy="origin"></script>
+      <script src="js/rich-text-editor.js"></script>
+      <script>
+          document.addEventListener('DOMContentLoaded', () => {
+              new RichTextEditor();
+          });
+      </script>
+      <!-- Add these before doc-management.js -->
+      <script src="js/api/config.js"></script>
+      <script src="js/api/api-service.js"></script>
+      <script src="js/doc-management.js"></script>
+      </body>
+      </html>

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>System Status</title>
+    <link rel="stylesheet" href="styles/status.css">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="stylesheet" href="styles/dark-mode.css">
+</head>
+<body>
+    <div class="status-container">
+        <!-- Sidebar Navigation -->
+        <aside class="sidebar">
+            <div class="sidebar-logo">
+                <img src="assets/images/logo.png" alt="Dashboard Logo" width="180" height="60">
+            </div>
+            <ul class="nav-menu">
+                <li><a href="adminhome.html"><i class="fas fa-bullhorn"></i> admin home</a></li>
+                <li><a href="admin-docs.html"><i class="fas fa-bullhorn"></i> Admin-docs-manger</a></li>
+                <li><a href="analytics.html"><i class="fas fa-bullhorn"></i> Analytics</a></li>
+                <li><a href="settings.html"><i class="fas fa-bullhorn"></i> settings</a></li>
+                <li><a href="rules.html"><i class="fas fa-bullhorn"></i> rules</a></li>
+                <li><a href="status.html"><i class="fas fa-bullhorn"></i> status</a></li>
+                <li><a href="cad-admin.html"><i class="fas fa-bullhorn"></i> cad admin</a></li>
+                </li>
+            </ul>
+        </aside>
+
+        <main class="main-content">
+            <h1>System Status</h1>
+            <div class="status-grid">
+                <div class="status-card" id="apiStatus">
+                    <h2>API Status</h2>
+                    <div class="status-indicator">
+                        <span class="status-dot"></span>
+                        <span class="status-text">Checking...</span>
+                    </div>
+                    <div class="status-details">
+                        <p>Last checked: <span id="lastChecked">-</span></p>
+                        <p>Response time: <span id="responseTime">-</span></p>
+                        <!-- Add inside the status-card div -->
+<div class="status-actions">
+    <button id="restartApi" class="btn btn-warning">
+        <span class="icon">🔄</span>
+        Restart API Service
+    </button>
+    <button id="refreshStatus" class="btn btn-primary">
+        <span class="icon">⟳</span>
+        Refresh Status
+    </button>
+</div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script src="js/api/config.js"></script>
+    <script src="js/status-checker.js"></script>
+</body>
+</html>
+
+
