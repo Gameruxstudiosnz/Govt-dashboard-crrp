@@ -5,217 +5,345 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>County Road RP</title>
     
-    <!-- CSS Dependencies -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <!-- Core CSS -->
     <link rel="stylesheet" href="mainpagecss/public-home.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
-    <link rel="stylesheet" href="styles/dark-mode.css">
+    
+    <!-- Component CSS -->
+    <link rel="stylesheet" href="mainpagecss/components/navbar.css">
+    <link rel="stylesheet" href="mainpagecss/components/hero.css">
+    <link rel="stylesheet" href="mainpagecss/components/cards.css">
+    <link rel="stylesheet" href="mainpagecss/components/footer.css">
+    <link rel="stylesheet" href="mainpagecss/components/events.css">
+    <link rel="icon" type="image/x-icon" href="massets/favicon.ico">
+    <meta name="description" content="County Road RP - Join our immersive FiveM roleplay community featuring law enforcement, civilian life, and dynamic events in New Horizon">
+    <meta name="keywords" content="County Road RP, FiveM roleplay, law enforcement RP, New Horizon, police roleplay, civilian roleplay">
+    <meta name="author" content="County Road RP">
+    <meta property="og:title" content="County Road RP - New Horizon Roleplay Community">
+    <meta property="og:description" content="Experience authentic roleplay in our growing FiveM community. Join law enforcement, become a civilian, or participate in dynamic events.">
+    <meta property="og:image" content="massets/countyroad.png">
+    <script type="application/ld+json">
+        {
+          "@context": "https://schema.org",
+          "@type": "Organization",
+          "name": "County Road RP",
+          "description": "Immersive FiveM roleplay community",
+          "url": "https://countyroadrp.com",
+          "logo": "massets/countyroad.png",
+          "sameAs": [
+            "https://discord.gg/countyroadrp",
+            "https://twitter.com/countyroadrp"
+          ]
+        }
+        </script>
 </head>
 <body>
-    <!-- Hero Section -->
-    <header class="hero-section">
-        <nav class="navbar navbar-expand-lg navbar-dark">
-            <div class="container">
-                <a class="navbar-brand" href="publlic-home.html">
-                    <img src="massets/countyroad.png" alt="CountyRoadRP" height="50">
-                    New Horizon
-                </a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="collapse navbar-collapse" id="navbarNav">
-                    <ul class="navbar-nav ms-auto">
-                        <li class="nav-item"><a class="nav-link active" href="public-home.html">Home</a></li>
-                        <li class="nav-item"><a class="nav-link" href="about-us.html">About us</a></li>
-                        <li class="nav-item"><a class="nav-link" href="department.html">Departments</a></li>
-                        <li class="nav-item"><a class="nav-link" href="news.html">News</a></li>
-                        <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
-                        <li class="nav-item"><a class="nav-link" href="rules.html">Rules</a></li>
-                        <li class="nav-item"><a class="nav-link btn btn-primary ms-2" href="login.html">Login</a></li>
-                        <!-- Add dark mode toggle -->
-                        <div class="nav-item">
-                            <button id="darkModeToggle" class="btn btn-outline-light">
-                                <i class="fas fa-moon"></i>
-                            </button>
-                        </div>
-                    </ul>
-                </div>
-            </div>
-        </nav>
+    <main>
+        <!-- Loading States -->
+        <div id="loadingStates">
+            <!-- All loading animations here -->
+        </div>
         
-        <div class="hero-content container">
+        <!-- Main Content -->
+        <div id="mainContent">
+            <!-- Hero Section -->
+            <header class="hero-section" style="background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('massets/govt-dashboard-crrp.png'); background-size: cover; background-position: center; min-height: 80vh; color: rgb(82, 82, 82); display: flex; flex-direction: column; padding: 2rem 0;">
+                <nav class="navbar navbar-expand-lg navbar-dark">
+                    <div class="container">
+                        <a class="navbar-brand" href="publlic-home.html">
+                            <img src="massets/countyroad.png" alt="CountyRoadRP" height="50">
+                            New Horizon
+                        </a>
+                        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                            <span class="navbar-toggler-icon"></span>
+                        </button>
+                        <div class="collapse navbar-collapse" id="navbarNav">
+                            <ul class="navbar-nav ms-auto">
+                                <li class="nav-item"><a class="nav-link active" href="public-home.html">Home</a></li>
+                                <li class="nav-item"><a class="nav-link" href="about-us.html">About us</a></li>
+                                <li class="nav-item"><a class="nav-link" href="department.html">Departments</a></li>
+                                <li class="nav-item"><a class="nav-link" href="news.html">News</a></li>
+                                <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+                                <li class="nav-item"><a class="nav-link" href="rules.html">Rules</a></li>
+                                <li class="nav-item"><a class="nav-link btn btn-primary ms-2" href="login.html">Login</a></li>
+                                <div class="nav-item">
+                                    <button id="darkModeToggle" class="btn btn-outline-light">
+                                        <i class="fas fa-moon"></i>
+                                    </button>
+                                </div>
+                            </ul>
+                        </div>
+                    </div>
+                </nav>
+                <div class="server-status">
+                    <div class="status-indicator online"></div>
+                    <div class="player-count">Players Online: 24/32</div>
+                </div>
+                <div class="hero-content container">
+                    <h1>Welcome to County Road Roleplay</h1>
+                    <p>Embracing Possibilities, Shaping Tomorrow.</p>
+                </div>
+            </header>
+            <section class="events-section">
+                <div class="container">
+                    <h2 class="section-title">Upcoming Events</h2>
+                    <div class="events-calendar">
+                        <!-- Featured Event -->
+                        <div class="event-card featured">
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <img src="event-image.jpg" class="event-image" alt="Event">
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="event-details">
+                                        <h3 class="event-title">Community Meet & Greet</h3>
+                                        <div class="event-info">
+                                            <p><i class="fas fa-calendar"></i> April 15, 2024</p>
+                                            <p><i class="fas fa-clock"></i> 7:00 PM EST</p>
+                                            <p><i class="fas fa-map-marker-alt"></i> Main Square</p>
+                                        </div>
+                                        <div class="event-description">
+                                            Join us for an evening of community building and fun!
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Regular Events Grid -->
+                        <div class="row mt-4">
+                            <div class="col-md-4">
+                                <div class="event-card">
+                                    <img src="event-image.jpg" class="event-image" alt="Event">
+                                    <div class="event-details">
+                                        <h3 class="event-title">Training Session</h3>
+                                        <div class="event-info">
+                                            <p><i class="fas fa-calendar"></i> April 20, 2024</p>
+                                            <p><i class="fas fa-clock"></i> 3:00 PM EST</p>
+                                            <p><i class="fas fa-map-marker-alt"></i> Training Center</p>
+                                        </div>
+                                        <div class="event-description">
+                                            Essential training for all new recruits.
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Add more event cards as needed -->
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+<section class="about-section">
+    <div class="container">
+        <!-- Mission Statement -->
+        <div class="mission-banner">
             <h1>Welcome to County Road Roleplay</h1>
-            <p>Embracing Possibilities, Shaping Tomorrow.</p>
+            <p>Creating Immersive Law Enforcement Experiences Since 2023</p>
         </div>
-    </header>
-    <!-- Events Calendar -->
-    <section class="events-section container my-5">
-        <h2>Upcoming Events</h2>
-        <div class="events-calendar">
-            <!-- Calendar implementation -->
-        </div>
-    </section>
 
-    <!-- Scripts -->
-    
-</body>
-</html><!-- Community Highlights -->
-<section class="community-section py-5">
-    <div class="container">
-        <h2 class="text-center mb-4">Community Features</h2>
-        <div class="row g-4">
+        <div class="about-grid">
+            <!-- Main About Content -->
+            <div class="about-card">
+                <div class="card-content">
+                    <h2 class="card-title">Our Community</h2>
+                    <p class="card-description">
+                        County Road Roleplay delivers an authentic law enforcement and civilian roleplay experience. Our community focuses on realistic scenarios, professional development, and creating meaningful connections between players.
+                    </p>
+                    
+                    <!-- Core Values -->
+                    <div class="values-grid">
+                        <div class="value-item">
+                            <div class="value-icon">
+                                <i class="fas fa-shield-alt"></i>
+                            </div>
+                            <h3>Professionalism</h3>
+                            <p>High standards in roleplay and community interaction</p>
+                        </div>
+                        <div class="value-item">
+                            <div class="value-icon">
+                                <i class="fas fa-users"></i>
+                            </div>
+                            <h3>Community</h3>
+                            <p>Strong focus on building lasting connections</p>
+                        </div>
+                        <div class="value-item">
+                            <div class="value-icon">
+                                <i class="fas fa-graduation-cap"></i>
+                            </div>
+                            <h3>Development</h3>
+                            <p>Continuous learning and skill improvement</p>
+                        </div>
+                    </div>
+
+                    <!-- Departments -->
+                    <div class="departments-grid">
+                        <h3 class="section-subtitle">Our Departments</h3>
+                        <div class="department-items">
+                            <div class="department-item">
+                                <img src="police.jpg" alt="Police">
+                                <h4>Law Enforcement</h4>
+                            </div>
+                            <div class="department-item">
+                                <img src="fire.jpg" alt="Fire">
+                                <h4>Fire Department</h4>
+                            </div>
+                            <div class="department-item">
+                                <img src="ems.jpg" alt="EMS">
+                                <h4>Emergency Medical</h4>
+                            </div>
+                            <div class="department-item">
+                                <img src="dispatch.jpg" alt="Dispatch">
+                                <h4>Communications</h4>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Community Features -->
+                    <div class="features-section">
+                        <h3 class="section-subtitle">What We Offer</h3>
+                        <div class="features-grid">
+                            <div class="feature-item">
+                                <i class="fas fa-server"></i>
+                                <div class="feature-content">
+                                    <h4>Advanced CAD System</h4>
+                                    <p>State-of-the-art dispatch and records management</p>
+                                </div>
+                            </div>
+                            <div class="feature-item">
+                                <i class="fas fa-car"></i>
+                                <div class="feature-content">
+                                    <h4>Custom Vehicles</h4>
+                                    <p>Extensive fleet of realistic emergency vehicles</p>
+                                </div>
+                            </div>
+                            <div class="feature-item">
+                                <i class="fas fa-headset"></i>
+                                <div class="feature-content">
+                                    <h4>24/7 Support</h4>
+                                    <p>Active staff and community assistance</p>
+                                </div>
+                            </div>
+                            <div class="feature-item">
+                                <i class="fas fa-calendar"></i>
+                                <div class="feature-content">
+                                    <h4>Regular Events</h4>
+                                    <p>Organized patrols and community activities</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Stats Section -->
+                    <div class="about-stats">
+                        <div class="stat-item">
+                            <div class="stat-number">1000+</div>
+                            <div class="stat-label">Active Members</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-number">50+</div>
+                            <div class="stat-label">Daily Events</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-number">24/7</div>
+                            <div class="stat-label">Server Uptime</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-number">100%</div>
+                            <div class="stat-label">Dedication</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>    <!-- New Staff Showcase -->
+    <div class="staff-showcase mt-5">
+        <h3 class="text-center mb-4">Meet Our Leadership Team</h3>
+        <div class="row">
+            <div class="col-md-3">
+                <div class="staff-card">
+                    <div class="staff-image">
+                        <img src="massets/staff/owner.jpg" alt="Server Owner">
+                        <div class="staff-badge">Owner</div>
+                    </div>
+                    <div class="staff-info">
+                        <h4>Username</h4>
+                        <p>"Leading innovation in RP"</p>
+                    </div>
+                </div>
+            </div>
+            <!-- Add more staff cards -->
+        </div>
+    </div>
+
+    <!-- Server Timeline -->
+    <div class="server-timeline mt-5">
+        <h3 class="text-center mb-4">Our Journey</h3>
+        <div class="timeline">
+            <div class="timeline-item">
+                <div class="date">2023</div>
+                <div class="content">
+                    <h4>Server Launch</h4>
+                    <p>County Road RP opens its doors</p>
+                </div>
+            </div>
+            <!-- Add more timeline items -->
+        </div>
+    </div>
+
+    <!-- Community Values -->
+    <div class="community-values mt-5">
+        <h3 class="text-center mb-4">Our Core Values</h3>
+        <div class="row">
             <div class="col-md-4">
-                <div class="service-card">
-                    <i class="fas fa-users"></i>
-                    <h3>Join Our Community</h3>
-                    <p>Become part of our growing roleplay family</p>
-                    <a href="#" class="btn btn-primary">Apply Now</a>
+                <div class="value-card">
+                    <i class="fas fa-handshake"></i>
+                    <h4>Respect</h4>
+                    <p>Fostering a community built on mutual respect and understanding</p>
                 </div>
             </div>
-            <div class="col-md-4">
-                <div class="service-card">
-                    <i class="fas fa-book"></i>
-                    <h3>Rules & Guidelines</h3>
-                    <p>Learn about our roleplay standards</p>
-                    <a href="rules.html" class="btn btn-primary">Read Rules</a>
-                </div>
-            </div>
-            <div class="col-md-4">
-                <div class="service-card">
-                    <i class="fas fa-gamepad"></i>
-                    <h3>Server Status</h3>
-                    <p>Check current server status and player count</p>
-                    <a href="#" class="btn btn-primary">View Status</a>
-                </div>
+            <!-- Add more value cards -->
+        </div>
+    </div>
+
+    <!-- Testimonials -->
+    <div class="testimonials mt-5">
+        <h3 class="text-center mb-4">Community Voices</h3>
+        <div class="testimonial-carousel">
+            <div class="testimonial-item">
+                <div class="quote">"Best RP experience I've had!"</div>
+                <div class="author">- Community Member</div>
             </div>
         </div>
     </div>
 </section>
-
-<!-- Community Stats -->
-<section class="statistics-section bg-primary text-white py-5">
-    <div class="container">
-        <div class="row text-center">
-            <div class="col-md-3">
-                <i class="fas fa-users fa-2x mb-3"></i>
-                <h3>20+</h3>
-                <p>Active Players</p>
+<div class="department-showcase">
+    <div class="department-carousel">
+        <button class="dept-carousel-btn prev"><i class="fas fa-chevron-left"></i></button>
+        <div class="department-slides">
+            <!-- Slide 1 -->
+            <div class="department-preview active">
+                <img src="massets/department-preview.jpg" alt="Department Preview">
+                <div class="overlay">
+                    <h3>Join Our Forces</h3>
+                    <p>Become part of our dedicated law enforcement team</p>
+                    <div class="department-info">
+                        <span><i class="fas fa-shield-alt"></i> Professional Training</span>
+                        <span><i class="fas fa-users"></i> Supportive Team</span>
+                    </div>
+                    <a href="#" class="btn btn-light">Learn More</a>
+                </div>
             </div>
-            <div class="col-md-3">
-                <i class="fas fa-star fa-2x mb-3"></i>
-                <h3>9</h3>
-                <p>Staff Members</p>
-            </div>
-            <div class="col-md-3">
-                <i class="fas fa-building fa-2x mb-3"></i>
-                <h3></h3>
-                <p></p>
-            </div>
-            <div class="col-md-3">
-                <i class="fas fa-calendar fa-2x mb-3"></i>
-                <h3>10+</h3>
-                <p>Events Monthly</p>
-            </div>
+            <!-- Add more department slides as needed -->
+        </div>
+        <button class="dept-carousel-btn next"><i class="fas fa-chevron-right"></i></button>
+        <div class="carousel-indicators">
+            <!-- Dots will be added dynamically via JS -->
         </div>
     </div>
-</section>
-
-<!-- Discord Integration -->
-<section class="discord-section py-5 bg-light">
-    <div class="container">
-        <div class="row align-items-center">
-            <div class="col-md-6">
-                <h2>Join Our Discord</h2>
-                <p>Connect with our community, stay updated, and participate in discussions</p>
-                <a href="#" class="btn btn-primary">
-                    <i class="fab fa-discord"></i> Join Discord
-                </a>
-            </div>
-            <div class="col-md-6">
-                <div class="discord-widget">
-                    <!-- Add Discord widget iframe here -->
-                    <iframe src="YOUR_DISCORD_WIDGET_URL" width="100%" height="400" allowtransparency="true" frameborder="0"></iframe>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-
-<!-- Featured Departments -->
-<section class="departments-section py-5">
-    <div class="container">
-        <h2 class="text-center mb-4">Featured Departments</h2>
-        <div class="row g-4">
-            <div class="col-md-3">
-                <div class="department-card">
-                    <img src="assets/hcpd.png" alt="Horizon City Police Department" class="department-image">
-                    <h4>Horizon City Police Department</h4>
-                    <a href="horizon-city-pd.html" class="btn btn-outline-primary">Learn More</a>
-                </div>
-            </div>
-            <div class="col-md-3">
-                <div class="department-card">
-                    <img src="assets/wmcso.png" alt="West Mesa County Sheriff Office" class="department-image">
-                    <h4>West Mesa County Sheriff Office</h4>
-                    <a href="west-mesa-sheriff.html" class="btn btn-outline-primary">Learn More</a>
-                </div>
-            </div>
-            <div class="col-md-3">
-                <div class="department-card">
-                    <img src="assets/wmso.png" alt="West Mesa State Office" class="department-image">
-                    <h4>West Mesa State Office</h4>
-                    <a href="west-mesa-state.html" class="btn btn-outline-primary">Learn More</a>
-                </div>
-            </div>
-            <div class="col-md-3">
-                <div class="department-card">
-                    <img src="assets/fire.png" alt="New Horizon Fire and Rescue" class="department-image">
-                    <h4>New Horizon Fire and Rescue</h4>
-                    <a href="fire-rescue.html" class="btn btn-outline-primary">Learn More</a>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- Civilian Organizations -->
-<section class="civilian-section py-5 bg-light">
-    <div class="container">
-        <h2 class="text-center mb-4">Civilian Organizations</h2>
-        <div class="row g-4">
-            <!-- Civilian Department -->
-            <div class="col-md-3">
-                <div class="department-card">
-                    <img src="assets/civilian.png" alt="Civilian Department" class="department-image">
-                    <h4>Civilian Department</h4>
-                    <p>Join our civilian community and build your character's story</p>
-                    <a href="civilian-dept.html" class="btn btn-outline-primary">Learn More</a>
-                </div>
-            </div>`
-            <div class="col-md-3">
-                <div class="department-card">
-                    <img src="assets/civilian.png" alt="Civilian Department" class="department-image">
-                    <h4>Department Of Transport</h4>
-                    <p>Join our civilian community and build your character's story</p>
-                    <a href="civilian-dept.html" class="btn btn-outline-primary">Learn More</a>
-                </div>
-            </div>
-            <div class="col-md-3">
-                <div class="department-card">
-                    <img src="assets/merryweather_5.png" alt="Civilian Department" class="department-image">
-                    <h4>Merryweather PMC</h4>
-                    <p>Professional • Reliable • Elite</p>
-                    <a href="mwpublic.html" class="btn btn-outline-primary">Learn More</a>
-        </div>
-    </div>
-        <div class="col-md-3">
-        <div class="department-card">
-            <img src="assets/civilian.png" alt="Civilian Department" class="department-image">
-            <h4>Viper Cartel</h4>
-            <p>Join our civilian community and build your character's story</p>
-            <a href="civilian-dept.html" class="btn btn-outline-primary">Learn More</a>
-        </div>
-    </div>
-</section>
-
+</div>
+</main>
 </section>
     <!-- Footer -->
     <footer class="footer bg-dark text-light py-4">
@@ -245,17 +373,17 @@
                     </div>
                 </div>
             </div>
-        </div>
-    </footer>
+            </div>
+     </footer>
+    </body>
+</html>
 
     <!-- Scripts -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <script src="js/public-home.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <script src="js/dark-mode.js"></script>
 </body>
 </html>
-
 
 
 

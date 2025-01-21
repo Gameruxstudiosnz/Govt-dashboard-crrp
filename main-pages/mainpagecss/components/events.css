@@ -1,0 +1,167 @@
+/* Events Section */
+.events-section {
+    padding: 6rem 0;
+    background: linear-gradient(to bottom, #f8fafc, #ffffff);
+}
+
+.section-title {
+    font-size: 2.8rem;
+    font-weight: 800;
+    background: linear-gradient(45deg, var(--primary), var(--secondary));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin-bottom: 3rem;
+    text-align: center;
+}
+
+.events-calendar {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+/* Event Card */
+.event-card {
+    background: rgba(255, 255, 255, 0.95);
+    border-radius: 20px;
+    overflow: hidden;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Image Container */
+.event-image-container {
+    height: 220px;
+    overflow: hidden;
+}
+
+.event-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.6s ease;
+}
+
+/* Content Styling */
+.event-details {
+    padding: 1.5rem;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.event-title {
+    font-size: 1.4rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    color: var(--text-dark);
+}
+
+.event-info {
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+    margin-bottom: 1rem;
+}
+
+.event-info p {
+    display: flex;
+    align-items: center;
+    color: var(--text-light);
+    font-size: 0.95rem;
+}
+
+.event-info i {
+    color: var(--primary);
+    width: 20px;
+    margin-right: 0.5rem;
+}
+
+/* Hover Effects */
+.event-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+}
+
+.event-card:hover .event-image {
+    transform: scale(1.08);
+}
+
+/* Media Queries */
+@media (max-width: 1200px) {
+    .events-calendar {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .events-calendar {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Featured Event */
+.event-card.featured {
+    background: linear-gradient(135deg, #ffffff, #f8fafc);
+    border-left: 5px solid var(--primary);
+}
+
+.event-card.featured .event-title {
+    font-size: 2.4rem;
+    background: linear-gradient(45deg, var(--primary), var(--secondary));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+/* Event Badge */
+.event-badge {
+    position: absolute;
+    top: -15px;
+    right: 2rem;
+    background: var(--primary);
+    color: white;
+    padding: 0.5rem 1.5rem;
+    border-radius: 50px;
+    font-weight: 600;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+
+/* Dark Mode */
+[data-theme="dark"] .event-card {
+    background: #2a2a2a;
+    border-color: rgba(255,255,255,0.1);
+}
+
+[data-theme="dark"] .event-title {
+    color: #fff;
+}
+
+[data-theme="dark"] .event-info {
+    color: #ccc;
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+    .section-title {
+        font-size: 2.2rem;
+    }
+    
+    .event-title {
+        font-size: 1.8rem;
+    }
+    
+    .event-card.featured .event-title {
+        font-size: 2rem;
+    }
+    
+    .event-image {
+        height: 250px;
+    }
+    
+    .event-details {
+        padding: 2rem;
+    }
+}

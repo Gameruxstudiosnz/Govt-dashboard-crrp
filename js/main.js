@@ -78,3 +78,17 @@ function setupDashboard() {
         document.querySelector('.user-profile span').textContent = userData.name;
     }
 }
+
+const loadingManager = new LoadingStateManager();
+
+// Show loading during API calls
+async function fetchData() {
+    loadingManager.showLoading('Fetching data...');
+    try {
+        const response = await fetch('/api/data');
+        const data = await response.json();
+        // Process data
+    } finally {
+        loadingManager.hideLoading();
+    }
+}
