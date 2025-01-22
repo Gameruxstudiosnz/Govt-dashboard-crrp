@@ -4,7 +4,8 @@
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(255, 255, 255, 0.9);
+    background: rgba(0, 0, 0, 0.8);
+    backdrop-filter: blur(8px);
     display: none;
     justify-content: center;
     align-items: center;
@@ -13,9 +14,11 @@
 
 .loading-spinner {
     text-align: center;
+    color: #ffffff;
 }
 
 .loading-text {
     margin-top: 1rem;
     font-weight: 500;
+    color: #ffffff;
 }
