@@ -46,331 +46,374 @@
 </head>
 <body>
     <main>        
-        <!-- Main Content -->
-        <div id="mainContent">
-            <!-- Hero Section -->
-            <header class="hero-section" style="background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('massets/govt-dashboard-crrp.png'); background-size: cover; background-position: center; min-height: 80vh; color: rgb(82, 82, 82); display: flex; flex-direction: column; padding: 2rem 0;"><-->
-                <nav class="navbar navbar-expand-lg navbar-dark">
-                    <div class="container">
-                        <a class="navbar-brand" href="publlic-home.html">
-                            <img src="massets/countyroad.png" alt="CountyRoadRP" height="50"></a>
-                                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-                            <span class="navbar-toggler-icon"></span>
-                        </button>
-                        <div class="collapse navbar-collapse" id="navbarNav">
-                            <ul class="navbar-nav ms-auto">
-                                <li class="nav-item"><a class="nav-link active" href="public-home.html">Home</a></li>
-                                <li class="nav-item"><a class="nav-link" href="about-us.html">About us</a></li>
-                                <li class="nav-item"><a class="nav-link" href="department.html">Departments</a></li>
-                                <li class="nav-item"><a class="nav-link" href="news.html">News</a></li>
-                                <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
-                                <li class="nav-item"><a class="nav-link" href="rules.html">Rules</a></li>
-                                <li class="nav-item"><a class="nav-link btn btn-primary ms-2" href="login.html">Login</a></li>
-                                <button id="darkModeToggle" class="theme-toggle"><i class="fas fa-sun"></i>
+        <!-- Hero Section -->
+        <section class="hero-section">
+            <div class="hero-background">
+                <img src="massets/govt-dashboard-crrp.png" alt="County Road RP Background">
+            </div>
+            <div class="hero-content">
+                <h1 class="hero-welcome">Welcome to County Road Roleplay</h1>
+                <p class="hero-tagline">Embracing Possibilities</p>
+            </div>
+        </section>
+        <header>
+            <nav class="navbar navbar-expand-lg navbar-dark">
+                <div class="container">
+                    <a class="navbar-brand" href="publlic-home.html">
+                        <img src="massets/countyroad.png" alt="CountyRoadRP" height="50"></a>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbarNav">
+                        <ul class="navbar-nav ms-auto">
+                            <li class="nav-item"><a class="nav-link active" href="public-home.html">Home</a></li>
+                            <li class="nav-item"><a class="nav-link" href="about-us.html">About us</a></li>
+                            <li class="nav-item"><a class="nav-link" href="department.html">Departments</a></li>
+                            <li class="nav-item"><a class="nav-link" href="news.html">News</a></li>
+                            <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+                            <li class="nav-item"><a class="nav-link" href="rules.html">Rules</a></li>
+                            <li class="nav-item"><a class="nav-link btn btn-primary ms-2" href="login.html">Login</a></li>
+                            <button id="darkModeToggle" class="theme-toggle"><i class="fas fa-sun"></i>
+                            </button>
                                 </button>
-                                    </button>
-                                </div>
-                            </ul>
+                            </div>
+                        </ul>
+                    </div>
+            </nav>
+        </header>
+        </section>
+                    
+        <!-- About Section -->
+        <section class="about-section">
+            <div class="about-container">
+                <!-- Header -->
+                <div class="about-header">
+                    <h2 class="about-title">About County Road RP</h2>
+                    <p class="about-subtitle">Experience authentic law enforcement and civilian roleplay in our growing community</p>
+                </div>
+
+                <!-- Main Content -->
+                <div class="about-content">
+                    <!-- Image Side -->
+                    <div class="about-image">
+                        <img src="massets/govt-logo.png" alt="County Road RP Community">
+                    </div>
+
+                    <!-- Text Side -->
+                    <div class="about-text">
+                        <h3>Our Mission</h3>
+                        <p>At <span class="highlight-text">County Road Roleplay,</span> our mission is to provide a truly authentic, immersive, and professional roleplay experience that brings creativity, realism, and community to the forefront. 
+                            We are committed to fostering an inclusive and collaborative environment where players of all skill levels can thrive, contribute, and grow together.
+                            We aim to deliver meticulously designed and dynamic scenarios that allow players to step into the roles of law enforcement officers, first responders, civilians, and more, 
+                            creating rich and meaningful stories that reflect real-world challenges and triumphs.<br><br> Our focus on realism ensures that every interaction and scenario is engaging, thought-provoking, 
+                            and rewarding, providing a unique platform for players to develop their skills, explore new perspectives, and build lasting connections with others who share their passion.
+                            Through innovation, dedication, and respect, we strive to create a community that empowers its members to shape the roleplay experience collaboratively. 
+                            Whether you're here to hone your roleplay abilities, meet like-minded individuals, or simply enjoy the thrill of storytelling,
+                             <span class="highlight-text">County Road Roleplay,</span> is a place where everyone can feel valued, supported, and inspired to bring their creative visions to life.</p>
+                    </div>
+                </div>
+
+                <!-- Stats Grid -->
+                <div class="stats-grid">
+                    <div class="stat-card">
+                        <div class="stat-value">28+</div>
+                        <div class="stat-label">Active Members</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-value">1</div>
+                        <div class="stat-label">Per Week Events</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-value">24/7</div>
+                        <div class="stat-label">Server Uptime</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-value">100%</div>
+                        <div class="stat-label">Dedication</div>
+                    </div>
+                </div>
+                 <!-- Add this after the stats-grid in the about section -->
+                <div class="departments-section">
+                    <h3 class="about-title">Our Departments</h3>
+                    <div class="departments-grid">
+                        <div class="department-card">
+                            <img src="massets/hcpd.png" alt="Law Enforcement">
+                            <div class="department-content">
+                                <h4>Law Enforcement</h4>
+                                <p>Dedicated to serving and protecting our community</p>
+                            </div>
                         </div>
-                </nav>
-                <section class="hero-section">
-                    <h1 class="hero-welcome">Welcome to County Road Roleplay</h1>
-                    <p class="hero-tagline">Embracing Possibilities</p>
-                </section>
-            </header>
-
-                    <!-- Main Content Grid -->
-                    <div class="about-grid">
-                        <div class="about-card">
-                            <div class="card-content">
-                                <h2 class="card-title">About County Road Roleplay</h2>
-                                <p class="card-description">
-                                    County Road Roleplay delivers an authentic law enforcement and civilian roleplay experience. Our community focuses on realistic scenarios, professional development, and creating meaningful connections between players.
-                                </p>
-                                
-                                <!-- Core Values Grid -->
-                                <div class="values-grid">
-                                    <div class="value-item">
-                                        <i class="fas fa-shield-alt value-icon"></i>
-                                        <h3>Professionalism</h3>
-                                        <p>High standards in roleplay and community interaction</p>
-                                    </div>
-                                    <div class="value-item">
-                                        <i class="fas fa-users value-icon"></i>
-                                        <h3>Community</h3>
-                                        <p>Strong focus on building lasting connections</p>
-                                    </div>
-                                    <div class="value-item">
-                                        <i class="fas fa-graduation-cap value-icon"></i>
-                                        <h3>Development</h3>
-                                        <p>Continuous learning and skill improvement</p>
-                                    </div>
-                                </div>
-
-                                <!-- Departments Section -->
-                                <div class="departments-section">
-                                    <h3>Our Departments</h3>
-                                    <div class="departments-grid">
-                                        <div class="department-card">
-                                            <img src="police.jpg" alt="Law Enforcement Department">
-                                            <h4>Law Enforcement</h4>
-                                        </div>
-                                        <div class="department-card">
-                                            <img src="fire.jpg" alt="Fire Department">
-                                            <h4>Fire Department</h4>
-                                        </div>
-                                        <div class="department-card">
-                                            <img src="ems.jpg" alt="Emergency Medical Services">
-                                            <h4>Emergency Medical</h4>
-                                        </div>
-                                        <div class="department-card">
-                                            <img src="dispatch.jpg" alt="Communications Department">
-                                            <h4>Communications</h4>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <!-- Features Section -->
-                                <div class="features-section">
-                                    <h3>What We Offer</h3>
-                                    <div class="features-grid">
-                                        <div class="feature-card">
-                                            <i class="fas fa-server"></i>
-                                            <h4>Advanced CAD System</h4>
-                                            <p>State-of-the-art dispatch and records management</p>
-                                        </div>
-                                        <div class="feature-card">
-                                            <i class="fas fa-car"></i>
-                                            <h4>Custom Vehicles</h4>
-                                            <p>Extensive fleet of realistic emergency vehicles</p>
-                                        </div>
-                                        <div class="feature-card">
-                                            <i class="fas fa-headset"></i>
-                                            <h4>24/7 Support</h4>
-                                            <p>Active staff and community assistance</p>
-                                        </div>
-                                        <div class="feature-card">
-                                            <i class="fas fa-calendar"></i>
-                                            <h4>Regular Events</h4>
-                                            <p>Organized patrols and community activities</p>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <!-- Statistics Section -->
-                                <div class="stats-section">
-                                    <div class="stats-grid">
-                                        <div class="stat-card">
-                                            <div class="stat-number">1000+</div>
-                                            <div class="stat-label">Active Members</div>
-                                        </div>
-                                        <div class="stat-card">
-                                            <div class="stat-number">50+</div>
-                                            <div class="stat-label">Daily Events</div>
-                                        </div>
-                                        <div class="stat-card">
-                                            <div class="stat-number">24/7</div>
-                                            <div class="stat-label">Server Uptime</div>
-                                        </div>
-                                        <div class="stat-card">
-                                            <div class="stat-number">100%</div>
-                                            <div class="stat-label">Dedication</div>
-                                        </div>
-                                    </div>
-                                </div>
+                        <div class="department-card">
+                            <img src="massets/wmcso.png" alt="Emergency Medical Services">
+                            <div class="department-content">
+                                <h4>Emergency Medical</h4>
+                                <p>Professional medical care when you need it most</p>
+                            </div>
+                        </div>
+                        <div class="department-card">
+                            <img src="massets/departments/dispatch.jpg" alt="Dispatch">
+                            <div class="department-content">
+                                <h4>Dispatch</h4>
+                                <p>Coordinating emergency response 24/7</p>
+                            </div>
+                        </div>
+                        <div class="department-card">
+                            <img src="massets/fire.png" alt="Fire Department">
+                            <div class="department-content">
+                                <h4>Fire Department</h4>
+                                <p>First responders ready for any emergency</p>
                             </div>
                         </div>
                     </div>
                 </div>
-            </section>
-    <!-- Events Section -->
-    <section class="events-section">
-        <div class="container text-center">
-            <h2 class="section-title">Upcoming Events</h2>
-            <div class="events-grid">
-                <!-- Featured Event -->
-                <div class="event-card featured">
-                    <div class="row">
-                        <div class="col-md-6">
-                            <img src="event-image.jpg" class="event-image" alt="Event">
-                        </div>
-                        <div class="col-md-6">
-                            <div class="event-details">
-                                <h3 class="event-title">Community Meet & Greet</h3>
-                                <div class="event-info">
-                                    <p><i class="fas fa-calendar"></i> April 15, 2024</p>
-                                    <p><i class="fas fa-clock"></i> 7:00 PM EST</p>
-                                    <p><i class="fas fa-map-marker-alt"></i> Main Square</p>
+            </div>
+        </section>
+        
+        <!-- Events Section -->
+        <section class="events-section">
+            <div class="container text-center">
+                <h2 class="section-title">Upcoming Events</h2>
+                <div class="events-grid">
+                    <!-- Featured Event -->
+                    <div class="event-card featured">
+                        <div class="row">
+                            <!-- Text Column (Moved First) -->
+                            <div class="col-md-6">
+                                <div class="event-details">
+                                    <h3 class="event-title">Grand opening event Chaos in county</h3>
+                                    <div class="event-info">
+                                        <p><i class="fas fa-calendar"></i>TBA</p>
+                                        <p><i class="fas fa-clock"></i>TBA </p>
+                                        <p><i class="fas fa-map-marker-alt"></i> Everywhere in city</p>
+                                    </div>
+                                    <div class="event-description">
+                                        The criminal gang viper cartel is slowly taking control of County Road, while law enforcement struggles to maintain order. Each day brings new challenges, escalating tension, and opportunities for players to influence the outcome.
+                                    </div>
                                 </div>
-                                <div class="event-description">
-                                    Join us for an evening of community building and fun!
-                                </div>
+                            </div>
+                            <!-- Image Column (Moved Second) -->
+                            <div class="col-md-6">
+                                <img src="massets/events/event1.png" class="event-image" alt="Event">
                             </div>
                         </div>
                     </div>
-                </div>
-    
-                <!-- Regular Events -->
-                <div class="events-regular-grid">
-                    <div class="col-md-4">
-                        <div class="event-card">
-                            <img src="event-image.jpg" class="event-image" alt="Event">
-                            <div class="event-details">
-                                <h3 class="event-title">Training Session</h3>
-                                <div class="event-info">
-                                    <p><i class="fas fa-calendar"></i> April 20, 2024</p>
-                                    <p><i class="fas fa-clock"></i> 3:00 PM EST</p>
-                                    <p><i class="fas fa-map-marker-alt"></i> Training Center</p>
-                                </div>
-                                <div class="event-description">
-                                    Essential training for all new recruits.
+                    <!-- Regular Events -->
+                    <div class="events-regular-grid">
+                        <div class="col-md-4">
+                            <div class="event-card">
+                                <img src="event-image.jpg" class="event-image" alt="Event">
+                                <div class="event-details">
+                                    <h3 class="event-title">Training Session</h3>
+                                    <div class="event-info">
+                                        <p><i class="fas fa-calendar"></i> April 20, 2024</p>
+                                        <p><i class="fas fa-clock"></i> 3:00 PM EST</p>
+                                        <p><i class="fas fa-map-marker-alt"></i> Training Center</p>
+                                    </div>
+                                    <div class="event-description">
+                                        Essential training for all new recruits.
+                                    </div>
                                 </div>
                             </div>
                         </div>
-                    </div>
-                    <!-- Add more event cards as needed -->
-                </div>
-            </div>
-        </div>
-    </section>        </div>
-</main>
-</section>    <!-- New Staff Showcase -->
-    <div class="staff-showcase mt-5">
-        <h3 class="text-center mb-4">Meet Our Leadership Team</h3>
-        <div class="row">
-            <div class="col-md-3">
-                <div class="staff-card">
-                    <div class="staff-image">
-                        <img src="massets/staff/owner.jpg" alt="Server Owner">
-                        <div class="staff-badge">Owner</div>
-                    </div>
-                    <div class="staff-info">
-                        <h4>Username</h4>
-                        <p>"Leading innovation in RP"</p>
+                        <div class="events-regular-grid">
+                            <div class="col-md-4">
+                                <div class="event-card">
+                                    <img src="event-image.jpg" class="event-image" alt="Event">
+                                    <div class="event-details">
+                                        <h3 class="event-title">Training Session</h3>
+                                        <div class="event-info">
+                                            <p><i class="fas fa-calendar"></i> April 20, 2024</p>
+                                            <p><i class="fas fa-clock"></i> 3:00 PM EST</p>
+                                            <p><i class="fas fa-map-marker-alt"></i> Training Center</p>
+                                        </div>
+                                        <div class="event-description">
+                                            Essential training for all new recruits.
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        <!-- Add more event cards as needed -->
                     </div>
                 </div>
             </div>
-            <!-- Add more staff cards -->
-        </div>
-    </div>
-
-    <!-- Server Timeline -->
-    <div class="server-timeline mt-5">
-        <h3 class="text-center mb-4">Our Journey</h3>
-        <div class="timeline">
-            <div class="timeline-item">
-                <div class="date">2023</div>
-                <div class="content">
-                    <h4>Server Launch</h4>
-                    <p>County Road RP opens its doors</p>
+        </section>
+                  <!-- Staff Showcase -->
+                  <section class="staff-showcase">
+                      <h2 class="section-title">Meet Our Leadership Team</h2>
+                      <div class="cards-container">
+                          <!-- Row 1 -->
+                          <div class="staff-card">
+                              <div class="staff-image">
+                                  <img src="massets/staff/owner.jpg" alt="Server Owner">
+                                  <div class="staff-badge">Owner</div>
+                              </div>
+                              <div class="staff-info">
+                                  <h4>Antonio Bailey</h4>
+                                  <p>"Leading innovation in RP"</p>
+                              </div>
+                          </div>
+                          <div class="staff-card">
+                              <div class="staff-image">
+                                  <img src="massets/staff/owner.jpg" alt="Server Owner">
+                                  <div class="staff-badge">Owner</div>
+                              </div>
+                              <div class="staff-info">
+                                  <h4>becks</h4>
+                                  <p>"Leading innovation in RP"</p>
+                              </div>
+                          </div>
+                          <div class="staff-card">
+                              <div class="staff-image">
+                                  <img src="massets/staff/owner.jpg" alt="Server Owner">
+                                  <div class="staff-badge">Lead Admin</div>
+                              </div>
+                              <div class="staff-info">
+                                  <h4>Gravityramen</h4>
+                                  <p>"Leading innovation in RP"</p>
+                              </div>
+                          </div>
+                          <div class="staff-card">
+                              <div class="staff-image">
+                                  <img src="massets/staff/owner.jpg" alt="Server Owner">
+                                  <div class="staff-badge">Lead Admin</div>
+                              </div>
+                              <div class="staff-info">
+                                  <h4>cptliambaker</h4>
+                                  <p>"Leading innovation in RP"</p>
+                              </div>
+                          </div>
+                          <!-- Row 2 -->
+                          <div class="staff-card">
+                              <div class="staff-image">
+                                  <img src="massets/staff/owner.jpg" alt="Server Owner">
+                                  <div class="staff-badge">Admin</div>
+                              </div>
+                              <div class="staff-info">
+                                  <h4>ice_breaker47</h4>
+                                  <p>"Leading innovation in RP"</p>
+                              </div>
+                          </div>
+                          <div class="staff-card">
+                              <div class="staff-image">
+                                  <img src="massets/staff/owner.jpg" alt="Server Owner">
+                                  <div class="staff-badge">Admin</div>
+                              </div>
+                              <div class="staff-info">
+                                  <h4>chev9015</h4>
+                                  <p>"Leading innovation in RP"</p>
+                              </div>
+                          </div>
+                          <div class="staff-card">
+                              <div class="staff-image">
+                                  <img src="massets/staff/owner.jpg" alt="Server Owner">
+                                  <div class="staff-badge">lead mod</div>
+                              </div>
+                              <div class="staff-info">
+                                  <h4>carcatdog123</h4>
+                                  <p>"Leading innovation in RP"</p>
+                              </div>
+                          </div>
+                          <div class="staff-card">
+                              <div class="staff-image">
+                                  <img src="massets/staff/owner.jpg" alt="Server Owner">
+                                  <div class="staff-badge">Development team</div>
+                              </div>
+                              <div class="staff-info">
+                                  <h4>crasynt</h4>
+                                  <p>"Leading innovation in RP"</p>
+                              </div>
+                          </div>
+                          </section>
+<div>
+<div>
+        <!-- Server Timeline -->
+        <section class="server-timeline">
+            <div class="container">
+                <h2 class="section-title">Our Journey</h2>
+                <div class="timeline">
+                    <div class="timeline-item">
+                        <div class="date">2023</div>
+                        <div class="content">
+                            <h4>Server Launch</h4>
+                            <p>County Road RP opens its doors</p>
+                        </div>
+                    </div>
+                    <!-- Add more timeline items -->
                 </div>
             </div>
-            <!-- Add more timeline items -->
-        </div>
-    </div>
-
-    <!-- Community Values -->
-    <div class="community-values mt-5">
-        <h3 class="text-center mb-4">Our Core Values</h3>
-        <div class="row">
-            <div class="col-md-4">
-                <div class="value-card">
-                    <i class="fas fa-handshake"></i>
-                    <h4>Respect</h4>
-                    <p>Fostering a community built on mutual respect and understanding</p>
+        </section>
+        
+        <!-- Testimonials -->
+        <section class="testimonials">
+            <h3 class="text-center mb-4">Community Voices</h3>
+            <div class="testimonial-carousel">
+                <div class="testimonial-item">
+                    <div class="quote">"Best RP experience I've had!"</div>
+                    <div class="author">- Community Member</div>
                 </div>
             </div>
-            <!-- Add more value cards -->
-        </div>
-    </div>
-
-    <!-- Testimonials -->
-    <div class="testimonials mt-5">
-        <h3 class="text-center mb-4">Community Voices</h3>
-        <div class="testimonial-carousel">
-            <div class="testimonial-item">
-                <div class="quote">"Best RP experience I've had!"</div>
-                <div class="author">- Community Member</div>
+        </section>
+    </main>
+    </body>
+    <footer class="footer">
+        <div class="footer-grid">
+            <!-- Company Info Section -->
+            <div class="footer-section">
+                <h2 class="footer-logo">County Road RP</h2>
+                <p>Delivering professional roleplay experiences and community-driven law enforcement simulation.</p>
+                <div class="social-links">
+                    <a href="#" class="social-icon"><i class="fab fa-discord"></i></a>
+                    <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
+                    <a href="#" class="social-icon"><i class="fab fa-youtube"></i></a>
+                    <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
+                </div>
             </div>
-        </div>
-    </div>
-</section>
-</main>
-</section>
-<footer class="footer">
-    <div class="footer-grid">
-        <!-- Company Info Section -->
-        <div class="footer-section">
-            <h2 class="footer-logo">County Road RP</h2>
-            <p>Delivering professional roleplay experiences and community-driven law enforcement simulation.</p>
-            <div class="social-links">
-                <a href="#" class="social-icon">
-                    <i class="fab fa-discord"></i>
-                </a>
-                <a href="#" class="social-icon">
-                    <i class="fab fa-twitter"></i>
-                </a>
-                <a href="#" class="social-icon">
-                    <i class="fab fa-youtube"></i>
-                </a>
-                <a href="#" class="social-icon">
-                    <i class="fab fa-instagram"></i>
-                </a>
+
+            <!-- Quick Links Section -->
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <ul class="footer-nav">
+                    <li><a href="/departments">Departments</a></li>
+                    <li><a href="/join">Join Us</a></li>
+                    <li><a href="/rules">Server Rules</a></li>
+                    <li><a href="/community">Community</a></li>
+                    <li><a href="/support">Support</a></li>
+                </ul>
             </div>
-        </div>
 
-        <!-- Quick Links Section -->
-        <div class="footer-section">
-            <h3>Quick Links</h3>
-            <ul class="footer-nav">
-                <li><a href="/departments">Departments</a></li>
-                <li><a href="/join">Join Us</a></li>
-                <li><a href="/rules">Server Rules</a></li>
-                <li><a href="/community">Community</a></li>
-                <li><a href="/support">Support</a></li>
-            </ul>
-        </div>
+            <!-- Contact Section -->
+            <div class="footer-section">
+                <h3>Contact Us</h3>
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <i class="fas fa-envelope"></i>
+                        <span>support@countyroadrp.com</span>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fab fa-discord"></i>
+                        <span>Join our Discord</span>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-clock"></i>
+                        <span>24/7 Support Available</span>
+                    </div>
+                </div>
+            </div>
 
-        <!-- Contact Section -->
-        <div class="footer-section">
-            <h3>Contact Us</h3>
-            <div class="contact-info">
-                <div class="contact-item">
-                    <i class="fas fa-envelope"></i>
-                    <span>support@countyroadrp.com</span>
-                </div>
-                <div class="contact-item">
-                    <i class="fab fa-discord"></i>
-                    <span>Join our Discord</span>
-                </div>
-                <div class="contact-item">
-                    <i class="fas fa-clock"></i>
-                    <span>24/7 Support Available</span>
-                </div>
+            <!-- Newsletter Section -->
+            <div class="footer-section">
+                <h3>Stay Updated</h3>
+                <p>Subscribe to our newsletter for the latest updates and events.</p>
+                <form class="newsletter-form">
+                    <input type="email" class="newsletter-input" placeholder="Enter your email" required>
+                    <button type="submit" class="newsletter-button">Subscribe</button>
+                </form>
             </div>
         </div>
 
-        <!-- Newsletter Section -->
-        <div class="footer-section">
-            <h3>Stay Updated</h3>
-            <p>Subscribe to our newsletter for the latest updates and events.</p>
-            <form class="newsletter-form">
-                <input 
-                    type="email" 
-                    class="newsletter-input" 
-                    placeholder="Enter your email"
-                    required
-                >
-                <button type="submit" class="newsletter-button">
-                    Subscribe
-                </button>
-            </form>
+        <!-- Copyright Bar -->
+        <div class="copyright-bar">
+            <p xmlns:cc="http://creativecommons.org/ns#" xmlns:dct="http://purl.org/dc/terms/"><a property="dct:title" rel="cc:attributionURL" href="https://github.com/NitroPixelDevelopments/County_Road_RP_Website_Cad">County_Road_RP_Website_Cad</a> by <a rel="cc:attributionURL dct:creator" property="cc:attributionName" href="https://github.com/Ashaw34254">Antonio Bailey</a> is licensed under <a href="https://creativecommons.org/licenses/by-nd/4.0/?ref=chooser-v1" target="_blank" rel="license noopener noreferrer" style="display:inline-block;">Creative Commons Attribution-NoDerivatives 4.0 International<img style="height:22px!important;margin-left:3px;vertical-align:text-bottom;" src="https://mirrors.creativecommons.org/presskit/icons/cc.svg?ref=chooser-v1" alt=""><img style="height:22px!important;margin-left:3px;vertical-align:text-bottom;" src="https://mirrors.creativecommons.org/presskit/icons/by.svg?ref=chooser-v1" alt=""><img style="height:22px!important;margin-left:3px;vertical-align:text-bottom;" src="https://mirrors.creativecommons.org/presskit/icons/nd.svg?ref=chooser-v1" alt=""></a></p>
         </div>
-    </div>
-
-    <!-- Copyright Bar -->
-    <p xmlns:cc="http://creativecommons.org/ns#" xmlns:dct="http://purl.org/dc/terms/"><a property="dct:title" rel="cc:attributionURL" href="https://github.com/NitroPixelDevelopments/County_Road_RP_Website_Cad">County_Road_RP_Website_Cad</a> by <a rel="cc:attributionURL dct:creator" property="cc:attributionName" href="https://github.com/Ashaw34254">Antonio Bailey</a> is licensed under <a href="https://creativecommons.org/licenses/by-nd/4.0/?ref=chooser-v1" target="_blank" rel="license noopener noreferrer" style="display:inline-block;">Creative Commons Attribution-NoDerivatives 4.0 International<img style="height:22px!important;margin-left:3px;vertical-align:text-bottom;" src="https://mirrors.creativecommons.org/presskit/icons/cc.svg?ref=chooser-v1" alt=""><img style="height:22px!important;margin-left:3px;vertical-align:text-bottom;" src="https://mirrors.creativecommons.org/presskit/icons/by.svg?ref=chooser-v1" alt=""><img style="height:22px!important;margin-left:3px;vertical-align:text-bottom;" src="https://mirrors.creativecommons.org/presskit/icons/nd.svg?ref=chooser-v1" alt=""></a></p>
-</footer>
+    </footer>
 
 
     <!-- Scripts -->
@@ -379,7 +422,6 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <script src="js/public-home.js"></script>
     <script src="js/dark-mode.js"></script>
-</body>
 </html>
 
 

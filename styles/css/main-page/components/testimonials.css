@@ -1,46 +1,78 @@
 /* Testimonials Section */
+.testimonials {
+    background: linear-gradient(135deg, #1a1a1a, #2d2d2d);
+    padding: 6rem 0;
+    position: relative;
+    overflow: hidden;
+}
+
+.testimonials h2 {
+    color: #ffffff;
+    text-align: center;
+    margin-bottom: 4rem;
+    font-size: 2.5rem;
+    font-weight: 800;
+    background: linear-gradient(45deg, #ffffff, #a8b2d1);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
 .testimonial-carousel {
-    padding: 4rem 3rem;
-    background: white;
-    border-radius: 20px;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease;
+    padding: 3rem;
+    background: #ffffff;
+    border-radius: 16px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.15);
+    max-width: 1000px;
+    margin: 0 auto;
+    position: relative;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .testimonial-carousel:hover {
-    transform: translateY(-5px);
+    transform: translateY(-8px);
+    box-shadow: 0 16px 48px rgba(0, 0, 0, 0.2);
 }
 
 .testimonial-item {
     text-align: center;
-    padding: 1rem;
-    max-width: 800px;
-    margin: 0 auto;
+    padding: 2rem;
 }
 
 .quote {
-    font-size: 1.25rem;
-    font-style: italic;
-    color: var(--text-dark);
-    margin-bottom: 1.5rem;
-    line-height: 1.6;
+    font-size: 1.4rem;
+    line-height: 1.8;
+    color: #333333;
+    margin-bottom: 2rem;
     position: relative;
+    padding: 0 3rem;
 }
 
 .quote::before,
 .quote::after {
     content: '"';
-    font-size: 2rem;
-    color: var(--text-light);
-    opacity: 0.5;
+    font-size: 4rem;
+    color: var(--accent-color);
+    opacity: 0.8;
+    position: absolute;
+    line-height: 1;
+}
+
+.quote::before {
+    left: 0;
+    top: -1rem;
+}
+
+.quote::after {
+    right: 0;
+    bottom: -2rem;
 }
 
 .author {
-    color: var(--text-light);
-    font-weight: 600;
-    font-size: 1.1rem;
+    font-weight: 700;
+    font-size: 1.2rem;
+    color: #666666;
     position: relative;
-    padding-top: 1rem;
+    padding-top: 2rem;
 }
 
 .author::before {
@@ -49,22 +81,24 @@
     top: 0;
     left: 50%;
     transform: translateX(-50%);
-    width: 50px;
-    height: 2px;
-    background: var(--text-light);
-    opacity: 0.3;
+    width: 60px;
+    height: 3px;
+    background: var(--accent-color);
+    opacity: 0.8;
 }
 
 @media (max-width: 768px) {
+    .testimonials {
+        padding: 4rem 0;
+    }
+    
     .testimonial-carousel {
-        padding: 2rem 1.5rem;
+        padding: 2rem;
+        margin: 0 1.5rem;
     }
     
     .quote {
-        font-size: 1.1rem;
-    }
-    
-    .author {
-        font-size: 1rem;
+        font-size: 1.2rem;
+        padding: 0 2rem;
     }
 }
