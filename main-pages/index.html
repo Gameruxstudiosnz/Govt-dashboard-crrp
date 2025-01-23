@@ -1,69 +1,97 @@
 <!DOCTYPE html>
-<html lang="en" data-theme="light">
+<html lang="en" data-theme="dark">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>County Road RP</title>
-    
+    <a class="skip-link" href="#main-content"></a>
     <!-- Core CSS Structure -->
-    <link rel="stylesheet" href="styles/css/main-page/public-home.css">
-    <link rel="stylesheet" href="styles/css/core/reset.css">
-    <link rel="stylesheet" href="styles/css/core/tokens.css">
-    <link rel="stylesheet" href="styles/css/core/components.css">
-    <link rel="stylesheet" href="styles/css/layouts/grid.css">
-    <link rel="stylesheet" href="styles/css/layouts/main.css">
-    
-    <!--weird js-->
-    <link rel="stylesheet" href="../styles/css/main-page/components/firework.css">
-    <script src="../js/firework-effect.js"></script>
-    <link rel="stylesheet" href="../styles/css/main-page/components/mouse-trail.css">
-    <script src="../js/mouse-trail.js"></script>
-    <link rel="stylesheet" href="../styles/css/main-page/components/loaders.css">
-<link rel="stylesheet" href="../styles/css/main-page/components/transitions.css">
-<link rel="stylesheet" href="../styles/css/main-page/components/emergency-effects.css">
-<script src="../js/loading-effects.js"></script>
+    <link rel="'stylesheet" href="../styles/css/core/components.css">
+    <link rel="stylesheet" href="../styles/css/core/dark-theme.css">
+    <link rel="stylesheet" href="../styles/css/core/footer.css">
+    <link rel="stylesheet" href="../styles/css/core/loaders.css">
+    <link rel="stylesheet" href="../styles/css/core/loading-effects.css">
+    <link rel="stylesheet" href="../styles/css/core/main.css">
+    <link rel="stylesheet" href="../styles/css/core/navbar.css">
+    <link rel="stylesheet" href="../styles/css/core/tokens.css">
+    <link rel="stylesheet" href="../styles/css/core/variables.css">
+
 
     <!-- Component CSS -->
-    <link rel="stylesheet" href="../styles/css/main-page/components/about.css">
-    <link rel="stylesheet" href="../styles/css/main-page/components/cards.css">
-    <link rel="stylesheet" href="../styles/css/main-page/components/events.css">
-    <link rel="stylesheet" href="../styles/css/main-page/components/footer.css">
-    <link rel="stylesheet" href="../styles/css/main-page/components/staff.css">
-    <link rel="stylesheet" href="../styles/css/main-page/components/hero.css">
-    <link rel="stylesheet" href="../styles/css/main-page/components/testimonials.css">
-    <link rel="stylesheet" href="../styles/css/main-page/components/timeline.css">
-    <link rel="stylesheet" href="../styles/css/main-page/components/values.css">
-    <link rel="stylesheet" href="../styles/css/main-page/components/navbar.css">
-    <link rel="stylesheet" href="../styles/css/main-page/components/rain.css">
+    <link rel="stylesheet" href="../styles/css/main-page/components/home/about.css">
+    <link rel="stylesheet" href="../styles/css/main-page/components/home/cards.css">
+    <link rel="stylesheet" href="../styles/css/main-page/components/home/emergency-effects.css">
+    <link rel="stylesheet" href="../styles/css/main-page/components/home/events.css">
+    <link rel="stylesheet" href="../styles/css/main-page/components/home/firework.css">
+    <link rel="stylesheet" href="../styles/css/main-page/components/home/hero.css">
+    <link rel="stylesheet" href="../styles/css/main-page/components/home/index.css">
+    <link rel="stylesheet" href="../styles/css/main-page/components/home/rain.css">
+    <link rel="stylesheet" href="../styles/css/main-page/components/home/staff.css">
+    <link rel="stylesheet" href="../styles/css/main-page/components/home/testimonials.css">
+    <link rel="stylesheet" href="../styles/css/main-page/components/home/timeline.css">
+    <link rel="stylesheet" href="../styles/css/main-page/components/home/transitions.css">
     <!--Page CSS-->
     <link rel="stylesheet" href="../styles/css/main-page/base.css">
     <link rel="stylesheet" href="../styles/css/main-page/pages/public-home.css">
 
-    <!--Dark CSS-->
+  <!--Dark CSS-->
     <link rel="stylesheet" href="../styles/css/core/dark-theme.css">
+    
+    <!-- Preload critical assets -->
+    <link rel="preload" href="massets/countyroad.png" as="image">
+    <link rel="preload" href="../styles/css/core/main.css" as="style">
 
-    <!--Google Font-->
-
-
+    <!--weird js-->
+    <script defer src="../js/firework-effect.js"></script>
+    <script defer src="../js/mouse-trail.js"></script>
+    <script src="../js/loading-effects.js"></script>
+    <script src="../js/rain-effect.js"></script>
+    <script src="../js/transitions.js"></script>
+    <script src="../js/testimonials.js"></script>
+    <script src="../js/timeline.js"></script>
+    <script src="../js/dark-mode.js"></script>
+    <!--Google Font-->       
+    
     <link rel="icon" type="image/x-icon" href="massets/favicon.ico">
-    <meta name="description" content="County Road RP - Join our immersive FiveM roleplay community featuring law enforcement, civilian life, and dynamic events in New Horizon">
-    <meta name="keywords" content="County Road RP, FiveM roleplay, law enforcement RP, New Horizon, police roleplay, civilian roleplay">
-    <meta name="author" content="No-Pixel Development">
-    <meta property="og:title" content="County Road RP - New Horizon Roleplay Community">
-    <meta property="og:description" content="Experience authentic roleplay in our growing FiveM community. Join law enforcement, become a civilian, or participate in dynamic events.">
-    <meta property="og:image" content="massets/countyroad.png">
-    <link rel="stylesheet" href="../styles/css/main-page/components/rain.css">
+      
+    <!-- Primary Meta Tags -->
+        <meta name="title" content="County Road RP - Premier FiveM Roleplay Community">
+        <meta name="description" content="Join County Road RP for an immersive FiveM roleplay experience featuring law enforcement, EMS, fire department and civilian interactions in a dynamic open world.">
+        <meta name="keywords" content="County Road RP, FiveM roleplay, police roleplay, EMS roleplay, fire department roleplay, civilian roleplay, gaming community, roleplay server">
+        <meta name="robots" content="index, follow">
+        <meta name="language" content="English">
+        <meta name="revisit-after" content="7 days">
+    
+        <!-- Open Graph / Facebook -->
+        <meta property="og:type" content="website">
+        <meta property="og:url" content="https://countyroadrp.com/">
+        <meta property="og:title" content="County Road RP - Premier FiveM Roleplay Community">
+        <meta property="og:description" content="Experience authentic roleplay with our professional law enforcement, emergency services and civilian community.">
+        <meta property="og:image" content="massets/social-preview.jpg">
+
+        <!-- Twitter -->
+        <meta property="twitter:card" content="summary_large_image">
+        <meta property="twitter:url" content="https://countyroadrp.com/">
+        <meta property="twitter:title" content="County Road RP - Premier FiveM Roleplay Community">
+        <meta property="twitter:description" content="Experience authentic roleplay with our professional law enforcement, emergency services and civilian community.">
+        <meta property="twitter:image" content="massets/social-preview.jpg">
+
+        <!-- Canonical URL -->
+        <link rel="canonical" href="https://countyroadrp.com/">
+    
+    
+        <link rel="stylesheet" href="../styles/css/main-page/components/rain.css">
     <script src="../js/rain-effect.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <script src="js/public-home.js"></script>
     <script src="js/dark-mode.js"></script>
-</head>
-<body>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <script src="../js/public-home.js"></script>
 <script src="../js/loading-effects-test.js"></script>
     <script src="js/dark-mode.js"></script>
-    <main>        
+</header>
+<body>  
+    <main>   
         <!-- Hero Section -->
         <section class="hero-section">
             <div class="hero-background">
@@ -422,6 +450,17 @@
     <!-- Add this in the navbar -->
    
 
+    <!-- Add skip link for keyboard users -->
+    <a class="skip-link" href="#main-content">Skip to main content</a>
 </html>
 
 
+
+<!-- Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=YOUR-ID"></script>
+
+<!-- Cookie Consent -->
+<div class="cookie-consent" role="alert">
+    <p>We use cookies to enhance your experience.</p>
+    <button class="accept-cookies">Accept</button>
+</div>
