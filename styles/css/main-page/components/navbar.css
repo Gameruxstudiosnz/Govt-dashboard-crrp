@@ -4,12 +4,12 @@
     width: 100%;
     top: 0;
     z-index: 1000;
-    background: rgba(255, 255, 255, 0.9);
+    background: rgba(32, 0, 0, 0);
     backdrop-filter: blur(10px);
     padding: var(--space-sm) 0;
     box-shadow: var(--shadow-sm);
     transition: all 0.3s ease;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    border-bottom: 1px solid rgba(255, 255, 255, 0);
 }
 
 /* Container Styling */
@@ -34,7 +34,7 @@
 .navbar-brand img {
     height: 50px;
     width: auto;
-    filter: drop-shadow(0 2px 4px rgba(0,0,0,0.1));
+    filter: drop-shadow(0 2px 4px rgba(255, 0, 0, 0));
 }
 
 /* Navigation Menu */
@@ -49,7 +49,7 @@
 
 /* Navigation Links */
 .nav-link {
-    color: white;
+    color: rgb(0, 191, 255);
     font-weight: 600;
     font-size: 1.1rem;
     text-decoration: none;
@@ -60,13 +60,13 @@
 
 .nav-link:hover {
     color: var(--accent);
-    background: rgba(255, 255, 255, 0.1);
+    background: rgba(86,137,164,255);
 }
 
 /* Active State */
 .nav-link.active {
     color: var(--accent);
-    background: rgba(255, 255, 255, 0.15);
+    background: rgba(255, 255, 255, 0);
 }
 
 /* Mobile Toggle */
