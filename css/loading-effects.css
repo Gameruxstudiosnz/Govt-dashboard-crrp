@@ -1,0 +1,44 @@
+.fire-effect {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    height: 200px;
+    overflow: hidden;
+}
+
+.fire-particle {
+    position: absolute;
+    bottom: -20px;
+    width: 10px;
+    height: 10px;
+    background: #ff4500;
+    border-radius: 50%;
+    animation: fire-rise 2s infinite;
+    filter: blur(2px);
+}
+
+.smoke-effect {
+    position: absolute;
+    bottom: 150px;
+    width: 100%;
+    height: 100px;
+    background: rgba(50, 50, 50, 0.3);
+    filter: blur(10px);
+    animation: smoke-drift 4s infinite;
+}
+
+@keyframes fire-rise {
+    0% {
+        transform: translateY(0) scale(1);
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(-100px) scale(0.5);
+        opacity: 0;
+    }
+}
+
+@keyframes smoke-drift {
+    0%, 100% { transform: translateX(0); }
+    50% { transform: translateX(20px); }
+}

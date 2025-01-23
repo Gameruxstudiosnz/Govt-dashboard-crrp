@@ -1,0 +1,15 @@
+.page-transition {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(45deg, #1a237e, #0d47a1);
+    clip-path: circle(0% at center);
+    z-index: 9999;
+    animation: pageTransition 1.5s ease-in-out;
+}
+
+@keyframes pageTransition {
+    0% { clip-path: circle(0% at center); }
+    50% { clip-path: circle(100% at center); }
+    100% { clip-path: circle(0% at center); }
+}

@@ -1,0 +1,22 @@
+.mouse-trail-particle {
+    position: fixed;
+    width: 8px;
+    height: 8px;
+    background: radial-gradient(circle, #ff6b6b, transparent);
+    border-radius: 50%;
+    pointer-events: none;
+    z-index: 9999;
+    opacity: 0.8;
+    animation: fadeOut 1s linear forwards;
+}
+
+@keyframes fadeOut {
+    0% {
+        transform: scale(1);
+        opacity: 0.8;
+    }
+    100% {
+        transform: scale(0.1);
+        opacity: 0;
+    }
+}

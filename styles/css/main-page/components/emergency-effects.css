@@ -1,0 +1,117 @@
+.easter-egg-effect {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.9);
+    z-index: 9999;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    animation: fadeIn 0.5s;
+}
+
+.effect-text {
+    color: white;
+    font-size: 3em;
+    text-shadow: 0 0 10px rgba(255,255,255,0.5);
+    animation: pulse 2s infinite;
+}
+
+.lightbar {
+    display: flex;
+    gap: 15px;
+    margin: 20px;
+}
+
+.light {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    animation: flash 0.5s infinite alternate;
+}
+
+.dispatch-effect .radio-waves {
+    width: 200px;
+    height: 200px;
+    border: 4px solid #00ff00;
+    border-radius: 50%;
+    animation: radioPulse 2s infinite;
+}
+
+.pursuit-effect .road-stripes {
+    width: 100%;
+    height: 20px;
+    background: repeating-linear-gradient(
+        90deg,
+        #fff,
+        #fff 50px,
+        transparent 50px,
+        transparent 100px
+    );
+    animation: roadMove 1s linear infinite;
+}
+
+@keyframes radioPulse {
+    0% { transform: scale(0.5); opacity: 1; }
+    100% { transform: scale(2); opacity: 0; }
+}
+
+@keyframes roadMove {
+    from { background-position: 0 0; }
+    to { background-position: -100px 0; }
+}
+
+.fade-out {
+    animation: fadeOut 1s;
+}
+
+@keyframes fadeOut {
+    to { opacity: 0; }
+}
+.fire-effect {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    height: 200px;
+    overflow: hidden;
+}
+
+.fire-particle {
+    position: absolute;
+    bottom: -20px;
+    width: 10px;
+    height: 10px;
+    background: #ff4500;
+    border-radius: 50%;
+    animation: fire-rise 2s infinite;
+    filter: blur(2px);
+}
+
+.smoke-effect {
+    position: absolute;
+    bottom: 150px;
+    width: 100%;
+    height: 100px;
+    background: rgba(50, 50, 50, 0.3);
+    filter: blur(10px);
+    animation: smoke-drift 4s infinite;
+}
+
+@keyframes fire-rise {
+    0% {
+        transform: translateY(0) scale(1);
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(-100px) scale(0.5);
+        opacity: 0;
+    }
+}
+
+@keyframes smoke-drift {
+    0%, 100% { transform: translateX(0); }
+    50% { transform: translateX(20px); }
+}

@@ -1,0 +1,29 @@
+.rain-container {
+    position: fixed;
+    width: 100%;
+    height: 100vh;
+    top: 0;
+    left: 0;
+    pointer-events: none;
+    z-index: 10000;
+    overflow: hidden;
+    background: rgba(0, 0, 0, 0.1); /* Slight dark overlay */
+}
+
+.raindrop {
+    position: absolute;
+    width: 3px; /* Thicker drops */
+    height: 20px;
+    background: linear-gradient(transparent, rgba(255, 255, 255, 0.9));
+    animation: rain linear infinite;
+    box-shadow: 0 0 5px rgba(255, 255, 255, 0.5); /* Glow effect */
+}
+
+@keyframes rain {
+    0% {
+        transform: translateY(-100vh) rotate(15deg);
+    }
+    100% {
+        transform: translateY(100vh) rotate(15deg);
+    }
+}
