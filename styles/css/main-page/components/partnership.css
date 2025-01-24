@@ -1,0 +1,147 @@
+/* Partnership Page Styles */
+:root {
+    --partner-gradient: linear-gradient(45deg, #ff3366, #ff9933);
+    --card-bg: linear-gradient(135deg, #000000, #1b0e00);
+    --text-light: #ffffff;
+    --text-gradient: linear-gradient(45deg, #ff3366, #ff9933);
+}
+
+/* Hero Section */
+.partnership-hero {
+    background: var(--card-bg);
+    min-height: 40vh;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    padding: 80px 0;
+}
+
+.partnership-hero h1 {
+    background: var(--text-gradient);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    font-size: 3.5rem;
+    margin-bottom: 1rem;
+}
+
+/* Partners Grid */
+.partners-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    padding: 40px 0;
+}
+
+.partner-card {
+    background: var(--card-bg);
+    border-radius: 15px;
+    padding: 2rem;
+    text-align: center;
+    transition: transform 0.3s ease;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.partner-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 5px 15px rgba(255, 81, 0, 0.2);
+}
+
+.partner-card img {
+    width: 150px;
+    height: auto;
+    margin-bottom: 1.5rem;
+    border-radius: 10px;
+}
+
+.partner-card h3 {
+    background: var(--text-gradient);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    margin-bottom: 1rem;
+}
+
+/* Benefits Section */
+.partnership-benefits {
+    background: #000000;
+    padding: 80px 0;
+}
+
+.benefits-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+}
+
+.benefit-card {
+    background: var(--card-bg);
+    padding: 2rem;
+    border-radius: 15px;
+    text-align: center;
+    transition: transform 0.3s ease;
+}
+
+.benefit-card i {
+    font-size: 2.5rem;
+    background: var(--text-gradient);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    margin-bottom: 1rem;
+}
+
+/* Application Form */
+.partnership-application {
+    background: #000000;
+    padding: 80px 0;
+}
+
+.partnership-form {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.form-group {
+    margin-bottom: 1.5rem;
+}
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: 1rem;
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 8px;
+    color: var(--text-light);
+}
+
+.submit-btn {
+    background: var(--partner-gradient);
+    color: var(--text-light);
+    padding: 1rem 2rem;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: opacity 0.3s ease;
+}
+
+.submit-btn:hover {
+    opacity: 0.9;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .partnership-hero h1 {
+        font-size: 2.5rem;
+    }
+    
+    .partners-grid,
+    .benefits-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .partnership-form {
+        padding: 0 20px;
+    }
+}

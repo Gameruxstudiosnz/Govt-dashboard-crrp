@@ -1,13 +1,21 @@
-  /* Base Variables */
+  /* Group related styles together */
   :root {
+      /* Move all variables here */
       --primary-color: #2c3e50;
       --secondary-color: #007bff;
       --text-color: #555;
       --light-bg: #f8f9fa;
       --shadow: 0 3px 10px rgba(0,0,0,0.1);
       --transition: all 0.3s ease;
+      --primary-gradient: linear-gradient(45deg, #ff3366, #ff9933);
+      --card-background: linear-gradient(135deg, #000000, #1b0e00);
   }
-/* Navigation */
+
+  /* Organize sections logically */
+  /* 1. Layout Components */
+  /* 2. Interactive Elements */
+  /* 3. Typography */
+  /* 4. Media Queries *//* Navigation */
 .navbar {
     background: rgba(0, 0, 0, 0.7);
     backdrop-filter: blur(10px);
