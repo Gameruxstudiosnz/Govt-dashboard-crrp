@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>New Horizon State Police</title>
+    
+    <!-- CSS Dependencies -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="styles/public-home.css">
+    <link rel="stylesheet" href="styles/departments.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="styles/dark-mode.css">
+    <!-- Hero Section -->
+    <header class="hero-section">
+        <nav class="navbar navbar-expand-lg navbar-dark">
+            <div class="container">
+                <a class="navbar-brand" href="#">
+                    <img src="assets/countyroad.png" alt="CountyRoadRP" height="50">
+                    New Horizon
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item"><a class="nav-link active" href="public-home.html">Home</a></li>
+                        <li class="nav-item"><a class="nav-link" href="about-us.html">About us</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#">Departments</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#">News</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#">Contact</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#">Rules</a></li>
+                        <li class="nav-item"><a class="nav-link btn btn-primary ms-2" href="login.html">Login</a></li>
+                          <!-- Add this to the navbar -->
+                <div class="nav-item">
+                    <button id="darkModeToggle" class="btn btn-outline-light">
+                       <i class="fas fa-moon"></i>
+                    </button>
+                   </div>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        
+</head>
+<body>
+    <!-- Department Hero Section -->
+    <header class="department-hero trooper-hero">
+        <div class="hero-content container">
+            <img src="assets/nhsp-badge.png" alt="NHSP Badge" class="department-badge">
+            <h1>New Horizon State Police</h1>
+            <p>Excellence • Honor • Service</p>
+        </div>
+    </header>
+
+    <!-- Department Info -->
+    <section class="department-info py-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-8">
+                    <h2>Protecting Our Highways</h2>
+                    <p>The New Horizon State Police serves as the premier law enforcement agency for our state's highways and interstates. We enforce traffic laws, investigate crashes, and provide emergency assistance across all state jurisdictions.</p>
+                    
+                    <h3 class="mt-4">Join the State Police</h3>
+                    <p>Requirements for State Trooper candidates:</p>
+                    <ul>
+                        <li>21+ years of age</li>
+                        <li>Valid driver's license</li>
+                        <li>Clean driving record</li>
+                        <li>Physical fitness standards</li>
+                        <li>Background check clearance</li>
+                    </ul>
+                    <a href="#" class="btn btn-primary">Apply for Academy</a>
+                </div>
+                <div class="col-md-4">
+                    <div class="department-stats">
+                        <div class="stat-card">
+                            <i class="fas fa-road"></i>
+                            <h4>1,500+</h4>
+                            <p>Miles of Highway</p>
+                        </div>
+                        <div class="stat-card">
+                            <i class="fas fa-user-shield"></i>
+                            <h4>40+</h4>
+                            <p>State Troopers</p>
+                        </div>
+                        <div class="stat-card">
+                            <i class="fas fa-car-crash"></i>
+                            <h4>24/7</h4>
+                            <p>Emergency Response</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Specialized Units -->
+    <section class="divisions-section py-5 bg-light">
+        <div class="container">
+            <h2 class="text-center mb-4">Specialized Units</h2>
+            <div class="row g-4">
+                <div class="col-md-3">
+                    <div class="division-card">
+                        <i class="fas fa-truck"></i>
+                        <h3>Commercial Vehicle</h3>
+                        <p>Commercial vehicle inspection and enforcement</p>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="division-card">
+                        <i class="fas fa-helicopter"></i>
+                        <h3>Air Support</h3>
+                        <p>Aerial patrol and emergency response</p>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="division-card">
+                        <i class="fas fa-car-crash"></i>
+                        <h3>Accident Investigation</h3>
+                        <p>Major crash investigation team</p>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="division-card">
+                        <i class="fas fa-drug"></i>
+                        <h3>K-9 Unit</h3>
+                        <p>Narcotic detection and pursuit</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Highway Safety Programs -->
+    <section class="safety-programs py-5">
+        <div class="container">
+            <h2 class="text-center mb-4">Highway Safety Programs</h2>
+            <div class="row g-4">
+                <div class="col-md-6">
+                    <div class="program-card">
+                        <i class="fas fa-car"></i>
+                        <h3>Operation Safe Driver</h3>
+                        <p>Targeting aggressive and distracted driving</p>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="program-card">
+                        <i class="fas fa-shield-alt"></i>
+                        <h3>Click It or Ticket</h3>
+                        <p>Seatbelt enforcement campaign</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Patrol Districts Map -->
+    <section class="patrol-districts py-5 bg-light">
+        <div class="container">
+            <h2 class="text-center mb-4">State Patrol Districts</h2>
+            <div class="map-container">
+                <img src="assets/state-districts.jpg" alt="State Patrol Districts" class="img-fluid">
+            </div>
+        </div>
+    </section>
+
+    <!-- Standard Footer -->
+    <footer class="footer bg-dark text-light py-4">
+        <!-- Footer content -->
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+<link rel="stylesheet" href="styles/dark-mode.css">
+</html>
