@@ -21,21 +21,28 @@
     gap: 2rem;
     margin-top: 3rem;
 }
+  .partner-card,
+  .staff-card,
+  .event-card,
+  .department-card,
+  .stat-card,
+  .about-container,
+  .testimonial-item {
+      background: linear-gradient(135deg, #000000, #1b0e00);
+      border-radius: 15px;
+      padding: 2rem;
+      text-align: center;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      transition: transform 0.3s ease;
+  }
 
-.partner-card {
-    background: linear-gradient(135deg, #000000, #1b0e00);
-    border-radius: 15px;
-    padding: 2rem;
-    text-align: center;
-    transition: transform 0.3s ease;
-    border: 1px solid rgba(255, 255, 255, 0.1);
-}
-
-.partner-card:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 5px 15px rgba(255, 81, 0, 0.2);
-}
-
+  .partner-card:hover,
+  .staff-card:hover,
+  .event-card:hover,
+  .department-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 5px 15px rgba(255, 81, 0, 0.2);
+  }
 .partner-card img {
     width: 120px;
     height: auto;
@@ -73,4 +80,87 @@
     .partners-grid {
         grid-template-columns: 1fr;
     }
+}
+
+/* Event Section Styling */
+.events-section {
+    background: linear-gradient(135deg, #000000, #1b0e00);
+    padding: 80px 0;
+    color: #ffffff;
+}
+
+.event-card {
+    background: linear-gradient(135deg, #000000, #1b0e00);
+    border-radius: 15px;
+    padding: 2rem;
+    margin-bottom: 2rem;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.event-card.featured {
+    background: linear-gradient(135deg, #000000, #1b0e00);
+    border: 1px solid rgba(255, 81, 0, 0.3);
+}
+
+.events-regular-grid .event-card {
+    background: linear-gradient(135deg, #000000, #1b0e00);
+    height: 100%;
+}
+
+/* Staff/Leadership Section Styling */
+.staff-showcase {
+    background: linear-gradient(135deg, #000000, #1b0e00);
+    padding: 80px 0;
+    color: #ffffff;
+}
+
+.staff-card {
+    background: linear-gradient(135deg, #000000, #1b0e00);
+    border-radius: 15px;
+    padding: 2rem;
+    margin: 1rem;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.staff-badge {
+    background: linear-gradient(135deg, #000000, #1b0e00);
+    border: 1px solid rgba(255, 81, 0, 0.3);
+    padding: 0.5rem 1rem;
+    border-radius: 25px;
+}
+
+.staff-info {
+    background: linear-gradient(135deg, #000000, #1b0e00);
+    padding: 1.5rem;
+    border-radius: 0 0 15px 15px;
+}
+
+/* Testimonials/Community Voices Section */
+.testimonials {
+    background: linear-gradient(135deg, #000000, #1b0e00);
+    padding: 80px 0;
+    color: #000000;
+}
+
+.testimonial-carousel {
+    background: linear-gradient(135deg, #000000, #1b0e00);
+    border-radius: 15px;
+    padding: 3rem;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.testimonial-item {
+    background: linear-gradient(135deg, #000000, #1b0e00);
+    border-radius: 15px;
+    padding: 2rem;
+    margin: 1rem;
+    border: 1px solid rgba(255, 81, 0, 0.2);
+}
+
+.quote {
+    background: linear-gradient(135deg, #000000, #1b0e00);
+    padding: 1.5rem;
+    border-radius: 10px;
+    margin-bottom: 1rem;
 }

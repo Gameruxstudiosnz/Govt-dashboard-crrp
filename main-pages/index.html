@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>County Road RP</title>
     <a class="skip-link" href="#main-content"></a>
+
     <!-- Core CSS Structure -->
     <link rel="'stylesheet" href="../styles/css/core/components.css">
     <link rel="stylesheet" href="../styles/css/core/dark-theme.css">
@@ -34,28 +35,90 @@
     <link rel="stylesheet" href="../styles/css/main-page/base.css">
     <link rel="stylesheet" href="../styles/css/main-page/pages/public-home.css">
 
-  <!--Dark CSS-->
+    <!--Easter Egg CSS-->
+    <link rel="stylesheet" href="../styles/css/main-page/components/rain.css">
+    
+    <!--Dark CSS-->
     <link rel="stylesheet" href="../styles/css/core/dark-theme.css">
     
     <!-- Preload critical assets -->
     <link rel="preload" href="massets/countyroad.png" as="image">
     <link rel="preload" href="../styles/css/core/main.css" as="style">
 
+    <!--bootstrap-->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+   
     <!--weird js-->
     <script defer src="../js/firework-effect.js"></script>
     <script defer src="../js/mouse-trail.js"></script>
+   
+    <!--Loading Effects-->
     <script src="../js/loading-effects.js"></script>
-    <script src="../js/rain-effect.js"></script>
     <script src="../js/transitions.js"></script>
     <script src="../js/testimonials.js"></script>
+    
+    <!--other js-->
     <script src="../js/timeline.js"></script>
-    <script src="../js/dark-mode.js"></script>
-
+    <script src="../js/rain-effect.js"></script>
+    <script src="../js/public-home.js"></script>
+    <script src="../js/loading-effects-test.js"></script>
+ 
     <!--Discord Javascript-->
     <script type="module" src="../js/auth/discord-profile.service.js"></script>
     <script type="module" src="../js/auth/discord-init.js"></script>
-    <!--Google Font-->       
+
+    <!--Font Awesome-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
     
+    <!--javascript popout-->
+    <script src="../js/event-popup.js"></script>
+     
+    <script type="application/ld+json">
+        {
+          "@context": "https://schema.org",
+          "@type": "Organization",
+          "name": "County Road RP",
+          "description": "Premier FiveM roleplay community featuring law enforcement, EMS, fire department and civilian interactions",
+          "url": "https://countyroadrp.com",
+          "logo": "massets/countyroad.png",
+          "sameAs": [
+            "https://discord.gg/countyroadrp",
+            "https://twitter.com/countyroadrp",
+            "https://youtube.com/countyroadrp",
+            "https://instagram.com/countyroadrp"
+          ],
+          "address": {
+            "@type": "PostalAddress",
+            "addressCountry": "US"
+          },
+          "department": [
+            {
+              "@type": "Organization",
+              "name": "Law Enforcement",
+              "description": "Dedicated to serving and protecting our community"
+            },
+            {
+              "@type": "Organization", 
+              "name": "Emergency Medical Services",
+              "description": "Professional medical care when you need it most"
+            },
+            {
+              "@type": "Organization",
+              "name": "Fire Department",
+              "description": "First responders ready for any emergency"
+            }
+          ],
+          "event": {
+            "@type": "Event",
+            "name": "Grand opening event Chaos in county",
+            "description": "The criminal gang viper cartel is slowly taking control of County Road...",
+            "location": "Everywhere in city",
+            "eventStatus": "https://schema.org/EventScheduled"
+          }
+        }
+        </script>
+        
     <link rel="icon" type="image/x-icon" href="massets/favicon.ico">
       
     <!-- Primary Meta Tags -->
@@ -84,14 +147,7 @@
         <link rel="canonical" href="https://countyroadrp.com/">
     
     
-        <link rel="stylesheet" href="../styles/css/main-page/components/rain.css">
-    <script src="../js/rain-effect.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="js/public-home.js"></script>
-    <script src="js/dark-mode.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="../js/public-home.js"></script>
-<script src="../js/loading-effects-test.js"></script>
+        
 </header>
 <body>  
     <main>   
@@ -120,8 +176,6 @@
                             <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
                             <li class="nav-item"><a class="nav-link" href="rules.html">Rules</a></li>
                             <li class="nav-item"><a class="nav-link btn btn-primary ms-2" href="login.html">Login</a></li>
-                            <button id="darkModeToggle" class="theme-toggle"><i class="fas fa-sun"></i>
-                            </button>
                                 </button>
                             </div>
                         </ul>
@@ -228,7 +282,6 @@
                     <!-- Featured Event -->
                     <div class="event-card featured">
                         <div class="row">
-                            <!-- Text Column (Moved First) -->
                             <div class="col-md-6">
                                 <div class="event-details">
                                     <h3 class="event-title">Grand opening event Chaos in county</h3>
@@ -238,17 +291,52 @@
                                         <p><i class="fas fa-map-marker-alt"></i> Everywhere in city</p>
                                     </div>
                                     <div class="event-description">
-                                        The criminal gang viper cartel is slowly taking control of County Road, while law enforcement struggles to maintain order. Each day brings new challenges, escalating tension, and opportunities for players to influence the outcome.
+                                        The criminal gang viper cartel is slowly taking control of County Road...
+                                        <button class="event-button" onclick="toggleEventPopup('event1')">
+                                            View Full Details <i class="fas fa-external-link-alt"></i>
+                                        </button>
                                     </div>
                                 </div>
                             </div>
-                            <!-- Image Column (Moved Second) -->
                             <div class="col-md-6">
                                 <img src="massets/events/event1.png" class="event-image" alt="Event">
                             </div>
                         </div>
                     </div>
                     <!-- Regular Events -->
+
+                    <!-- Add the popup container -->
+                    <div id="eventPopup" class="event-popup">
+                        <div class="event-popup-content">
+                            <span class="close-popup" onclick="toggleEventPopup()">×</span>
+                            <div class="event-popup-header">
+                                <h2>Event Details</h2>
+                            </div>
+                            <div class="event-popup-body">
+                                <img src="massets/events/event1.png" class="popup-event-image" alt="Event">
+                                <div class="popup-event-info">
+                                    <h3>Grand opening event Chaos in county</h3>
+                                    <div class="event-meta">
+                                        <p><i class="fas fa-calendar"></i> Date: TBA</p>
+                                        <p><i class="fas fa-clock"></i> Time: TBA</p>
+                                        <p><i class="fas fa-map-marker-alt"></i> Location: Everywhere in city</p>
+                                    </div>
+                                    <div class="event-full-description">
+                                        <h4>Event Description</h4>
+                                        <p>The criminal gang viper cartel is slowly taking control of County Road, while law enforcement struggles to maintain order. Each day brings new challenges, escalating tension, and opportunities for players to influence the outcome.</p>
+                                        
+                                        <h4>Event Highlights</h4>
+                                        <ul>
+                                            <li>Dynamic gang activity scenarios</li>
+                                            <li>Special police operations</li>
+                                            <li>Territory control mechanics</li>
+                                            <li>Civilian involvement opportunities</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                     <div class="events-regular-grid">
                         <div class="col-md-4">
                             <div class="event-card">
@@ -478,25 +566,5 @@
         </div>
     </footer>
 
-
-    <!-- Scripts -->
-    <!-- Add this in the navbar -->
-   
-
-    <!-- Add skip link for keyboard users -->
-    <a class="skip-link" href="#main-content">Skip to main content</a>
-
-  
-
-
-
-<!-- Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=YOUR-ID"></script>
-
-<!-- Cookie Consent -->
-<div class="cookie-consent" role="alert">
-    <p>We use cookies to enhance your experience.</p>
-    <button class="accept-cookies">Accept</button>
-</div>
 
 

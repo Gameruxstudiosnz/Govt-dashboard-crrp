@@ -1,5 +1,5 @@
 const API_CONFIG = {
-    baseUrl: 'http://your-api-domain.com/api/v1',
+    baseUrl: 'http://localhost:3000/api/v1',
     endpoints: {
         documents: {
             list: '/documents',
