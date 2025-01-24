@@ -1,82 +1,422 @@
-
-/* Hero Section Styles */
-.hero-section {
-    background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('../assets/hero-bg.jpg');
-    background-size: cover;
-    background-position: center;
-    padding: 100px 0;
-    color: #303030;
-    text-align: center;
+  /* Base Variables */
+  :root {
+      --primary-color: #2c3e50;
+      --secondary-color: #007bff;
+      --text-color: #555;
+      --light-bg: #f8f9fa;
+      --shadow: 0 3px 10px rgba(0,0,0,0.1);
+      --transition: all 0.3s ease;
+  }
+/* Navigation */
+.navbar {
+    background: rgba(0, 0, 0, 0.7);
+    backdrop-filter: blur(10px);
+    padding: 1rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
-.hero-content h1 {
-    font-size: 3.5rem;
-    font-weight: 700;
-    margin-bottom: 1rem;
+.navbar-brand {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
 }
 
-/* About Section Styles */
-.about-section {
+.navbar-nav {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 1rem;
+    margin-left: -20%;
+    list-style: none;
+    white-space: nowrap;
+}
+
+.nav-item {
+    display: inline-flex;
+    align-items: center;
+    margin: 0;
+    padding: 0;
+}
+
+.nav-link {
+    padding: 8px 16px;
+    color: #ffffff !important;
+    transition: all 0.3s ease;
+    border-radius: 5px;
+}
+
+.nav-link:hover {
+    background: rgba(255, 255, 255, 0.1);
+    transform: translateY(-2px);
+}
+
+.nav-link.btn-primary {
+    margin-left: 67rem;
+    background: var(--primary);
+    border: 2px solid transparent;
+    padding: 8px 20px;
+    order: 2;
+}
+
+.nav-link.btn-primary:hover {
+    background: transparent;
+    border-color: var(--primary);
+    color: var(--primary) !important;
+}
+
+.navbar-toggler {
+    border: 2px solid rgba(255, 255, 255, 0.5);
+    padding: 8px 12px;
+}
+
+.navbar-toggler:focus {
+    box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.25);
+}
+
+.navbar-toggler-icon {
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%28255, 255, 255, 0.9%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+}
+
+  /* Hero Section */
+  .hero-section {
+      background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('../assets/hero-bg.jpg');
+      background-size: cover;
+      background-position: center;
+      background-attachment: fixed;
+      min-height: 60vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #ffffff00;
+      text-align: center;
+      margin-top: 80px; /* Added to account for fixed navbar */
+  }
+
+  /* Title Styling */
+  .hero-section h1,
+  .about-section h2,
+  .mission-section h2,
+  .team-section h2,
+  .stats-section h2,
+  .features-section h2,
+  .testimonials-section h2,
+  .cta-section h2 {
+      background: linear-gradient(45deg, #ff3366, #ff9933);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+      display: inline-block;
+      font-weight: 700;
+      text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+  }
+
+  /* Section-specific title adjustments */
+  .hero-section h1 {
+      font-size: clamp(2.5rem, 5vw, 4rem);
+      margin-bottom: 1.5rem;
+  }
+
+  .section-title {
+      font-size: clamp(2rem, 4vw, 3rem);
+      text-align: center;
+      margin-bottom: 3rem;
+  }
+
+  /* About Section */
+  .about-section {
+      padding: 5rem 0;
+      background: var(--light-bg);
+  }
+
+  .about-section p {
+      font-size: 1.1rem;
+      line-height: 1.8;
+      color: var(--text-color);
+      margin-bottom: 1.5rem;
+  }
+
+  .about-section img {
+      box-shadow: var(--shadow);
+      transition: var(--transition);
+      border-radius: 8px;
+      width: 100%;
+      height: auto;
+  }
+
+  /* Service Cards */
+  .service-card {
+      background: #ffffff;
+      padding: 2rem;
+      border-radius: 10px;
+      box-shadow: var(--shadow);
+      text-align: center;
+      transition: var(--transition);
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+  }
+
+  .service-card i {
+      font-size: 2.5rem;
+      color: var(--secondary-color);
+      margin-bottom: 1.25rem;
+  }
+
+  /* Team Section */
+  .team-card {
+      padding: 1.5rem;
+      transition: var(--transition);
+      text-align: center;
+  }
+
+  .team-card img {
+      width: 150px;
+      height: 150px;
+      object-fit: cover;
+      border: 5px solid #fff;
+      box-shadow: var(--shadow);
+      margin-bottom: 1rem;
+  }
+
+  /* Hover Effects */
+  .about-section img:hover,
+  .service-card:hover,
+  .team-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+  }
+
+  /* Media Queries */
+  @media (max-width: 768px) {
+      .about-section {
+          padding: 3rem 0;
+      }
+    
+      .service-card {
+          margin-bottom: 1.5rem;
+      }
+    
+      .team-card img {
+          width: 120px;
+          height: 120px;
+      }
+  }
+
+  @media (max-width: 576px) {
+      .hero-section {
+          min-height: 40vh;
+      }
+    
+      .about-section h2 {
+          text-align: center;
+      }
+  }
+
+
+
+/* Stats Section */
+.stats-section {
+    background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7))
+    color: #fff;
     padding: 80px 0;
 }
 
-.about-section h2 {
-    color: #2c3e50;
-    font-size: 2.5rem;
-    margin-bottom: 30px;
-}
-
-.about-section p {
-    font-size: 1.1rem;
-    line-height: 1.8;
-    color: #555;
-}
-
-.about-section img {
-    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+.stat-card {
+    padding: 2rem;
+    border-radius: 15px;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(5px);
     transition: transform 0.3s ease;
 }
 
-.about-section img:hover {
-    transform: scale(1.02);
+.stat-card i {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    color: rgba(255, 255, 255, 0.9);
 }
 
-/* Mission & Values Section Styles */
-.mission-section {
-    background-color: #f8f9fa;
+.stat-card .counter {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin: 1rem 0;
 }
 
-.service-card {
-    background: #ffffff;
-    padding: 30px;
+/* Features Section */
+.feature-card {
+    background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7))
+    padding: 2.5rem;
     border-radius: 10px;
-    box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    transition: all 0.3s ease;
+    height: 100%;
+}
+
+.feature-card i {
+    font-size: 2.5rem;
+    color: var(--secondary-color);
+    margin-bottom: 1.5rem;
+}
+
+.feature-card h3 {
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+}
+
+/* Testimonials Section */
+.testimonials-section {
+    background: #f8f9fa;
+}
+
+.testimonial-card {
+    background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7))
+    padding: 2rem;
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
     text-align: center;
     transition: transform 0.3s ease;
 }
 
-.service-card:hover {
-    transform: translateY(-5px);
+.testimonial-card img {
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    border: 5px solid #fff;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.2);
+    margin-bottom: 1.5rem;
 }
 
-.service-card i {
+.testimonial-text {
+    font-style: italic;
+    color: #666;
+    margin: 1.5rem 0;
+    line-height: 1.6;
+}
+
+.testimonial-card h4 {
+    color: var(--primary-color);
+    margin-bottom: 0.5rem;
+}
+
+.role {
+    color: var(--secondary-color);
+    font-weight: 500;
+}
+
+/* Call to Action Section */
+.cta-section {
+    background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('../assets/cta-bg.jpg');
+    background-size: cover;
+    background-position: center;
+    color: #fff;
+    padding: 100px 0;
+}
+
+.cta-section h2 {
     font-size: 2.5rem;
-    color: #007bff;
-    margin-bottom: 20px;
+    margin-bottom: 1rem;
 }
 
-.service-card h3 {
-    color: #2c3e50;
-    margin-bottom: 15px;
+.cta-buttons {
+    margin-top: 2rem;
 }
 
-/* Team Section Styles */
-.team-section {
-    background-color: #ffffff;
+/* Hover Effects */
+.stat-card:hover,
+.feature-card:hover,
+.testimonial-card:hover {
+    transform: translateY(-10px);
+}
+
+/* Media Queries */
+@media (max-width: 768px) {
+    .stat-card,
+    .feature-card,
+    .testimonial-card {
+        margin-bottom: 1.5rem;
+    }
+    
+    .cta-section {
+        padding: 60px 0;
+    }
+    
+    .cta-buttons .btn {
+        display: block;
+        width: 100%;
+        margin: 1rem 0;
+    }
+}
+  .mission-section {
+      background-color: #000000;
+      padding: 80px 0;
+      position: relative;
+  }
+
+  .mission-section::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: linear-gradient(45deg, rgb(0, 0, 0), rgb(20, 20, 20));
+      pointer-events: none;
+  }
+
+  .mission-section .container {
+      position: relative;
+      z-index: 2;
+  }
+
+  .mission-section h2 {
+      background: linear-gradient(45deg, #ff3366, #ff9933);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+      margin-bottom: 3rem;
+  }
+
+  .mission-section .service-card {
+    background: linear-gradient(135deg, #000000, #1b0e00);
+      border-radius: 15px;
+      backdrop-filter: blur(10px);
+      box-shadow: 0 5px 15px rgba(255, 81, 0, 0.2);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+  }
+
+  .mission-section .service-card h3 {
+      background: linear-gradient(45deg, #ff3366, #ff9933);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+      font-weight: 600;
+  }
+
+  .mission-section p {
+      color: #ffffff;
+  }
+
+  .mission-section .service-card p {
+      color: #ffffff;
+  }
+
+  .mission-section .service-card i {
+      background: linear-gradient(45deg, #ff3366, #ff9933);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+  }
+  .team-section {
+    background-color: #000000;
+    color: #000000; /* Adding white text color for contrast */
 }
 
 .team-card {
+    background-color: rgba(255, 255, 255, 0.1); /* Semi-transparent white for cards */
     padding: 20px;
+    border-radius: 8px;
     transition: transform 0.3s ease;
 }
 
@@ -84,35 +424,36 @@
     transform: translateY(-5px);
 }
 
-.team-card img {
-    width: 150px;
-    height: 150px;
-    object-fit: cover;
-    border: 5px solid #fff;
-    box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+.features-section {
+    background-color: #000000 !important; /* Override bg-light */
+    color: #ffffff;
 }
 
-.team-card h4 {
-    color: #2c3e50;
-    margin-top: 15px;
-    margin-bottom: 5px;
+.feature-card {
+    background-color: rgba(255, 255, 255, 0.05);
+    padding: 2rem;
+    border-radius: 10px;
+    transition: all 0.3s ease;
+    text-align: center;
 }
 
-.team-card p {
-    color: #6c757d;
+.feature-card i {
+    font-size: 2.5rem;
+    color: linear-gradient(45deg, #ff3366, #ff9933);
+    margin-bottom: 1.5rem;
 }
 
-/* Responsive Design */
-@media (max-width: 768px) {
-    .hero-content h1 {
-        font-size: 2.5rem;
-    }
-    
-    .about-section {
-        text-align: center;
-    }
-    
-    .team-card {
-        margin-bottom: 30px;
-    }
+.feature-card:hover {
+    transform: translateY(-10px);
+    background-color: rgba(255, 255, 255, 0.1);
+    box-shadow: 0 5px 15px rgba(0, 123, 255, 0.2);
+}
+
+.feature-card h3 {
+    color:linear-gradient(45deg, #ff3366, #ff9933);
+    margin-bottom: 1rem;
+}
+
+.feature-card p {
+    color: #e0e0e0;
 }
