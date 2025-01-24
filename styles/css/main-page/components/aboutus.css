@@ -16,78 +16,154 @@
   /* 2. Interactive Elements */
   /* 3. Typography */
   /* 4. Media Queries *//* Navigation */
+/* Navigation Styling */
 .navbar {
-    background: rgba(0, 0, 0, 0.7);
+    background: linear-gradient(135deg, #000000, #1b0e00);
+    padding: 1rem 0;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+    border-bottom: 1px solid rgba(255, 81, 0, 0.2);
     backdrop-filter: blur(10px);
-    padding: 1rem 2rem;
+}
+
+.navbar-container {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 2rem;
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
 
-.navbar-brand {
-    position: absolute;
-    left: 50%;
-    transform: translateX(-50%);
+.navbar-logo img {
+    height: 50px;
+    transition: transform 0.3s ease;
 }
 
-.navbar-nav {
+.navbar-logo img:hover {
+    transform: scale(1.05);
+}
+
+.navbar-links {
     display: flex;
-    flex-direction: row;
+    gap: 2rem;
     align-items: center;
-    gap: 1rem;
-    margin-left: -20%;
-    list-style: none;
-    white-space: nowrap;
 }
 
-.nav-item {
-    display: inline-flex;
-    align-items: center;
-    margin: 0;
-    padding: 0;
-}
-
-.nav-link {
-    padding: 8px 16px;
-    color: #ffffff !important;
+.navbar-links a {
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 1.1rem;
+    font-weight: 500;
+    padding: 0.5rem 1rem;
+    border-radius: 8px;
     transition: all 0.3s ease;
-    border-radius: 5px;
+    position: relative;
 }
 
-.nav-link:hover {
-    background: rgba(255, 255, 255, 0.1);
+.navbar-links a::after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: linear-gradient(45deg, #ff3366, #ff9933);
+    transition: width 0.3s ease;
+}
+
+.navbar-links a:hover::after {
+    width: 100%;
+}
+
+.navbar-links a.active {
+    background: linear-gradient(45deg, #ff3366, #ff9933);
+    color: #ffffff;
+    box-shadow: 0 2px 10px rgba(255, 81, 0, 0.3);
+}
+
+.navbar-cta .cta-button {
+    background: linear-gradient(45deg, #ff3366, #ff9933);
+    color: #ffffff;
+    padding: 0.8rem 1.5rem;
+    border-radius: 25px;
+    font-weight: bold;
+    text-decoration: none;
+    transition: transform 0.3s ease;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.navbar-cta .cta-button:hover {
     transform: translateY(-2px);
+    box-shadow: 0 4px 15px rgba(255, 81, 0, 0.4);
 }
 
-.nav-link.btn-primary {
-    margin-left: 67rem;
-    background: var(--primary);
-    border: 2px solid transparent;
-    padding: 8px 20px;
-    order: 2;
+/* Base Background */
+body {
+    background: #000000;
+    color: #ffffff;
 }
 
-.nav-link.btn-primary:hover {
-    background: transparent;
-    border-color: var(--primary);
-    color: var(--primary) !important;
+/* Dark Gradient Overlay */
+.page-wrapper {
+    background: linear-gradient(135deg, #000000 0%, #0a0500 50%, #1b0e00 100%);
+    min-height: 100vh;
 }
 
-.navbar-toggler {
-    border: 2px solid rgba(255, 255, 255, 0.5);
-    padding: 8px 12px;
+/* Section Backgrounds */
+.hero-section,
+.about-section,
+.mission-section,
+.team-section,
+.stats-section {
+    background: linear-gradient(145deg, #000000, #0a0500);
+    position: relative;
 }
 
-.navbar-toggler:focus {
-    box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.25);
+/* Card Backgrounds */
+.service-card,
+.team-card,
+.stat-card {
+    background: linear-gradient(145deg, #000000, #0a0500);
+    border: 1px solid rgba(255, 81, 0, 0.2);
+    transition: transform 0.3s ease;
 }
 
-.navbar-toggler-icon {
-    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%28255, 255, 255, 0.9%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+.service-card:hover,
+.team-card:hover,
+.stat-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(255, 81, 0, 0.2);
 }
 
-  /* Hero Section */
+/* Mobile Navigation */
+@media (max-width: 768px) {
+    .navbar-container {
+        flex-direction: column;
+        gap: 1rem;
+        padding: 1rem;
+    }
+
+    .navbar-links {
+        flex-direction: column;
+        width: 100%;
+        gap: 0.5rem;
+    }
+
+    .navbar-links a {
+        width: 100%;
+        text-align: center;
+        padding: 0.8rem;
+    }
+
+    .navbar-cta {
+        width: 100%;
+        text-align: center;
+        margin-top: 1rem;
+    }
+}  /* Hero Section */
   .hero-section {
       background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('../assets/hero-bg.jpg');
       background-size: cover;
@@ -221,9 +297,6 @@
       .about-section h2 {
           text-align: center;
       }
-  }
-
-
 
 /* Stats Section */
 .stats-section {
@@ -261,7 +334,6 @@
     transition: all 0.3s ease;
     height: 100%;
 }
-
 .feature-card i {
     font-size: 2.5rem;
     color: var(--secondary-color);
